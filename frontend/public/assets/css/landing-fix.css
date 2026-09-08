@@ -1,0 +1,453 @@
+/* ==========================================================================
+   LANDING PAGE ESSENTIAL FIXES & ISOLATION
+   Ensures 100% clean isolation from Admin panel, prevents OS/Browser dark-mode bleed,
+   and provides smooth Slick/Swiper slider layouts and responsive galleries.
+   ========================================================================== */
+
+:root {
+  color-scheme: light !important;
+  --bs-body-bg: #ffffff !important;
+  --bs-body-color: #111111 !important;
+  --bs-body-bg-rgb: 255, 255, 255 !important;
+  --bs-body-color-rgb: 17, 17, 17 !important;
+  --bs-heading-color: #111111 !important;
+}
+
+html[data-bs-theme],
+html[data-bs-theme="dark"],
+html[data-bs-theme="light"],
+body {
+  color-scheme: light !important;
+  background-color: #ffffff !important;
+  color: #111111 !important;
+  min-height: 100vh;
+}
+
+.landing-wrapper {
+  color-scheme: light !important;
+  background-color: #ffffff !important;
+  color: #111111 !important;
+  width: 100%;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Fixed Header Spacing for Product Single & Inner Pages */
+.header.header-type1-1 {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+/* Ensure product detail top margin is clean and never hidden under fixed header */
+.block-product-single-10 {
+  padding-top: 110px !important;
+}
+
+.block-product-single-10 .container-product-10 .box-product-info {
+  padding-top: 20px !important;
+}
+
+/* Responsive Product Gallery Slider & Figures */
+.detail-gallery {
+  width: 100%;
+  display: flex;
+}
+
+.detail-gallery figure img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.product-image-slider figure {
+  margin-bottom: 0;
+  text-align: center;
+}
+
+.product-image-slider:not(.slick-initialized) {
+  display: flex;
+  overflow: hidden;
+}
+
+.product-image-slider:not(.slick-initialized) figure {
+  flex: 0 0 100%;
+}
+
+/* Vertical Thumbnails Gallery (slider-nav-thumbnails-1) */
+.slider-nav-thumbnails-1 {
+  min-width: 100px;
+  max-width: 100px;
+  margin-right: 10px;
+  height: 635px;
+}
+
+.slider-nav-thumbnails-1:not(.slick-initialized) {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow: hidden;
+  height: 635px;
+}
+
+.slider-nav-thumbnails-1:not(.slick-initialized) > div {
+  width: 100px;
+  height: 119px;
+  flex: 0 0 119px;
+  cursor: pointer;
+}
+
+.slider-nav-thumbnails-1 .item-thumb {
+  width: 100%;
+  height: 100%;
+  border: 1px solid #e5e5e5;
+  border-radius: 4px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.slider-nav-thumbnails-1 .item-thumb img {
+  width: 100%;
+  height: 119px;
+  object-fit: cover;
+  display: block;
+}
+
+.slider-nav-thumbnails-1 .slick-slide {
+  border: 1px solid transparent;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 10px;
+  height: 119px;
+}
+
+.slider-nav-thumbnails-1 .slick-slide:hover,
+.slider-nav-thumbnails-1 .slick-current.slick-active,
+.slider-nav-thumbnails-1 .slick-current {
+  border-color: #111111 !important;
+}
+
+/* Horizontal Thumbnails Gallery (slider-nav-thumbnails-2 and 5) */
+.slider-nav-thumbnails-2:not(.slick-initialized),
+.slider-nav-thumbnails-5:not(.slick-initialized) {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  margin-top: 15px;
+}
+
+.slider-nav-thumbnails-2:not(.slick-initialized) > div,
+.slider-nav-thumbnails-5:not(.slick-initialized) > div {
+  flex: 0 0 80px;
+  cursor: pointer;
+}
+
+.slider-nav-thumbnails-2 .item-thumb {
+  border: 1px solid #e5e5e5;
+  border-radius: 4px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.slider-nav-thumbnails-2 .item-thumb img {
+  width: 100%;
+  height: 80px;
+  object-fit: cover;
+  display: block;
+}
+
+.slider-nav-thumbnails-5 .item-thumb {
+  border: 1px solid #ffffff;
+  border-radius: 50% !important;
+  overflow: hidden;
+  cursor: pointer;
+  width: 80px;
+  height: 80px;
+}
+
+.slider-nav-thumbnails-5 .item-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 50% !important;
+}
+
+.slider-nav-thumbnails-2 .slick-slide:hover .item-thumb,
+.slider-nav-thumbnails-2 .slick-current .item-thumb,
+.slider-nav-thumbnails-5 .slick-slide:hover .item-thumb,
+.slider-nav-thumbnails-5 .slick-current .item-thumb,
+.slider-nav-thumbnails-5 .slick-current.slick-active .item-thumb {
+  border-color: #111111 !important;
+}
+
+/* Product Countdown Timer (Red border boxes matching template) */
+.block-hurry .box-count .deals-countdown {
+  display: flex;
+  padding: 4px 0px;
+  width: 100%;
+  max-width: 100%;
+}
+
+.block-hurry .box-count .deals-countdown .countdown-section {
+  display: inline-block;
+  text-align: center;
+  width: 25%;
+  position: relative;
+  max-width: 80px;
+  border: 1px solid #ED0006 !important;
+  margin-right: 12px;
+  border-radius: 4px;
+  padding: 15px 4px;
+  box-sizing: border-box;
+}
+
+.block-hurry .box-count .deals-countdown .countdown-section span {
+  display: block;
+}
+
+.block-hurry .box-count .deals-countdown .countdown-section .countdown-amount {
+  font-size: 34px !important;
+  font-weight: 500 !important;
+  line-height: 44px !important;
+  color: #111111 !important;
+}
+
+.block-hurry .box-count .deals-countdown .countdown-section .countdown-period {
+  text-transform: capitalize !important;
+  color: #111111 !important;
+  font-size: 17px !important;
+  font-weight: 400 !important;
+  line-height: 24px !important;
+}
+
+/* ==========================================================================
+   SWIPER FALLBACK BEFORE JS MOUNTS
+   Ensures 4 columns are shown immediately on desktop without 100% stacking.
+   Once Swiper initializes (.swiper-container-initialized), Swiper handles all sizing.
+   ========================================================================== */
+
+.box-swiper {
+  position: relative;
+}
+
+.swiper-container.swiper-4-items,
+.swiper-container.swiper-4-products,
+.swiper-container.swiper-tab-1,
+.swiper-container.swiper-tab-2,
+.swiper-container.swiper-tab-3,
+.swiper-container.swiper-tab-4,
+.swiper-container.swiper-tab-5,
+.swiper-container.swiper-tab-6,
+.swiper-container.swiper-3-items,
+.swiper-container.swiper-popular-product,
+.swiper-container.swiper-scrollbar-4-items,
+.swiper-container.swiper-group-4-category {
+  overflow: hidden;
+  width: 100%;
+}
+
+/* Banner single-slide before hydration to avoid stacking */
+.swiper-container.swiper-banner:not(.swiper-container-initialized) > .swiper-wrapper {
+  display: flex;
+  overflow: hidden;
+}
+.swiper-container.swiper-banner:not(.swiper-container-initialized) > .swiper-wrapper > .swiper-slide:not(:first-child) {
+  display: none;
+}
+.swiper-container.swiper-banner:not(.swiper-container-initialized) > .swiper-wrapper > .swiper-slide:first-child {
+  width: 100%;
+  flex: 0 0 100%;
+}
+
+/* 4-Item Carousels & Tab Sliders fallback */
+.swiper-container.swiper-4-items:not(.swiper-container-initialized) > .swiper-wrapper,
+.swiper-container.swiper-4-products:not(.swiper-container-initialized) > .swiper-wrapper,
+.swiper-container.swiper-tab-1:not(.swiper-container-initialized) > .swiper-wrapper,
+.swiper-container.swiper-tab-2:not(.swiper-container-initialized) > .swiper-wrapper,
+.swiper-container.swiper-tab-3:not(.swiper-container-initialized) > .swiper-wrapper,
+.swiper-container.swiper-tab-4:not(.swiper-container-initialized) > .swiper-wrapper,
+.swiper-container.swiper-popular-product:not(.swiper-container-initialized) > .swiper-wrapper,
+.swiper-container.swiper-scrollbar-4-items:not(.swiper-container-initialized) > .swiper-wrapper {
+  display: flex;
+  gap: 30px;
+  box-sizing: border-box;
+}
+
+.swiper-container.swiper-4-items:not(.swiper-container-initialized) > .swiper-wrapper > .swiper-slide,
+.swiper-container.swiper-4-products:not(.swiper-container-initialized) > .swiper-wrapper > .swiper-slide,
+.swiper-container.swiper-tab-1:not(.swiper-container-initialized) > .swiper-wrapper > .swiper-slide,
+.swiper-container.swiper-tab-2:not(.swiper-container-initialized) > .swiper-wrapper > .swiper-slide,
+.swiper-container.swiper-tab-3:not(.swiper-container-initialized) > .swiper-wrapper > .swiper-slide,
+.swiper-container.swiper-tab-4:not(.swiper-container-initialized) > .swiper-wrapper > .swiper-slide,
+.swiper-container.swiper-popular-product:not(.swiper-container-initialized) > .swiper-wrapper > .swiper-slide,
+.swiper-container.swiper-scrollbar-4-items:not(.swiper-container-initialized) > .swiper-wrapper > .swiper-slide {
+  flex: 0 0 calc((100% - 90px) / 4);
+  max-width: calc((100% - 90px) / 4);
+  box-sizing: border-box;
+}
+
+/* 3-Item Swiper fallback (Natural Skins index-15) */
+.swiper-container.swiper-3-items:not(.swiper-container-initialized) > .swiper-wrapper {
+  display: flex;
+  gap: 30px;
+  box-sizing: border-box;
+}
+
+.swiper-container.swiper-3-items:not(.swiper-container-initialized) > .swiper-wrapper > .swiper-slide {
+  flex: 0 0 calc((100% - 60px) / 3);
+  max-width: calc((100% - 60px) / 3);
+  box-sizing: border-box;
+}
+
+/* Category group 4 (5px gap) */
+.swiper-container.swiper-group-4-category:not(.swiper-container-initialized) > .swiper-wrapper {
+  display: flex;
+  gap: 5px;
+  box-sizing: border-box;
+}
+
+.swiper-container.swiper-group-4-category:not(.swiper-container-initialized) > .swiper-wrapper > .swiper-slide {
+  flex: 0 0 calc((100% - 15px) / 4);
+  max-width: calc((100% - 15px) / 4);
+  box-sizing: border-box;
+}
+
+/* 6-Item Swiper fallback (Furniture Store 02 index-9) */
+.swiper-container.swiper-6-items:not(.swiper-container-initialized) > .swiper-wrapper {
+  display: flex;
+  gap: 30px;
+  box-sizing: border-box;
+}
+
+.swiper-container.swiper-6-items:not(.swiper-container-initialized) > .swiper-wrapper > .swiper-slide {
+  flex: 0 0 calc((100% - 150px) / 6);
+  max-width: calc((100% - 150px) / 6);
+  box-sizing: border-box;
+}
+
+/* 5-Item Swiper fallback (Book Store index-32) */
+.swiper-container.swiper-group-5-items:not(.swiper-container-initialized) > .swiper-wrapper {
+  display: flex;
+  gap: 30px;
+  box-sizing: border-box;
+}
+
+.swiper-container.swiper-group-5-items:not(.swiper-container-initialized) > .swiper-wrapper > .swiper-slide {
+  flex: 0 0 calc((100% - 120px) / 5);
+  max-width: calc((100% - 120px) / 5);
+  box-sizing: border-box;
+}
+
+/* Group Center Items fallback (Glasses Shop index-33, Jeans Fashion index-34) */
+.swiper-container.swiper-group-center-items:not(.swiper-container-initialized) > .swiper-wrapper {
+  display: flex;
+  gap: 30px;
+  box-sizing: border-box;
+}
+
+.swiper-container.swiper-group-center-items:not(.swiper-container-initialized) > .swiper-wrapper > .swiper-slide {
+  flex: 0 0 calc((100% - 90px) / 4);
+  max-width: calc((100% - 90px) / 4);
+  box-sizing: border-box;
+}
+
+@media (max-width: 1199px) {
+  .swiper-container.swiper-4-items:not(.swiper-container-initialized) > .swiper-wrapper > .swiper-slide,
+  .swiper-container.swiper-4-products:not(.swiper-container-initialized) > .swiper-wrapper > .swiper-slide,
+  .swiper-container.swiper-tab-1:not(.swiper-container-initialized) > .swiper-wrapper > .swiper-slide,
+  .swiper-container.swiper-tab-2:not(.swiper-container-initialized) > .swiper-wrapper > .swiper-slide {
+    flex: 0 0 calc((100% - 60px) / 3);
+    max-width: calc((100% - 60px) / 3);
+  }
+  .swiper-container.swiper-group-4-category:not(.swiper-container-initialized) > .swiper-wrapper > .swiper-slide {
+    flex: 0 0 calc((100% - 10px) / 3);
+    max-width: calc((100% - 10px) / 3);
+  }
+}
+
+@media (max-width: 767px) {
+  .swiper-container.swiper-4-items:not(.swiper-container-initialized) > .swiper-wrapper > .swiper-slide,
+  .swiper-container.swiper-4-products:not(.swiper-container-initialized) > .swiper-wrapper > .swiper-slide,
+  .swiper-container.swiper-tab-1:not(.swiper-container-initialized) > .swiper-wrapper > .swiper-slide,
+  .swiper-container.swiper-tab-2:not(.swiper-container-initialized) > .swiper-wrapper > .swiper-slide {
+    flex: 0 0 calc((100% - 20px) / 2);
+    max-width: calc((100% - 20px) / 2);
+  }
+  .swiper-container.swiper-group-4-category:not(.swiper-container-initialized) > .swiper-wrapper > .swiper-slide {
+    flex: 0 0 calc((100% - 5px) / 2);
+    max-width: calc((100% - 5px) / 2);
+  }
+}
+
+@media (max-width: 480px) {
+  .swiper-container.swiper-4-items:not(.swiper-container-initialized) > .swiper-wrapper > .swiper-slide,
+  .swiper-container.swiper-4-products:not(.swiper-container-initialized) > .swiper-wrapper > .swiper-slide,
+  .swiper-container.swiper-tab-1:not(.swiper-container-initialized) > .swiper-wrapper > .swiper-slide,
+  .swiper-container.swiper-tab-2:not(.swiper-container-initialized) > .swiper-wrapper > .swiper-slide,
+  .swiper-container.swiper-group-4-category:not(.swiper-container-initialized) > .swiper-wrapper > .swiper-slide {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
+/* Card collection style 1 image aspect & transition */
+.cardCollectionStyle1 .cardImage img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Accordions */
+.accordion-button:not(.collapsed) {
+  color: #111111 !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+
+.accordion-button:focus {
+  box-shadow: none !important;
+  border-color: rgba(0, 0, 0, 0.125) !important;
+}
+
+/* Ensure buttons and inputs are always light-themed */
+.landing-wrapper input,
+.landing-wrapper textarea,
+.landing-wrapper select {
+  background-color: #ffffff !important;
+  color: #111111 !important;
+  border-color: #e5e5e5 !important;
+}
+
+.slick-prev,
+.slick-next {
+  z-index: 10;
+}
+
+/* Shop Filter Overlays and Popups */
+.wrapper-overlay {
+  background: rgba(0, 0, 0, 0.45) !important;
+  z-index: 12343 !important;
+}
+
+.block-filter-canvas {
+  z-index: 12344 !important;
+}
+
+.box-popup-preview {
+  background: rgba(0, 0, 0, 0.6) !important;
+  z-index: 99999 !important;
+}
+
+.box-popup-preview .box-popup-content {
+  position: relative;
+  z-index: 100000 !important;
+}
+
+/* Filter collapse transition */
+.box-collapse {
+  transition: max-height 0.3s ease;
+}
+

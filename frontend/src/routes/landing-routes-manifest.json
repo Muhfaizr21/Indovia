@@ -1,0 +1,512 @@
+[
+  {
+    "slug": "404",
+    "componentName": "Landing404",
+    "routePath": "/pages-404",
+    "title": "404 | Larkon Store"
+  },
+  {
+    "slug": "about-us-1",
+    "componentName": "AboutUs1",
+    "routePath": "/about-us-1",
+    "title": "About Us 1 | Larkon Store"
+  },
+  {
+    "slug": "about-us-2",
+    "componentName": "AboutUs2",
+    "routePath": "/about-us-2",
+    "title": "About Us 2 | Larkon Store"
+  },
+  {
+    "slug": "blog-grid",
+    "componentName": "BlogGrid",
+    "routePath": "/blog-grid",
+    "title": "Blog Grid | Larkon Store"
+  },
+  {
+    "slug": "blog-list",
+    "componentName": "BlogList",
+    "routePath": "/blog-list",
+    "title": "Blog List | Larkon Store"
+  },
+  {
+    "slug": "blog-masonry",
+    "componentName": "BlogMasonry",
+    "routePath": "/blog-masonry",
+    "title": "Blog Masonry | Larkon Store"
+  },
+  {
+    "slug": "blog-single",
+    "componentName": "BlogSingle",
+    "routePath": "/blog-single",
+    "title": "Blog Single | Larkon Store"
+  },
+  {
+    "slug": "carrers",
+    "componentName": "Carrers",
+    "routePath": "/carrers",
+    "title": "Carrers | Larkon Store"
+  },
+  {
+    "slug": "cart",
+    "componentName": "Cart",
+    "routePath": "/cart",
+    "title": "Cart | Larkon Store"
+  },
+  {
+    "slug": "checkout",
+    "componentName": "Checkout",
+    "routePath": "/checkout",
+    "title": "Checkout | Larkon Store"
+  },
+  {
+    "slug": "comming-soon",
+    "componentName": "CommingSoon",
+    "routePath": "/comming-soon",
+    "title": "Comming Soon | Larkon Store"
+  },
+  {
+    "slug": "contact",
+    "componentName": "Contact",
+    "routePath": "/contact",
+    "title": "Contact | Larkon Store"
+  },
+  {
+    "slug": "custome-service",
+    "componentName": "CustomeService",
+    "routePath": "/custome-service",
+    "title": "Custome Service | Larkon Store"
+  },
+  {
+    "slug": "faq",
+    "componentName": "Faq",
+    "routePath": "/faq",
+    "title": "Faq | Larkon Store"
+  },
+  {
+    "slug": "index-10",
+    "componentName": "Index10",
+    "routePath": "/index-10",
+    "title": "Index 10 | Larkon Store"
+  },
+  {
+    "slug": "index-11",
+    "componentName": "Index11",
+    "routePath": "/index-11",
+    "title": "Index 11 | Larkon Store"
+  },
+  {
+    "slug": "index-12",
+    "componentName": "Index12",
+    "routePath": "/index-12",
+    "title": "Index 12 | Larkon Store"
+  },
+  {
+    "slug": "index-13",
+    "componentName": "Index13",
+    "routePath": "/index-13",
+    "title": "Index 13 | Larkon Store"
+  },
+  {
+    "slug": "index-14",
+    "componentName": "Index14",
+    "routePath": "/index-14",
+    "title": "Index 14 | Larkon Store"
+  },
+  {
+    "slug": "index-15",
+    "componentName": "Index15",
+    "routePath": "/index-15",
+    "title": "Index 15 | Larkon Store"
+  },
+  {
+    "slug": "index-16",
+    "componentName": "Index16",
+    "routePath": "/index-16",
+    "title": "Index 16 | Larkon Store"
+  },
+  {
+    "slug": "index-17",
+    "componentName": "Index17",
+    "routePath": "/index-17",
+    "title": "Index 17 | Larkon Store"
+  },
+  {
+    "slug": "index-18",
+    "componentName": "Index18",
+    "routePath": "/index-18",
+    "title": "Index 18 | Larkon Store"
+  },
+  {
+    "slug": "index-19",
+    "componentName": "Index19",
+    "routePath": "/index-19",
+    "title": "Index 19 | Larkon Store"
+  },
+  {
+    "slug": "index-2",
+    "componentName": "Index2",
+    "routePath": "/index-2",
+    "title": "Index 2 | Larkon Store"
+  },
+  {
+    "slug": "index-20",
+    "componentName": "Index20",
+    "routePath": "/index-20",
+    "title": "Index 20 | Larkon Store"
+  },
+  {
+    "slug": "index-21",
+    "componentName": "Index21",
+    "routePath": "/index-21",
+    "title": "Index 21 | Larkon Store"
+  },
+  {
+    "slug": "index-22",
+    "componentName": "Index22",
+    "routePath": "/index-22",
+    "title": "Index 22 | Larkon Store"
+  },
+  {
+    "slug": "index-23",
+    "componentName": "Index23",
+    "routePath": "/index-23",
+    "title": "Index 23 | Larkon Store"
+  },
+  {
+    "slug": "index-24",
+    "componentName": "Index24",
+    "routePath": "/index-24",
+    "title": "Index 24 | Larkon Store"
+  },
+  {
+    "slug": "index-25",
+    "componentName": "Index25",
+    "routePath": "/index-25",
+    "title": "Index 25 | Larkon Store"
+  },
+  {
+    "slug": "index-26",
+    "componentName": "Index26",
+    "routePath": "/index-26",
+    "title": "Index 26 | Larkon Store"
+  },
+  {
+    "slug": "index-27",
+    "componentName": "Index27",
+    "routePath": "/index-27",
+    "title": "Index 27 | Larkon Store"
+  },
+  {
+    "slug": "index-28",
+    "componentName": "Index28",
+    "routePath": "/index-28",
+    "title": "Index 28 | Larkon Store"
+  },
+  {
+    "slug": "index-29",
+    "componentName": "Index29",
+    "routePath": "/index-29",
+    "title": "Index 29 | Larkon Store"
+  },
+  {
+    "slug": "index-3",
+    "componentName": "Index3",
+    "routePath": "/index-3",
+    "title": "Index 3 | Larkon Store"
+  },
+  {
+    "slug": "index-30",
+    "componentName": "Index30",
+    "routePath": "/index-30",
+    "title": "Index 30 | Larkon Store"
+  },
+  {
+    "slug": "index-31",
+    "componentName": "Index31",
+    "routePath": "/index-31",
+    "title": "Index 31 | Larkon Store"
+  },
+  {
+    "slug": "index-32",
+    "componentName": "Index32",
+    "routePath": "/index-32",
+    "title": "Index 32 | Larkon Store"
+  },
+  {
+    "slug": "index-33",
+    "componentName": "Index33",
+    "routePath": "/index-33",
+    "title": "Index 33 | Larkon Store"
+  },
+  {
+    "slug": "index-34",
+    "componentName": "Index34",
+    "routePath": "/index-34",
+    "title": "Index 34 | Larkon Store"
+  },
+  {
+    "slug": "index-4",
+    "componentName": "Index4",
+    "routePath": "/index-4",
+    "title": "Index 4 | Larkon Store"
+  },
+  {
+    "slug": "index-5",
+    "componentName": "Index5",
+    "routePath": "/index-5",
+    "title": "Index 5 | Larkon Store"
+  },
+  {
+    "slug": "index-6",
+    "componentName": "Index6",
+    "routePath": "/index-6",
+    "title": "Index 6 | Larkon Store"
+  },
+  {
+    "slug": "index-7",
+    "componentName": "Index7",
+    "routePath": "/index-7",
+    "title": "Index 7 | Larkon Store"
+  },
+  {
+    "slug": "index-8",
+    "componentName": "Index8",
+    "routePath": "/index-8",
+    "title": "Index 8 | Larkon Store"
+  },
+  {
+    "slug": "index-9",
+    "componentName": "Index9",
+    "routePath": "/index-9",
+    "title": "Index 9 | Larkon Store"
+  },
+  {
+    "slug": "index",
+    "componentName": "LandingIndex",
+    "routePath": "/",
+    "title": "Index | Larkon Store"
+  },
+  {
+    "slug": "lookbook-2",
+    "componentName": "Lookbook2",
+    "routePath": "/lookbook-2",
+    "title": "Lookbook 2 | Larkon Store"
+  },
+  {
+    "slug": "lookbook-3",
+    "componentName": "Lookbook3",
+    "routePath": "/lookbook-3",
+    "title": "Lookbook 3 | Larkon Store"
+  },
+  {
+    "slug": "lookbook",
+    "componentName": "Lookbook",
+    "routePath": "/lookbook",
+    "title": "Lookbook | Larkon Store"
+  },
+  {
+    "slug": "maintenance",
+    "componentName": "Maintenance",
+    "routePath": "/maintenance",
+    "title": "Maintenance | Larkon Store"
+  },
+  {
+    "slug": "product-single-10",
+    "componentName": "ProductSingle10",
+    "routePath": "/product-single-10",
+    "title": "Product Single 10 | Larkon Store"
+  },
+  {
+    "slug": "product-single-12",
+    "componentName": "ProductSingle12",
+    "routePath": "/product-single-12",
+    "title": "Product Single 12 | Larkon Store"
+  },
+  {
+    "slug": "product-single-13",
+    "componentName": "ProductSingle13",
+    "routePath": "/product-single-13",
+    "title": "Product Single 13 | Larkon Store"
+  },
+  {
+    "slug": "product-single-14",
+    "componentName": "ProductSingle14",
+    "routePath": "/product-single-14",
+    "title": "Product Single 14 | Larkon Store"
+  },
+  {
+    "slug": "product-single-15",
+    "componentName": "ProductSingle15",
+    "routePath": "/product-single-15",
+    "title": "Product Single 15 | Larkon Store"
+  },
+  {
+    "slug": "product-single-16",
+    "componentName": "ProductSingle16",
+    "routePath": "/product-single-16",
+    "title": "Product Single 16 | Larkon Store"
+  },
+  {
+    "slug": "product-single-17",
+    "componentName": "ProductSingle17",
+    "routePath": "/product-single-17",
+    "title": "Product Single 17 | Larkon Store"
+  },
+  {
+    "slug": "product-single-18",
+    "componentName": "ProductSingle18",
+    "routePath": "/product-single-18",
+    "title": "Product Single 18 | Larkon Store"
+  },
+  {
+    "slug": "product-single-19",
+    "componentName": "ProductSingle19",
+    "routePath": "/product-single-19",
+    "title": "Product Single 19 | Larkon Store"
+  },
+  {
+    "slug": "product-single-2",
+    "componentName": "ProductSingle2",
+    "routePath": "/product-single-2",
+    "title": "Product Single 2 | Larkon Store"
+  },
+  {
+    "slug": "product-single-20",
+    "componentName": "ProductSingle20",
+    "routePath": "/product-single-20",
+    "title": "Product Single 20 | Larkon Store"
+  },
+  {
+    "slug": "product-single-21",
+    "componentName": "ProductSingle21",
+    "routePath": "/product-single-21",
+    "title": "Product Single 21 | Larkon Store"
+  },
+  {
+    "slug": "product-single-22",
+    "componentName": "ProductSingle22",
+    "routePath": "/product-single-22",
+    "title": "Product Single 22 | Larkon Store"
+  },
+  {
+    "slug": "product-single-23",
+    "componentName": "ProductSingle23",
+    "routePath": "/product-single-23",
+    "title": "Product Single 23 | Larkon Store"
+  },
+  {
+    "slug": "product-single-24",
+    "componentName": "ProductSingle24",
+    "routePath": "/product-single-24",
+    "title": "Product Single 24 | Larkon Store"
+  },
+  {
+    "slug": "product-single-3",
+    "componentName": "ProductSingle3",
+    "routePath": "/product-single-3",
+    "title": "Product Single 3 | Larkon Store"
+  },
+  {
+    "slug": "product-single-4",
+    "componentName": "ProductSingle4",
+    "routePath": "/product-single-4",
+    "title": "Product Single 4 | Larkon Store"
+  },
+  {
+    "slug": "product-single-5",
+    "componentName": "ProductSingle5",
+    "routePath": "/product-single-5",
+    "title": "Product Single 5 | Larkon Store"
+  },
+  {
+    "slug": "product-single-6",
+    "componentName": "ProductSingle6",
+    "routePath": "/product-single-6",
+    "title": "Product Single 6 | Larkon Store"
+  },
+  {
+    "slug": "product-single-7",
+    "componentName": "ProductSingle7",
+    "routePath": "/product-single-7",
+    "title": "Product Single 7 | Larkon Store"
+  },
+  {
+    "slug": "product-single-8",
+    "componentName": "ProductSingle8",
+    "routePath": "/product-single-8",
+    "title": "Product Single 8 | Larkon Store"
+  },
+  {
+    "slug": "product-single-9",
+    "componentName": "ProductSingle9",
+    "routePath": "/product-single-9",
+    "title": "Product Single 9 | Larkon Store"
+  },
+  {
+    "slug": "product-single",
+    "componentName": "ProductSingle",
+    "routePath": "/product-single",
+    "title": "Product Single | Larkon Store"
+  },
+  {
+    "slug": "shop-canvas-filter",
+    "componentName": "ShopCanvasFilter",
+    "routePath": "/shop-canvas-filter",
+    "title": "Shop Canvas Filter | Larkon Store"
+  },
+  {
+    "slug": "shop-custom-banner",
+    "componentName": "ShopCustomBanner",
+    "routePath": "/shop-custom-banner",
+    "title": "Shop Custom Banner | Larkon Store"
+  },
+  {
+    "slug": "shop-infinity-scrolling",
+    "componentName": "ShopInfinityScrolling",
+    "routePath": "/shop-infinity-scrolling",
+    "title": "Shop Infinity Scrolling | Larkon Store"
+  },
+  {
+    "slug": "shop-left-filter",
+    "componentName": "ShopLeftFilter",
+    "routePath": "/shop-left-filter",
+    "title": "Shop Left Filter | Larkon Store"
+  },
+  {
+    "slug": "shop-load-more",
+    "componentName": "ShopLoadMore",
+    "routePath": "/shop-load-more",
+    "title": "Shop Load More | Larkon Store"
+  },
+  {
+    "slug": "shop-show-category-2",
+    "componentName": "ShopShowCategory2",
+    "routePath": "/shop-show-category-2",
+    "title": "Shop Show Category 2 | Larkon Store"
+  },
+  {
+    "slug": "shop-show-category",
+    "componentName": "ShopShowCategory",
+    "routePath": "/shop-show-category",
+    "title": "Shop Show Category | Larkon Store"
+  },
+  {
+    "slug": "shop-top-filter-showing",
+    "componentName": "ShopTopFilterShowing",
+    "routePath": "/shop-top-filter-showing",
+    "title": "Shop Top Filter Showing | Larkon Store"
+  },
+  {
+    "slug": "shop-top-filter",
+    "componentName": "ShopTopFilter",
+    "routePath": "/shop-top-filter",
+    "title": "Shop Top Filter | Larkon Store"
+  },
+  {
+    "slug": "store-location",
+    "componentName": "StoreLocation",
+    "routePath": "/store-location",
+    "title": "Store Location | Larkon Store"
+  }
+]
