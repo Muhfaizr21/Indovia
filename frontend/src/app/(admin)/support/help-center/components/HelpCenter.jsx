@@ -77,7 +77,7 @@ const HelpCenter = () => {
             <button type="button" onClick={toggle} className="btn-close" data-bs-dismiss="modal" aria-label="Close" />
           </ModalHeader>
           <ModalBody>
-            <CardTitle as={'h4'}>Getting Started with Larkon</CardTitle>
+            <CardTitle as={'h4'}>Getting Started with Indovia</CardTitle>
             <Row className="g-2 mt-2">
               <Col lg={6}>
                 <div className="ratio ratio-16x9">

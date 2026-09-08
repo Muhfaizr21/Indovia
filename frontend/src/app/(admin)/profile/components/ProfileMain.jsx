@@ -129,7 +129,7 @@ const ProfileMain = () => {
                 <p className="mb-0 fs-14">
                   Website{' '}
                   <Link to="" className="text-primary fw-semibold">
-                    www.larkon.co
+                    www.indovia.co
                   </Link>
                 </p>
               </div>

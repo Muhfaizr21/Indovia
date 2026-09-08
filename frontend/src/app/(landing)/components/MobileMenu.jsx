@@ -18,7 +18,7 @@ const MobileMenu = ({ isOpen, onClose }) => {
         style={{ maxWidth: '340px', zIndex: 2, boxShadow: '0 0 25px rgba(0,0,0,0.2)' }}
       >
         <div className="d-flex align-items-center justify-content-between pb-3 mb-3 border-bottom">
-          <img src="/assets/imgs/template/logo.svg" alt="Larkon Store" style={{ height: '32px' }} />
+          <img src="/assets/imgs/template/logo.svg" alt="Indovia Store" style={{ height: '32px' }} />
           <button
             type="button"
             className="btn btn-sm btn-light rounded-circle p-1 d-flex align-items-center justify-content-center"

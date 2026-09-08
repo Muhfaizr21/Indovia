@@ -22,7 +22,7 @@ const Hero = () => {
           <Col lg={9} xl={8}>
             {/* Version / Notification Pill */}
             <div className="d-inline-flex align-items-center gap-2 px-3 py-1 rounded-pill bg-primary-subtle text-primary mb-3 border border-primary-subtle shadow-sm">
-              <Badge bg="primary" pill>Larkon v2.0</Badge>
+              <Badge bg="primary" pill>Indovia v2.0</Badge>
               <span className="small fw-semibold">Next-Gen React & Vite E-Commerce Admin</span>
               <IconifyIcon icon="solar:sparkler-bold-duotone" className="fs-16" />
             </div>
@@ -91,7 +91,7 @@ const Hero = () => {
                     className="small text-muted px-3 py-1 rounded bg-body border text-truncate"
                     style={{ maxWidth: '320px', fontSize: '12px' }}
                   >
-                    https://larkon.dashboard/app/overview
+                    https://indovia.dashboard/app/overview
                   </div>
                   <Link to="/dashboard" className="btn btn-sm btn-link text-decoration-none p-0">
                     <IconifyIcon icon="solar:maximize-square-minimalistic-bold" className="fs-16" />
@@ -161,7 +161,7 @@ const Hero = () => {
                         <IconifyIcon icon="solar:graph-bold" className="fs-20" />
                       </div>
                       <div>
-                        <h6 className="mb-0 fw-semibold">Larkon E-Commerce Admin Suite Siap Digunakan</h6>
+                        <h6 className="mb-0 fw-semibold">Indovia E-Commerce Admin Suite Siap Digunakan</h6>
                         <small className="text-muted">Jelajahi fitur lengkap manajemen toko, order, inventaris, dan pelanggan.</small>
                       </div>
                     </div>

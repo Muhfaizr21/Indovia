@@ -15,7 +15,7 @@ function getRouteInfo(filename) {
   let routePath = '/' + base;
   if (base === 'index') routePath = '/';
   if (base === '404') routePath = '/pages-404';
-  return { slug: base, componentName, routePath, title: base.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase()) + ' | Larkon Store' };
+  return { slug: base, componentName, routePath, title: base.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase()) + ' | Indovia Store' };
 }
 
 function htmlToJsx(html) {

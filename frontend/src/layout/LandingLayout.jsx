@@ -117,7 +117,7 @@ const LandingLayout = ({ children }) => {
 
     disableAdminStyles();
 
-    // 3. Inject Guza Landing Template Stylesheet
+    // 3. Inject Indovia Landing Template Stylesheet
     let link = document.getElementById(styleId);
     if (!link) {
       link = document.createElement('link');

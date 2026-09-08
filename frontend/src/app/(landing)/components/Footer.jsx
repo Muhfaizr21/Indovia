@@ -60,7 +60,7 @@ const Footer = () => {
         <div className="container">
           <div className="footer-bottom">
             <div className="row align-items-center">
-              <div className="col-lg-6 col-md-12 text-center text-lg-start mb-20"><span className="body-p1 color-white">© 2023 Guza.Co. All rights reserved</span></div>
+              <div className="col-lg-6 col-md-12 text-center text-lg-start mb-20"><span className="body-p1 color-white">© 2023 Indovia.Co. All rights reserved</span></div>
               <div className="col-lg-6 col-md-12 text-center text-lg-end mb-20">
                 <div className="d-flex justify-content-center justify-content-lg-end align-items-center box-all-payments">
                   <div className="d-inline-block box-payments mr-20"><img src="/assets/imgs/template/icons/visa.svg" alt="" /><img src="/assets/imgs/template/icons/master.svg" alt="" /><img src="/assets/imgs/template/icons/stripe.svg" alt="" /><img src="/assets/imgs/template/icons/paypal.svg" alt="" /></div>

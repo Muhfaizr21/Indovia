@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet';
 const Lookbook2 = () => (
   <>
     <Helmet>
-      <title>Lookbook 2 | Larkon Store</title>
+      <title>Lookbook 2 | Indovia Store</title>
     </Helmet>
     <div className="landing-page-lookbook-2">
       <header className="header sticky-bar header-style-2">
@@ -28,7 +28,7 @@ const Lookbook2 = () => (
                               <div className="col-menu">
                                 <h6 className="text-16-semibold mb-10 text-uppercase">Home Demo IV</h6><a href="/index-12">Oganic Store</a><a href="/index-13">Toys Store</a><a href="/index-14">Skateboard Store</a><a href="/index-19">Plants Store</a><a href="/index-20">Bikes Store</a><a href="/index-21">Baby Clothing</a><a href="/index-23">Travel gear</a><a href="/index-24">Coffee Shop</a>
                               </div>
-                              <div className="col-menu"><img src="/assets/imgs/template/banner-menu.webp" alt="Guza" /></div>
+                              <div className="col-menu"><img src="/assets/imgs/template/banner-menu.webp" alt="Indovia" /></div>
                             </div>
                           </div>
                         </li>
@@ -52,7 +52,7 @@ const Lookbook2 = () => (
                               <div className="col-menu"><a href="/product-single-7">Product Single 7</a><a href="/product-single-8">Product Single 8</a><a href="/product-single-9">Product Single 9</a><a href="/product-single-10">Product Single 10</a><a href="/product-single-11">Product Single 11</a><a href="/product-single-12">Product Single 12</a></div>
                               <div className="col-menu"><a href="/product-single-13">Product Single 13</a><a href="/product-single-14">Product Single 14</a><a href="/product-single-15">Product Single 15</a><a href="/product-single-16">Product Single 16</a><a href="/product-single-17">Product Single 17</a><a href="/product-single-18">Product Single 18</a></div>
                               <div className="col-menu"><a href="/product-single-21">Product Single 21</a><a href="/product-single-20">Product Single 20</a><a href="/product-single-21">Product Single 21</a><a href="/product-single-22">Product Single 22</a><a href="/product-single-23">Product Single 23</a><a href="/product-single-24">Product Single 24</a></div>
-                              <div className="col-menu"><img src="/assets/imgs/template/banner-menu-2.png" alt="Guza" /></div>
+                              <div className="col-menu"><img src="/assets/imgs/template/banner-menu-2.png" alt="Indovia" /></div>
                             </div>
                           </div>
                         </li>
@@ -89,7 +89,7 @@ const Lookbook2 = () => (
                     <div className="burger-icon burger-icon-white"><span className="burger-icon-top"></span><span className="burger-icon-mid"></span><span className="burger-icon-bottom"></span></div>
                   </div>
                 </div>
-                <div className="header-logo"> <a className="d-flex" href="/"><img alt="luxride" src="/assets/imgs/template/logo.svg" /></a></div>
+                <div className="header-logo"> <a className="d-flex" href="/"><img alt="Indovia" src="/assets/imgs/template/logo.svg" /></a></div>
                 <div className="header-account"><a className="account-icon search" href="#">
                     <svg className="d-inline-flex align-items-center justify-content-center" width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
                       <g clipPath="url(#clip0_91_73)">
@@ -138,8 +138,8 @@ const Lookbook2 = () => (
             <div className="mobile-header-wrapper-inner">
               <div className="mobile-header-content-area">
                 <div className="mobile-menu-head">
-                  <div className="box-head-1"><a className="link-underline mr-20 account-icon account" href="#">Login</a><a className="link-underline account-icon account" href="#">Sign Up</a><a className="close-mobile" href="#"><img src="/assets/imgs/template/icons/close.svg" alt="Guza" /></a></div>
-                  <div className="box-head-2"><a className="back-mobile" href="#"><img src="/assets/imgs/template/icons/back.svg" alt="Guza" /></a></div>
+                  <div className="box-head-1"><a className="link-underline mr-20 account-icon account" href="#">Login</a><a className="link-underline account-icon account" href="#">Sign Up</a><a className="close-mobile" href="#"><img src="/assets/imgs/template/icons/close.svg" alt="Indovia" /></a></div>
+                  <div className="box-head-2"><a className="back-mobile" href="#"><img src="/assets/imgs/template/icons/back.svg" alt="Indovia" /></a></div>
                 </div>
                 <div className="perfect-scroll">
                   <div className="mobile-menu-wrap mobile-header-border">
@@ -263,7 +263,7 @@ const Lookbook2 = () => (
             <section className="section block-content-lookbook">
               <div className="list-lookbok-style-2">
                 <div className="item-lookbook"> 
-                  <div className="item-lookbook-image"><img src="/assets/imgs/page/lookbook2/banner.png" alt="Guza" /></div>
+                  <div className="item-lookbook-image"><img src="/assets/imgs/page/lookbook2/banner.png" alt="Indovia" /></div>
                   <div className="item-lookbook-info">
                     <h1 className="color-white">Winter.</h1>
                     <p className="text-24 color-white">Shop and discover the world’s most stylish brands.</p>
@@ -271,7 +271,7 @@ const Lookbook2 = () => (
                   </div>
                 </div>
                 <div className="item-lookbook item-lookbook-left">
-                  <div className="item-lookbook-image"><img src="/assets/imgs/page/lookbook2/banner2.png" alt="Guza" /></div>
+                  <div className="item-lookbook-image"><img src="/assets/imgs/page/lookbook2/banner2.png" alt="Indovia" /></div>
                   <div className="item-lookbook-info">
                     <h1 className="primary-dark">Fall Love.</h1>
                     <p className="text-24 primary-dark">Shop and discover the world’s most stylish brands.</p>
@@ -279,7 +279,7 @@ const Lookbook2 = () => (
                   </div>
                 </div>
                 <div className="item-lookbook item-lookbook-right"> 
-                  <div className="item-lookbook-image"><img src="/assets/imgs/page/lookbook2/banner3.png" alt="Guza" /></div>
+                  <div className="item-lookbook-image"><img src="/assets/imgs/page/lookbook2/banner3.png" alt="Indovia" /></div>
                   <div className="item-lookbook-info">
                     <h1 className="primary-dark">Winter.</h1>
                     <p className="text-24 primary-dark">Shop and discover the world’s most stylish brands.</p>
@@ -287,7 +287,7 @@ const Lookbook2 = () => (
                   </div>
                 </div>
                 <div className="item-lookbook"> 
-                  <div className="item-lookbook-image"><img src="/assets/imgs/page/lookbook2/banner4.png" alt="Guza" /></div>
+                  <div className="item-lookbook-image"><img src="/assets/imgs/page/lookbook2/banner4.png" alt="Indovia" /></div>
                   <div className="item-lookbook-info">
                     <h1 className="color-white">Winter.</h1>
                     <p className="text-24 color-white">Shop and discover the world’s most stylish brands.</p>
@@ -301,7 +301,7 @@ const Lookbook2 = () => (
             <div className="footer-1">
               <div className="container">
                 <div className="row">
-                  <div className="col-lg-6 col-md-12 text-center text-lg-start"><a className="logo-footer" href="#"><img alt="luxride" src="/assets/imgs/template/logo.svg" /></a>
+                  <div className="col-lg-6 col-md-12 text-center text-lg-start"><a className="logo-footer" href="#"><img alt="Indovia" src="/assets/imgs/template/logo.svg" /></a>
                     <ul className="menu-footer-inline">
                       <li><a href="/about-us-1">About us</a></li>
                       <li><a href="/carrers">Careers</a></li>
@@ -309,7 +309,7 @@ const Lookbook2 = () => (
                     </ul>
                   </div>
                   <div className="col-lg-6 col-md-12 text-center text-lg-end mb-20">
-                    <div className="socials"><a href="#"><img src="/assets/imgs/template/icons/fb.svg" alt="Guza" /></a><a href="#"><img src="/assets/imgs/template/icons/insta.svg" alt="Guza" /></a><a href="#"><img src="/assets/imgs/template/icons/tw.svg" alt="Guza" /></a></div>
+                    <div className="socials"><a href="#"><img src="/assets/imgs/template/icons/fb.svg" alt="Indovia" /></a><a href="#"><img src="/assets/imgs/template/icons/insta.svg" alt="Indovia" /></a><a href="#"><img src="/assets/imgs/template/icons/tw.svg" alt="Indovia" /></a></div>
                   </div>
                 </div>
               </div>
@@ -318,7 +318,7 @@ const Lookbook2 = () => (
               <div className="container">
                 <div className="footer-bottom">
                   <div className="row align-items-center">
-                    <div className="col-lg-6 col-md-12 text-center text-lg-start mb-20"><span className="body-p1 neutral-medium-dark">© 2023 Guza.Co. All rights reserved</span></div>
+                    <div className="col-lg-6 col-md-12 text-center text-lg-start mb-20"><span className="body-p1 neutral-medium-dark">© 2023 Indovia.Co. All rights reserved</span></div>
                     <div className="col-lg-6 col-md-12 text-center text-lg-end mb-20">
                       <div className="d-flex justify-content-center justify-content-lg-end align-items-center box-all-payments">
                         <div className="dropdown mr-20">
@@ -364,7 +364,7 @@ const Lookbook2 = () => (
               <div className="preview-product-info">
                 <div className="box-product-info">
                   <h3 className="mb-5">Summer Stripes Shorts</h3>
-                  <div className="block-rating"><img src="/assets/imgs/template/icons/star-fill.svg" alt="Guza" /><img src="/assets/imgs/template/icons/star-fill.svg" alt="Guza" /><img src="/assets/imgs/template/icons/star-fill.svg" alt="Guza" /><img src="/assets/imgs/template/icons/star-fill.svg" alt="Guza" /><img src="/assets/imgs/template/icons/star-none.svg" alt="Guza" /><span className="text-17 neutral-medium-dark">(5)</span></div>
+                  <div className="block-rating"><img src="/assets/imgs/template/icons/star-fill.svg" alt="Indovia" /><img src="/assets/imgs/template/icons/star-fill.svg" alt="Indovia" /><img src="/assets/imgs/template/icons/star-fill.svg" alt="Indovia" /><img src="/assets/imgs/template/icons/star-fill.svg" alt="Indovia" /><img src="/assets/imgs/template/icons/star-none.svg" alt="Indovia" /><span className="text-17 neutral-medium-dark">(5)</span></div>
                   <div className="block-price"><span className="price-main">$15.00</span><span className="price-line">$25.00</span></div>
                   <p className="body-p2 viewed-guest viewed-guest-black mb-25"><span className="text-17-medium">24 guests are viewing this product</span></p>
                   <div className="block-description">
@@ -412,7 +412,7 @@ const Lookbook2 = () => (
                 <div className="box-list-product-search">
                   <div className="item-product-search">
                     <div className="cardProductStyle3 cardProductType03 cardProductType02 wow fadeInUp">
-                      <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/popup/product-1.png" alt="guza" /><img className="imageHover" src="/assets/imgs/page/popup/product-5.png" alt="guza" /></a>
+                      <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/popup/product-1.png" alt="Indovia" /><img className="imageHover" src="/assets/imgs/page/popup/product-5.png" alt="Indovia" /></a>
                         <div className="button-select"><a href="#">Select Options</a></div>
                         <div className="box-quick-button"><a className="btn" href="#">
                             <svg className="d-inline-flex align-items-center justify-content-center" width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
@@ -454,7 +454,7 @@ const Lookbook2 = () => (
                   </div>
                   <div className="item-product-search">
                     <div className="cardProductStyle3 cardProductType03 cardProductType02 wow fadeInUp">
-                      <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/popup/product-2.png" alt="guza" /><img className="imageHover" src="/assets/imgs/page/popup/product-6.png" alt="guza" /></a>
+                      <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/popup/product-2.png" alt="Indovia" /><img className="imageHover" src="/assets/imgs/page/popup/product-6.png" alt="Indovia" /></a>
                         <div className="button-select"><a href="#">Select Options</a></div>
                         <div className="box-quick-button"><a className="btn" href="#">
                             <svg className="d-inline-flex align-items-center justify-content-center" width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
@@ -496,7 +496,7 @@ const Lookbook2 = () => (
                   </div>
                   <div className="item-product-search">
                     <div className="cardProductStyle3 cardProductType03 cardProductType02 wow fadeInUp">
-                      <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/popup/product-3.png" alt="guza" /><img className="imageHover" src="/assets/imgs/page/popup/product-7.png" alt="guza" /></a>
+                      <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/popup/product-3.png" alt="Indovia" /><img className="imageHover" src="/assets/imgs/page/popup/product-7.png" alt="Indovia" /></a>
                         <div className="button-select"><a href="#">Select Options</a></div>
                         <div className="box-quick-button"><a className="btn" href="#">
                             <svg className="d-inline-flex align-items-center justify-content-center" width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
@@ -538,7 +538,7 @@ const Lookbook2 = () => (
                   </div>
                   <div className="item-product-search">
                     <div className="cardProductStyle3 cardProductType03 cardProductType02 wow fadeInUp">
-                      <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/popup/product-4.png" alt="guza" /><img className="imageHover" src="/assets/imgs/page/popup/product-8.png" alt="guza" /></a>
+                      <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/popup/product-4.png" alt="Indovia" /><img className="imageHover" src="/assets/imgs/page/popup/product-8.png" alt="Indovia" /></a>
                         <div className="button-select"><a href="#">Select Options</a></div>
                         <div className="box-quick-button"><a className="btn" href="#">
                             <svg className="d-inline-flex align-items-center justify-content-center" width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
@@ -658,14 +658,14 @@ const Lookbook2 = () => (
               </div>
               <div className="box-products-cart">
                 <div className="box-empty-cart d-none">
-                  <div className="icon-empty-cart"><img src="/assets/imgs/template/icons/empty-cart.svg" alt="Guza" /></div>
+                  <div className="icon-empty-cart"><img src="/assets/imgs/template/icons/empty-cart.svg" alt="Indovia" /></div>
                   <div className="info-empty-cart">
                     <p className="text-17 neutral-medium-dark">Your cart is empty</p><a className="link-underline" href="#">Add from Wishlist</a>
                   </div>
                 </div>
                 <div className="list-items-cart">
                   <div className="item-cart">
-                    <div className="item-cart-image"><img src="/assets/imgs/page/cart/sp.png" alt="Guza" /></div>
+                    <div className="item-cart-image"><img src="/assets/imgs/page/cart/sp.png" alt="Indovia" /></div>
                     <div className="item-cart-info">
                       <div className="item-cart-info-1"><a className="text-16-medium" href="#">Ball Crew Shirt</a>
                         <div className="box-info-size-color-product">
@@ -685,7 +685,7 @@ const Lookbook2 = () => (
                     </div>
                   </div>
                   <div className="item-cart">
-                    <div className="item-cart-image"><img src="/assets/imgs/page/cart/sp2.png" alt="Guza" /></div>
+                    <div className="item-cart-image"><img src="/assets/imgs/page/cart/sp2.png" alt="Indovia" /></div>
                     <div className="item-cart-info">
                       <div className="item-cart-info-1"><a className="text-16-medium" href="#">Ball Crew Shirt</a>
                         <div className="box-info-size-color-product">
@@ -711,7 +711,7 @@ const Lookbook2 = () => (
                 <div className="box-list-product-search">
                   <div className="item-product-search">
                     <div className="cardProductStyle3 cardProductType03 cardProductType02 wow fadeInUp">
-                      <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/shop1/sp.png" alt="guza" /><img className="imageHover" src="/assets/imgs/page/shop1/sp.png" alt="guza" /></a>
+                      <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/shop1/sp.png" alt="Indovia" /><img className="imageHover" src="/assets/imgs/page/shop1/sp.png" alt="Indovia" /></a>
                         <div className="button-select"><a href="#">Select Options</a></div>
                         <div className="box-quick-button"><a className="btn" href="#">
                             <svg className="d-inline-flex align-items-center justify-content-center" width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
@@ -753,7 +753,7 @@ const Lookbook2 = () => (
                   </div>
                   <div className="item-product-search">
                     <div className="cardProductStyle3 cardProductType03 cardProductType02 wow fadeInUp">
-                      <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/shop1/sp2.png" alt="guza" /><img className="imageHover" src="/assets/imgs/page/shop1/sp2.png" alt="guza" /></a>
+                      <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/shop1/sp2.png" alt="Indovia" /><img className="imageHover" src="/assets/imgs/page/shop1/sp2.png" alt="Indovia" /></a>
                         <div className="button-select"><a href="#">Select Options</a></div>
                         <div className="box-quick-button"><a className="btn" href="#">
                             <svg className="d-inline-flex align-items-center justify-content-center" width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
@@ -814,14 +814,14 @@ const Lookbook2 = () => (
               <h5 className="mb-15">Your Wishlist</h5>
               <div className="box-products-cart">
                 <div className="box-empty-cart d-none">
-                  <div className="icon-empty-cart"><img src="/assets/imgs/template/icons/empty-cart.svg" alt="Guza" /></div>
+                  <div className="icon-empty-cart"><img src="/assets/imgs/template/icons/empty-cart.svg" alt="Indovia" /></div>
                   <div className="info-empty-cart">
                     <p className="text-17 neutral-medium-dark">Your cart is empty</p><a className="link-underline" href="#">Add from Wishlist</a>
                   </div>
                 </div>
                 <div className="list-items-cart">
                   <div className="item-cart">
-                    <div className="item-cart-image"><img src="/assets/imgs/page/cart/sp.png" alt="Guza" /></div>
+                    <div className="item-cart-image"><img src="/assets/imgs/page/cart/sp.png" alt="Indovia" /></div>
                     <div className="item-cart-info">
                       <div className="item-cart-info-1"><a className="text-16-medium" href="#">Ball Crew Shirt</a>
                         <div className="box-info-size-color-product">
@@ -839,7 +839,7 @@ const Lookbook2 = () => (
                     </div>
                   </div>
                   <div className="item-cart">
-                    <div className="item-cart-image"><img src="/assets/imgs/page/cart/sp2.png" alt="Guza" /></div>
+                    <div className="item-cart-image"><img src="/assets/imgs/page/cart/sp2.png" alt="Indovia" /></div>
                     <div className="item-cart-info">
                       <div className="item-cart-info-1"><a className="text-16-medium" href="#">Ball Crew Shirt</a>
                         <div className="box-info-size-color-product">
@@ -857,7 +857,7 @@ const Lookbook2 = () => (
                     </div>
                   </div>
                   <div className="item-cart">
-                    <div className="item-cart-image"><img src="/assets/imgs/page/cart/sp3.png" alt="Guza" /></div>
+                    <div className="item-cart-image"><img src="/assets/imgs/page/cart/sp3.png" alt="Indovia" /></div>
                     <div className="item-cart-info">
                       <div className="item-cart-info-1"><a className="text-16-medium" href="#">Ball Crew Shirt</a>
                         <div className="box-info-size-color-product">
@@ -881,7 +881,7 @@ const Lookbook2 = () => (
                 <div className="box-list-product-search">
                   <div className="item-product-search">
                     <div className="cardProductStyle3 cardProductType03 cardProductType02 wow fadeInUp">
-                      <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/popup/product-1.png" alt="guza" /><img className="imageHover" src="/assets/imgs/page/popup/product-5.png" alt="guza" /></a>
+                      <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/popup/product-1.png" alt="Indovia" /><img className="imageHover" src="/assets/imgs/page/popup/product-5.png" alt="Indovia" /></a>
                         <div className="button-select"><a href="#">Select Options</a></div>
                         <div className="box-quick-button"><a className="btn" href="#">
                             <svg className="d-inline-flex align-items-center justify-content-center" width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
@@ -923,7 +923,7 @@ const Lookbook2 = () => (
                   </div>
                   <div className="item-product-search">
                     <div className="cardProductStyle3 cardProductType03 cardProductType02 wow fadeInUp">
-                      <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/popup/product-2.png" alt="guza" /><img className="imageHover" src="/assets/imgs/page/popup/product-6.png" alt="guza" /></a>
+                      <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/popup/product-2.png" alt="Indovia" /><img className="imageHover" src="/assets/imgs/page/popup/product-6.png" alt="Indovia" /></a>
                         <div className="button-select"><a href="#">Select Options</a></div>
                         <div className="box-quick-button"><a className="btn" href="#">
                             <svg className="d-inline-flex align-items-center justify-content-center" width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">

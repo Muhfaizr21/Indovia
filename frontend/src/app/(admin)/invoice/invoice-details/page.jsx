@@ -64,7 +64,7 @@ const page = () => {
                     <img className="logo-dark me-1" src={logoDark} alt="logo-dark" height={24} />
                   </div>
                   <div className="mt-4">
-                    <h4>Larkon Admin.</h4>
+                    <h4>Indovia Admin.</h4>
                     <address className="mt-3 mb-0">
                       1729 Bangor St,
                       <br />
@@ -122,7 +122,7 @@ const page = () => {
                   <div>
                     <CardTitle as={'h4'}>Issue From :</CardTitle>
                     <div className="mt-3">
-                      <h4>Larkon Admin.INC</h4>
+                      <h4>Indovia Admin.INC</h4>
                       <p className="mb-2">2437 Romano Street Cambridge, MA 02141</p>
                       <p className="mb-2">
                         <span className="text-decoration-underline">Phone :</span> +(31)781-417-2004

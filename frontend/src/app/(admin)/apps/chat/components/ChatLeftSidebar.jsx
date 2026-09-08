@@ -106,7 +106,7 @@ const ChatLeftSidebar = ({
               </div>
               <h5 className="my-0 fs-14">Gaston Lapierre</h5>
               <p className="mt-1 mb-0 text-muted">
-                <span className="w-75">Hey there! I am using Larkon Chat.</span>
+                <span className="w-75">Hey there! I am using Indovia Chat.</span>
               </p>
             </div>
           </div>
@@ -134,7 +134,7 @@ const ChatLeftSidebar = ({
                     </li>
                     <li className="mb-2">
                       <Link to="">
-                        <IconifyIcon icon="bx:check-Larkon" className="fs-18 me-2" />
+                        <IconifyIcon icon="bx:shield" className="fs-18 me-2" />
                         Security
                       </Link>
                     </li>

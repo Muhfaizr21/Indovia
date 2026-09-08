@@ -10,11 +10,11 @@ const InstagramGallery = () => {
           </div>
         </div>
         <div className="box-gallery-instagram"> 
-          <div className="gallery-item wow fadeInLeft"><img src="/assets/imgs/page/homepage1/instagram.jpg" alt="Guza" /></div>
-          <div className="gallery-item wow fadeInUp"><img src="/assets/imgs/page/homepage1/instagram2.jpg" alt="Guza" /></div>
-          <div className="gallery-item wow fadeInUp"><img src="/assets/imgs/page/homepage1/instagram3.jpg" alt="Guza" /></div>
-          <div className="gallery-item wow fadeInUp"><img src="/assets/imgs/page/homepage1/instagram4.jpg" alt="Guza" /></div>
-          <div className="gallery-item wow fadeInRight"><img src="/assets/imgs/page/homepage1/instagram5.jpg" alt="Guza" /></div>
+          <div className="gallery-item wow fadeInLeft"><img src="/assets/imgs/page/homepage1/instagram.jpg" alt="Indovia" /></div>
+          <div className="gallery-item wow fadeInUp"><img src="/assets/imgs/page/homepage1/instagram2.jpg" alt="Indovia" /></div>
+          <div className="gallery-item wow fadeInUp"><img src="/assets/imgs/page/homepage1/instagram3.jpg" alt="Indovia" /></div>
+          <div className="gallery-item wow fadeInUp"><img src="/assets/imgs/page/homepage1/instagram4.jpg" alt="Indovia" /></div>
+          <div className="gallery-item wow fadeInRight"><img src="/assets/imgs/page/homepage1/instagram5.jpg" alt="Indovia" /></div>
         </div>
       </section>
   );

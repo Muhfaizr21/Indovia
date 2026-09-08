@@ -30,7 +30,7 @@ const NewsletterSection = () => {
           {subscribed ? (
             <div className="alert alert-success d-inline-flex align-items-center gap-2 px-4 py-2 rounded-pill">
               <IconifyIcon icon="solar:check-circle-bold" className="fs-20" />
-              <span>Terima kasih telah berlangganan newsletter Larkon Store!</span>
+              <span>Terima kasih telah berlangganan newsletter Indovia Store!</span>
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="d-flex flex-column flex-sm-row gap-2 justify-content-center mx-auto" style={{ maxWidth: '520px' }}>

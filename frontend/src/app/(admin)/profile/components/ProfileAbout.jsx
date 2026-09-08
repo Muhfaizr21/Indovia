@@ -185,7 +185,7 @@ const ProfileAbout = () => {
             </ul>
             <p className="text-muted">Copy the URL below and share it with your friends:</p>
             <p className="d-flex align-items-center border p-2 rounded-2 border-dashed bg-body text-start mb-0">
-              https://larkon-mileage.com{' '}
+              https://indovia-mileage.com{' '}
               <Link to="" className="ms-auto fs-4">
                 <IconifyIcon icon="bx:copy" />
               </Link>

@@ -44,7 +44,7 @@ const SellerDetails = () => {
                   <h4 className="mb-1"> ZARA International</h4>
                   <p className="mb-1">(Most Selling Fashion Brand)</p>
                   <Link to="" className="link-primary fs-16 fw-medium">
-                    www.larkon.co
+                    www.indovia.co
                   </Link>
                   <div className="d-flex align-items-center justify-content-satrt gap-2 mt-2 mb-1">
                     <ul className="d-flex text-warning m-0 fs-20 list-unstyled">

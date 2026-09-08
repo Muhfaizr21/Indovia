@@ -15,28 +15,28 @@ const Collections = () => {
             <div className="swiper-wrapper">
               <div className="swiper-slide">
                 <div className="cardCollectionStyle1 wow fadeInUp">
-                  <div className="cardImage"><Link to="#"><img src="/assets/imgs/page/homepage1/collection1.png" alt="guza" /></Link></div>
+                  <div className="cardImage"><Link to="#"><img src="/assets/imgs/page/homepage1/collection1.png" alt="indovia" /></Link></div>
                   <div className="cardInfo"><Link to="#">
                       <h6>Kid’s (8)</h6></Link></div>
                 </div>
               </div>
               <div className="swiper-slide">
                 <div className="cardCollectionStyle1 wow fadeInUp">
-                  <div className="cardImage"><Link to="#"><img src="/assets/imgs/page/homepage1/collection2.png" alt="guza" /></Link></div>
+                  <div className="cardImage"><Link to="#"><img src="/assets/imgs/page/homepage1/collection2.png" alt="indovia" /></Link></div>
                   <div className="cardInfo"><Link to="#">
                       <h6>Skirts (5)</h6></Link></div>
                 </div>
               </div>
               <div className="swiper-slide">
                 <div className="cardCollectionStyle1 wow fadeInUp">
-                  <div className="cardImage"><Link to="#"><img src="/assets/imgs/page/homepage1/collection3.png" alt="guza" /></Link></div>
+                  <div className="cardImage"><Link to="#"><img src="/assets/imgs/page/homepage1/collection3.png" alt="indovia" /></Link></div>
                   <div className="cardInfo"><Link to="#">
                       <h6>Men’s (12)</h6></Link></div>
                 </div>
               </div>
               <div className="swiper-slide">
                 <div className="cardCollectionStyle1 wow fadeInUp">
-                  <div className="cardImage"><Link to="#"><img src="/assets/imgs/page/homepage1/collection4.png" alt="guza" /></Link></div>
+                  <div className="cardImage"><Link to="#"><img src="/assets/imgs/page/homepage1/collection4.png" alt="indovia" /></Link></div>
                   <div className="cardInfo"><Link to="#">
                       <h6>Shirts (3)</h6></Link></div>
                 </div>

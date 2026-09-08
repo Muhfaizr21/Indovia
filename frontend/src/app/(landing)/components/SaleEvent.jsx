@@ -8,7 +8,7 @@ const SaleEvent = () => {
           <div className="box-sale-event">
             <div className="row align-items-center"> 
               <div className="col-lg-6">
-                <div className="image-sale-event wow fadeInLeft"> <img src="/assets/imgs/page/homepage1/img-banner.png" alt="Guza" /></div>
+                <div className="image-sale-event wow fadeInLeft"> <img src="/assets/imgs/page/homepage1/img-banner.png" alt="Indovia" /></div>
               </div>
               <div className="col-lg-6">
                 <div className="box-padding wow fadeInRight"><span className="text-17-medium neutral-dark text-uppercase">Sale Event</span>

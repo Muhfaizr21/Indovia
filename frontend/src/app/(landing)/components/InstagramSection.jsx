@@ -8,7 +8,7 @@ const InstagramSection = () => {
         <div className="text-center mb-4">
           <h6 className="text-18-medium instagram-title fw-bold text-dark d-flex align-items-center justify-content-center gap-2">
             <IconifyIcon icon="solar:camera-bold" className="text-danger fs-20" />
-            <span>Follow Us on Instagram #LarkonStyle</span>
+            <span>Follow Us on Instagram #IndoviaStyle</span>
           </h6>
         </div>
       </div>

@@ -33,7 +33,7 @@ export const activityStreamData = [{
   files: [{
     name: 'Concept.fig'
   }, {
-    name: 'larkon.docs'
+    name: 'indovia.docs'
   }],
   time: addOrSubtractDaysFromDate(0)
 }, {
@@ -46,7 +46,7 @@ export const activityStreamData = [{
   status: 'completed',
   time: addOrSubtractDaysFromDate(1)
 }, {
-  title: 'Larkon Application UI v2.0.0',
+  title: 'Indovia Application UI v2.0.0',
   variant: 'primary',
   content: 'Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.',
   files: [{

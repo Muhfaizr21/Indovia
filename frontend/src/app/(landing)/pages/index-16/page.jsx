@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet';
 const Index16 = () => (
   <>
     <Helmet>
-      <title>Index 16 | Larkon Store</title>
+      <title>Index 16 | Indovia Store</title>
     </Helmet>
     <div className="landing-page-index-16">
       <header className="header sticky-bar header-style-2 header-style-2-nofix">
@@ -28,7 +28,7 @@ const Index16 = () => (
                               <div className="col-menu">
                                 <h6 className="text-16-semibold mb-10 text-uppercase">Home Demo IV</h6><a href="/index-12">Oganic Store</a><a href="/index-13">Toys Store</a><a href="/index-14">Skateboard Store</a><a href="/index-19">Plants Store</a><a href="/index-20">Bikes Store</a><a href="/index-21">Baby Clothing</a><a href="/index-23">Travel gear</a><a href="/index-24">Coffee Shop</a>
                               </div>
-                              <div className="col-menu"><img src="/assets/imgs/template/banner-menu.webp" alt="Guza" /></div>
+                              <div className="col-menu"><img src="/assets/imgs/template/banner-menu.webp" alt="Indovia" /></div>
                             </div>
                           </div>
                         </li>
@@ -52,7 +52,7 @@ const Index16 = () => (
                               <div className="col-menu"><a href="/product-single-7">Product Single 7</a><a href="/product-single-8">Product Single 8</a><a href="/product-single-9">Product Single 9</a><a href="/product-single-10">Product Single 10</a><a href="/product-single-11">Product Single 11</a><a href="/product-single-12">Product Single 12</a></div>
                               <div className="col-menu"><a href="/product-single-13">Product Single 13</a><a href="/product-single-14">Product Single 14</a><a href="/product-single-15">Product Single 15</a><a href="/product-single-16">Product Single 16</a><a href="/product-single-17">Product Single 17</a><a href="/product-single-18">Product Single 18</a></div>
                               <div className="col-menu"><a href="/product-single-21">Product Single 21</a><a href="/product-single-20">Product Single 20</a><a href="/product-single-21">Product Single 21</a><a href="/product-single-22">Product Single 22</a><a href="/product-single-23">Product Single 23</a><a href="/product-single-24">Product Single 24</a></div>
-                              <div className="col-menu"><img src="/assets/imgs/template/banner-menu-2.png" alt="Guza" /></div>
+                              <div className="col-menu"><img src="/assets/imgs/template/banner-menu-2.png" alt="Indovia" /></div>
                             </div>
                           </div>
                         </li>
@@ -89,7 +89,7 @@ const Index16 = () => (
                     <div className="burger-icon burger-icon-white"><span className="burger-icon-top"></span><span className="burger-icon-mid"></span><span className="burger-icon-bottom"></span></div>
                   </div>
                 </div>
-                <div className="header-logo"> <a className="d-flex" href="/"><img alt="luxride" src="/assets/imgs/template/logo.svg" /></a></div>
+                <div className="header-logo"> <a className="d-flex" href="/"><img alt="Indovia" src="/assets/imgs/template/logo.svg" /></a></div>
                 <div className="header-account"><a className="account-icon search" href="#">
                     <svg className="d-inline-flex align-items-center justify-content-center" width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
                       <g clipPath="url(#clip0_91_73)">
@@ -138,8 +138,8 @@ const Index16 = () => (
             <div className="mobile-header-wrapper-inner">
               <div className="mobile-header-content-area">
                 <div className="mobile-menu-head">
-                  <div className="box-head-1"><a className="link-underline mr-20 account-icon account" href="#">Login</a><a className="link-underline account-icon account" href="#">Sign Up</a><a className="close-mobile" href="#"><img src="/assets/imgs/template/icons/close.svg" alt="Guza" /></a></div>
-                  <div className="box-head-2"><a className="back-mobile" href="#"><img src="/assets/imgs/template/icons/back.svg" alt="Guza" /></a></div>
+                  <div className="box-head-1"><a className="link-underline mr-20 account-icon account" href="#">Login</a><a className="link-underline account-icon account" href="#">Sign Up</a><a className="close-mobile" href="#"><img src="/assets/imgs/template/icons/close.svg" alt="Indovia" /></a></div>
+                  <div className="box-head-2"><a className="back-mobile" href="#"><img src="/assets/imgs/template/icons/back.svg" alt="Indovia" /></a></div>
                 </div>
                 <div className="perfect-scroll">
                   <div className="mobile-menu-wrap mobile-header-border">
@@ -265,25 +265,25 @@ const Index16 = () => (
                 <div className="row"> 
                   <div className="col-lg-3 col-sm-6"> 
                     <div className="box-icon-type-1"> 
-                      <div className="item-image"> <img src="/assets/imgs/page/homepage3/ship.svg" alt="Guza" /></div>
+                      <div className="item-image"> <img src="/assets/imgs/page/homepage3/ship.svg" alt="Indovia" /></div>
                       <div className="item-info"> <span className="text-18">Shipping Worldwide</span></div>
                     </div>
                   </div>
                   <div className="col-lg-3 col-sm-6"> 
                     <div className="box-icon-type-1"> 
-                      <div className="item-image"> <img src="/assets/imgs/page/homepage4/return.svg" alt="Guza" /></div>
+                      <div className="item-image"> <img src="/assets/imgs/page/homepage4/return.svg" alt="Indovia" /></div>
                       <div className="item-info"> <span className="text-18">60 - Days Returns</span></div>
                     </div>
                   </div>
                   <div className="col-lg-3 col-sm-6"> 
                     <div className="box-icon-type-1"> 
-                      <div className="item-image"> <img src="/assets/imgs/page/homepage4/payment.svg" alt="Guza" /></div>
+                      <div className="item-image"> <img src="/assets/imgs/page/homepage4/payment.svg" alt="Indovia" /></div>
                       <div className="item-info"> <span className="text-18">Security Payment</span></div>
                     </div>
                   </div>
                   <div className="col-lg-3 col-sm-6"> 
                     <div className="box-icon-type-1"> 
-                      <div className="item-image"> <img src="/assets/imgs/page/homepage4/cart.svg" alt="Guza" /></div>
+                      <div className="item-image"> <img src="/assets/imgs/page/homepage4/cart.svg" alt="Indovia" /></div>
                       <div className="item-info"> <span className="text-18">Order Tracking</span></div>
                     </div>
                   </div>
@@ -373,7 +373,7 @@ const Index16 = () => (
                             <div className="row"> 
                               <div className="col-lg-3 col-md-4 col-sm-6"> 
                                 <div className="cardProductStyle3 cardProductStyle5 wow fadeInUp">
-                                  <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/homepage16/sp1.png" alt="guza" /><img className="imageHover" src="/assets/imgs/page/homepage16/sp8.png" alt="guza" /></a>
+                                  <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/homepage16/sp1.png" alt="Indovia" /><img className="imageHover" src="/assets/imgs/page/homepage16/sp8.png" alt="Indovia" /></a>
                                     <div className="button-select"><a href="#">Select Options</a></div>
                                     <div className="box-quick-button"><a className="btn" href="#">
                                         <svg className="d-inline-flex align-items-center justify-content-center" width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
@@ -415,7 +415,7 @@ const Index16 = () => (
                               </div>
                               <div className="col-lg-3 col-md-4 col-sm-6"> 
                                 <div className="cardProductStyle3 cardProductStyle5 wow fadeInUp">
-                                  <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/homepage16/sp2.png" alt="guza" /><img className="imageHover" src="/assets/imgs/page/homepage16/sp7.png" alt="guza" /></a>
+                                  <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/homepage16/sp2.png" alt="Indovia" /><img className="imageHover" src="/assets/imgs/page/homepage16/sp7.png" alt="Indovia" /></a>
                                     <div className="button-select"><a href="#">Select Options</a></div>
                                     <div className="box-quick-button"><a className="btn" href="#">
                                         <svg className="d-inline-flex align-items-center justify-content-center" width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
@@ -457,7 +457,7 @@ const Index16 = () => (
                               </div>
                               <div className="col-lg-3 col-md-4 col-sm-6"> 
                                 <div className="cardProductStyle3 cardProductStyle5 wow fadeInUp">
-                                  <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/homepage16/sp3.png" alt="guza" /><img className="imageHover" src="/assets/imgs/page/homepage16/sp6.png" alt="guza" /></a>
+                                  <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/homepage16/sp3.png" alt="Indovia" /><img className="imageHover" src="/assets/imgs/page/homepage16/sp6.png" alt="Indovia" /></a>
                                     <div className="button-select"><a href="#">Select Options</a></div>
                                     <div className="box-quick-button"><a className="btn" href="#">
                                         <svg className="d-inline-flex align-items-center justify-content-center" width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
@@ -499,7 +499,7 @@ const Index16 = () => (
                               </div>
                               <div className="col-lg-3 col-md-4 col-sm-6"> 
                                 <div className="cardProductStyle3 cardProductStyle5 wow fadeInUp">
-                                  <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/homepage16/sp4.png" alt="guza" /><img className="imageHover" src="/assets/imgs/page/homepage16/sp5.png" alt="guza" /></a>
+                                  <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/homepage16/sp4.png" alt="Indovia" /><img className="imageHover" src="/assets/imgs/page/homepage16/sp5.png" alt="Indovia" /></a>
                                     <div className="button-select"><a href="#">Select Options</a></div>
                                     <div className="box-quick-button"><a className="btn" href="#">
                                         <svg className="d-inline-flex align-items-center justify-content-center" width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
@@ -541,7 +541,7 @@ const Index16 = () => (
                               </div>
                               <div className="col-lg-3 col-md-4 col-sm-6"> 
                                 <div className="cardProductStyle3 cardProductStyle5 wow fadeInUp">
-                                  <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/homepage16/sp5.png" alt="guza" /><img className="imageHover" src="/assets/imgs/page/homepage16/sp4.png" alt="guza" /></a>
+                                  <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/homepage16/sp5.png" alt="Indovia" /><img className="imageHover" src="/assets/imgs/page/homepage16/sp4.png" alt="Indovia" /></a>
                                     <div className="button-select"><a href="#">Select Options</a></div>
                                     <div className="box-quick-button"><a className="btn" href="#">
                                         <svg className="d-inline-flex align-items-center justify-content-center" width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
@@ -583,7 +583,7 @@ const Index16 = () => (
                               </div>
                               <div className="col-lg-3 col-md-4 col-sm-6"> 
                                 <div className="cardProductStyle3 cardProductStyle5 wow fadeInUp">
-                                  <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/homepage16/sp6.png" alt="guza" /><img className="imageHover" src="/assets/imgs/page/homepage16/sp3.png" alt="guza" /></a>
+                                  <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/homepage16/sp6.png" alt="Indovia" /><img className="imageHover" src="/assets/imgs/page/homepage16/sp3.png" alt="Indovia" /></a>
                                     <div className="button-select"><a href="#">Select Options</a></div>
                                     <div className="box-quick-button"><a className="btn" href="#">
                                         <svg className="d-inline-flex align-items-center justify-content-center" width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
@@ -625,7 +625,7 @@ const Index16 = () => (
                               </div>
                               <div className="col-lg-3 col-md-4 col-sm-6"> 
                                 <div className="cardProductStyle3 cardProductStyle5 wow fadeInUp">
-                                  <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/homepage16/sp7.png" alt="guza" /><img className="imageHover" src="/assets/imgs/page/homepage16/sp2.png" alt="guza" /></a>
+                                  <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/homepage16/sp7.png" alt="Indovia" /><img className="imageHover" src="/assets/imgs/page/homepage16/sp2.png" alt="Indovia" /></a>
                                     <div className="button-select"><a href="#">Select Options</a></div>
                                     <div className="box-quick-button"><a className="btn" href="#">
                                         <svg className="d-inline-flex align-items-center justify-content-center" width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
@@ -667,7 +667,7 @@ const Index16 = () => (
                               </div>
                               <div className="col-lg-3 col-md-4 col-sm-6"> 
                                 <div className="cardProductStyle3 cardProductStyle5 wow fadeInUp">
-                                  <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/homepage16/sp8.png" alt="guza" /><img className="imageHover" src="/assets/imgs/page/homepage16/sp1.png" alt="guza" /></a>
+                                  <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/homepage16/sp8.png" alt="Indovia" /><img className="imageHover" src="/assets/imgs/page/homepage16/sp1.png" alt="Indovia" /></a>
                                     <div className="button-select"><a href="#">Select Options</a></div>
                                     <div className="box-quick-button"><a className="btn" href="#">
                                         <svg className="d-inline-flex align-items-center justify-content-center" width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
@@ -713,7 +713,7 @@ const Index16 = () => (
                             <div className="row"> 
                               <div className="col-lg-3 col-md-4 col-sm-6"> 
                                 <div className="cardProductStyle3 cardProductStyle5 wow fadeInUp">
-                                  <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/homepage16/sp1.png" alt="guza" /><img className="imageHover" src="/assets/imgs/page/homepage16/sp8.png" alt="guza" /></a>
+                                  <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/homepage16/sp1.png" alt="Indovia" /><img className="imageHover" src="/assets/imgs/page/homepage16/sp8.png" alt="Indovia" /></a>
                                     <div className="button-select"><a href="#">Select Options</a></div>
                                     <div className="box-quick-button"><a className="btn" href="#">
                                         <svg className="d-inline-flex align-items-center justify-content-center" width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
@@ -755,7 +755,7 @@ const Index16 = () => (
                               </div>
                               <div className="col-lg-3 col-md-4 col-sm-6"> 
                                 <div className="cardProductStyle3 cardProductStyle5 wow fadeInUp">
-                                  <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/homepage16/sp2.png" alt="guza" /><img className="imageHover" src="/assets/imgs/page/homepage16/sp7.png" alt="guza" /></a>
+                                  <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/homepage16/sp2.png" alt="Indovia" /><img className="imageHover" src="/assets/imgs/page/homepage16/sp7.png" alt="Indovia" /></a>
                                     <div className="button-select"><a href="#">Select Options</a></div>
                                     <div className="box-quick-button"><a className="btn" href="#">
                                         <svg className="d-inline-flex align-items-center justify-content-center" width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
@@ -797,7 +797,7 @@ const Index16 = () => (
                               </div>
                               <div className="col-lg-3 col-md-4 col-sm-6"> 
                                 <div className="cardProductStyle3 cardProductStyle5 wow fadeInUp">
-                                  <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/homepage16/sp3.png" alt="guza" /><img className="imageHover" src="/assets/imgs/page/homepage16/sp6.png" alt="guza" /></a>
+                                  <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/homepage16/sp3.png" alt="Indovia" /><img className="imageHover" src="/assets/imgs/page/homepage16/sp6.png" alt="Indovia" /></a>
                                     <div className="button-select"><a href="#">Select Options</a></div>
                                     <div className="box-quick-button"><a className="btn" href="#">
                                         <svg className="d-inline-flex align-items-center justify-content-center" width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
@@ -839,7 +839,7 @@ const Index16 = () => (
                               </div>
                               <div className="col-lg-3 col-md-4 col-sm-6"> 
                                 <div className="cardProductStyle3 cardProductStyle5 wow fadeInUp">
-                                  <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/homepage16/sp4.png" alt="guza" /><img className="imageHover" src="/assets/imgs/page/homepage16/sp5.png" alt="guza" /></a>
+                                  <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/homepage16/sp4.png" alt="Indovia" /><img className="imageHover" src="/assets/imgs/page/homepage16/sp5.png" alt="Indovia" /></a>
                                     <div className="button-select"><a href="#">Select Options</a></div>
                                     <div className="box-quick-button"><a className="btn" href="#">
                                         <svg className="d-inline-flex align-items-center justify-content-center" width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
@@ -881,7 +881,7 @@ const Index16 = () => (
                               </div>
                               <div className="col-lg-3 col-md-4 col-sm-6"> 
                                 <div className="cardProductStyle3 cardProductStyle5 wow fadeInUp">
-                                  <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/homepage16/sp5.png" alt="guza" /><img className="imageHover" src="/assets/imgs/page/homepage16/sp4.png" alt="guza" /></a>
+                                  <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/homepage16/sp5.png" alt="Indovia" /><img className="imageHover" src="/assets/imgs/page/homepage16/sp4.png" alt="Indovia" /></a>
                                     <div className="button-select"><a href="#">Select Options</a></div>
                                     <div className="box-quick-button"><a className="btn" href="#">
                                         <svg className="d-inline-flex align-items-center justify-content-center" width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
@@ -923,7 +923,7 @@ const Index16 = () => (
                               </div>
                               <div className="col-lg-3 col-md-4 col-sm-6"> 
                                 <div className="cardProductStyle3 cardProductStyle5 wow fadeInUp">
-                                  <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/homepage16/sp6.png" alt="guza" /><img className="imageHover" src="/assets/imgs/page/homepage16/sp3.png" alt="guza" /></a>
+                                  <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/homepage16/sp6.png" alt="Indovia" /><img className="imageHover" src="/assets/imgs/page/homepage16/sp3.png" alt="Indovia" /></a>
                                     <div className="button-select"><a href="#">Select Options</a></div>
                                     <div className="box-quick-button"><a className="btn" href="#">
                                         <svg className="d-inline-flex align-items-center justify-content-center" width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
@@ -965,7 +965,7 @@ const Index16 = () => (
                               </div>
                               <div className="col-lg-3 col-md-4 col-sm-6"> 
                                 <div className="cardProductStyle3 cardProductStyle5 wow fadeInUp">
-                                  <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/homepage16/sp7.png" alt="guza" /><img className="imageHover" src="/assets/imgs/page/homepage16/sp2.png" alt="guza" /></a>
+                                  <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/homepage16/sp7.png" alt="Indovia" /><img className="imageHover" src="/assets/imgs/page/homepage16/sp2.png" alt="Indovia" /></a>
                                     <div className="button-select"><a href="#">Select Options</a></div>
                                     <div className="box-quick-button"><a className="btn" href="#">
                                         <svg className="d-inline-flex align-items-center justify-content-center" width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
@@ -1007,7 +1007,7 @@ const Index16 = () => (
                               </div>
                               <div className="col-lg-3 col-md-4 col-sm-6"> 
                                 <div className="cardProductStyle3 cardProductStyle5 wow fadeInUp">
-                                  <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/homepage16/sp8.png" alt="guza" /><img className="imageHover" src="/assets/imgs/page/homepage16/sp1.png" alt="guza" /></a>
+                                  <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/homepage16/sp8.png" alt="Indovia" /><img className="imageHover" src="/assets/imgs/page/homepage16/sp1.png" alt="Indovia" /></a>
                                     <div className="button-select"><a href="#">Select Options</a></div>
                                     <div className="box-quick-button"><a className="btn" href="#">
                                         <svg className="d-inline-flex align-items-center justify-content-center" width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
@@ -1064,7 +1064,7 @@ const Index16 = () => (
                             <div className="row"> 
                               <div className="col-lg-3 col-md-4 col-sm-6"> 
                                 <div className="cardProductStyle3 cardProductStyle5 wow fadeInUp">
-                                  <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/homepage16/sp1.png" alt="guza" /><img className="imageHover" src="/assets/imgs/page/homepage16/sp8.png" alt="guza" /></a>
+                                  <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/homepage16/sp1.png" alt="Indovia" /><img className="imageHover" src="/assets/imgs/page/homepage16/sp8.png" alt="Indovia" /></a>
                                     <div className="button-select"><a href="#">Select Options</a></div>
                                     <div className="box-quick-button"><a className="btn" href="#">
                                         <svg className="d-inline-flex align-items-center justify-content-center" width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
@@ -1106,7 +1106,7 @@ const Index16 = () => (
                               </div>
                               <div className="col-lg-3 col-md-4 col-sm-6"> 
                                 <div className="cardProductStyle3 cardProductStyle5 wow fadeInUp">
-                                  <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/homepage16/sp2.png" alt="guza" /><img className="imageHover" src="/assets/imgs/page/homepage16/sp7.png" alt="guza" /></a>
+                                  <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/homepage16/sp2.png" alt="Indovia" /><img className="imageHover" src="/assets/imgs/page/homepage16/sp7.png" alt="Indovia" /></a>
                                     <div className="button-select"><a href="#">Select Options</a></div>
                                     <div className="box-quick-button"><a className="btn" href="#">
                                         <svg className="d-inline-flex align-items-center justify-content-center" width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
@@ -1148,7 +1148,7 @@ const Index16 = () => (
                               </div>
                               <div className="col-lg-3 col-md-4 col-sm-6"> 
                                 <div className="cardProductStyle3 cardProductStyle5 wow fadeInUp">
-                                  <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/homepage16/sp3.png" alt="guza" /><img className="imageHover" src="/assets/imgs/page/homepage16/sp6.png" alt="guza" /></a>
+                                  <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/homepage16/sp3.png" alt="Indovia" /><img className="imageHover" src="/assets/imgs/page/homepage16/sp6.png" alt="Indovia" /></a>
                                     <div className="button-select"><a href="#">Select Options</a></div>
                                     <div className="box-quick-button"><a className="btn" href="#">
                                         <svg className="d-inline-flex align-items-center justify-content-center" width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
@@ -1190,7 +1190,7 @@ const Index16 = () => (
                               </div>
                               <div className="col-lg-3 col-md-4 col-sm-6"> 
                                 <div className="cardProductStyle3 cardProductStyle5 wow fadeInUp">
-                                  <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/homepage16/sp4.png" alt="guza" /><img className="imageHover" src="/assets/imgs/page/homepage16/sp5.png" alt="guza" /></a>
+                                  <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/homepage16/sp4.png" alt="Indovia" /><img className="imageHover" src="/assets/imgs/page/homepage16/sp5.png" alt="Indovia" /></a>
                                     <div className="button-select"><a href="#">Select Options</a></div>
                                     <div className="box-quick-button"><a className="btn" href="#">
                                         <svg className="d-inline-flex align-items-center justify-content-center" width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
@@ -1232,7 +1232,7 @@ const Index16 = () => (
                               </div>
                               <div className="col-lg-3 col-md-4 col-sm-6"> 
                                 <div className="cardProductStyle3 cardProductStyle5 wow fadeInUp">
-                                  <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/homepage16/sp5.png" alt="guza" /><img className="imageHover" src="/assets/imgs/page/homepage16/sp4.png" alt="guza" /></a>
+                                  <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/homepage16/sp5.png" alt="Indovia" /><img className="imageHover" src="/assets/imgs/page/homepage16/sp4.png" alt="Indovia" /></a>
                                     <div className="button-select"><a href="#">Select Options</a></div>
                                     <div className="box-quick-button"><a className="btn" href="#">
                                         <svg className="d-inline-flex align-items-center justify-content-center" width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
@@ -1274,7 +1274,7 @@ const Index16 = () => (
                               </div>
                               <div className="col-lg-3 col-md-4 col-sm-6"> 
                                 <div className="cardProductStyle3 cardProductStyle5 wow fadeInUp">
-                                  <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/homepage16/sp6.png" alt="guza" /><img className="imageHover" src="/assets/imgs/page/homepage16/sp3.png" alt="guza" /></a>
+                                  <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/homepage16/sp6.png" alt="Indovia" /><img className="imageHover" src="/assets/imgs/page/homepage16/sp3.png" alt="Indovia" /></a>
                                     <div className="button-select"><a href="#">Select Options</a></div>
                                     <div className="box-quick-button"><a className="btn" href="#">
                                         <svg className="d-inline-flex align-items-center justify-content-center" width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
@@ -1316,7 +1316,7 @@ const Index16 = () => (
                               </div>
                               <div className="col-lg-3 col-md-4 col-sm-6"> 
                                 <div className="cardProductStyle3 cardProductStyle5 wow fadeInUp">
-                                  <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/homepage16/sp7.png" alt="guza" /><img className="imageHover" src="/assets/imgs/page/homepage16/sp2.png" alt="guza" /></a>
+                                  <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/homepage16/sp7.png" alt="Indovia" /><img className="imageHover" src="/assets/imgs/page/homepage16/sp2.png" alt="Indovia" /></a>
                                     <div className="button-select"><a href="#">Select Options</a></div>
                                     <div className="box-quick-button"><a className="btn" href="#">
                                         <svg className="d-inline-flex align-items-center justify-content-center" width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
@@ -1358,7 +1358,7 @@ const Index16 = () => (
                               </div>
                               <div className="col-lg-3 col-md-4 col-sm-6"> 
                                 <div className="cardProductStyle3 cardProductStyle5 wow fadeInUp">
-                                  <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/homepage16/sp8.png" alt="guza" /><img className="imageHover" src="/assets/imgs/page/homepage16/sp1.png" alt="guza" /></a>
+                                  <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/homepage16/sp8.png" alt="Indovia" /><img className="imageHover" src="/assets/imgs/page/homepage16/sp1.png" alt="Indovia" /></a>
                                     <div className="button-select"><a href="#">Select Options</a></div>
                                     <div className="box-quick-button"><a className="btn" href="#">
                                         <svg className="d-inline-flex align-items-center justify-content-center" width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
@@ -1404,7 +1404,7 @@ const Index16 = () => (
                             <div className="row"> 
                               <div className="col-lg-3 col-md-4 col-sm-6"> 
                                 <div className="cardProductStyle3 cardProductStyle5 wow fadeInUp">
-                                  <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/homepage16/sp1.png" alt="guza" /><img className="imageHover" src="/assets/imgs/page/homepage16/sp8.png" alt="guza" /></a>
+                                  <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/homepage16/sp1.png" alt="Indovia" /><img className="imageHover" src="/assets/imgs/page/homepage16/sp8.png" alt="Indovia" /></a>
                                     <div className="button-select"><a href="#">Select Options</a></div>
                                     <div className="box-quick-button"><a className="btn" href="#">
                                         <svg className="d-inline-flex align-items-center justify-content-center" width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
@@ -1446,7 +1446,7 @@ const Index16 = () => (
                               </div>
                               <div className="col-lg-3 col-md-4 col-sm-6"> 
                                 <div className="cardProductStyle3 cardProductStyle5 wow fadeInUp">
-                                  <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/homepage16/sp2.png" alt="guza" /><img className="imageHover" src="/assets/imgs/page/homepage16/sp7.png" alt="guza" /></a>
+                                  <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/homepage16/sp2.png" alt="Indovia" /><img className="imageHover" src="/assets/imgs/page/homepage16/sp7.png" alt="Indovia" /></a>
                                     <div className="button-select"><a href="#">Select Options</a></div>
                                     <div className="box-quick-button"><a className="btn" href="#">
                                         <svg className="d-inline-flex align-items-center justify-content-center" width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
@@ -1488,7 +1488,7 @@ const Index16 = () => (
                               </div>
                               <div className="col-lg-3 col-md-4 col-sm-6"> 
                                 <div className="cardProductStyle3 cardProductStyle5 wow fadeInUp">
-                                  <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/homepage16/sp3.png" alt="guza" /><img className="imageHover" src="/assets/imgs/page/homepage16/sp6.png" alt="guza" /></a>
+                                  <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/homepage16/sp3.png" alt="Indovia" /><img className="imageHover" src="/assets/imgs/page/homepage16/sp6.png" alt="Indovia" /></a>
                                     <div className="button-select"><a href="#">Select Options</a></div>
                                     <div className="box-quick-button"><a className="btn" href="#">
                                         <svg className="d-inline-flex align-items-center justify-content-center" width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
@@ -1530,7 +1530,7 @@ const Index16 = () => (
                               </div>
                               <div className="col-lg-3 col-md-4 col-sm-6"> 
                                 <div className="cardProductStyle3 cardProductStyle5 wow fadeInUp">
-                                  <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/homepage16/sp4.png" alt="guza" /><img className="imageHover" src="/assets/imgs/page/homepage16/sp5.png" alt="guza" /></a>
+                                  <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/homepage16/sp4.png" alt="Indovia" /><img className="imageHover" src="/assets/imgs/page/homepage16/sp5.png" alt="Indovia" /></a>
                                     <div className="button-select"><a href="#">Select Options</a></div>
                                     <div className="box-quick-button"><a className="btn" href="#">
                                         <svg className="d-inline-flex align-items-center justify-content-center" width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
@@ -1572,7 +1572,7 @@ const Index16 = () => (
                               </div>
                               <div className="col-lg-3 col-md-4 col-sm-6"> 
                                 <div className="cardProductStyle3 cardProductStyle5 wow fadeInUp">
-                                  <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/homepage16/sp5.png" alt="guza" /><img className="imageHover" src="/assets/imgs/page/homepage16/sp4.png" alt="guza" /></a>
+                                  <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/homepage16/sp5.png" alt="Indovia" /><img className="imageHover" src="/assets/imgs/page/homepage16/sp4.png" alt="Indovia" /></a>
                                     <div className="button-select"><a href="#">Select Options</a></div>
                                     <div className="box-quick-button"><a className="btn" href="#">
                                         <svg className="d-inline-flex align-items-center justify-content-center" width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
@@ -1614,7 +1614,7 @@ const Index16 = () => (
                               </div>
                               <div className="col-lg-3 col-md-4 col-sm-6"> 
                                 <div className="cardProductStyle3 cardProductStyle5 wow fadeInUp">
-                                  <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/homepage16/sp6.png" alt="guza" /><img className="imageHover" src="/assets/imgs/page/homepage16/sp3.png" alt="guza" /></a>
+                                  <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/homepage16/sp6.png" alt="Indovia" /><img className="imageHover" src="/assets/imgs/page/homepage16/sp3.png" alt="Indovia" /></a>
                                     <div className="button-select"><a href="#">Select Options</a></div>
                                     <div className="box-quick-button"><a className="btn" href="#">
                                         <svg className="d-inline-flex align-items-center justify-content-center" width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
@@ -1656,7 +1656,7 @@ const Index16 = () => (
                               </div>
                               <div className="col-lg-3 col-md-4 col-sm-6"> 
                                 <div className="cardProductStyle3 cardProductStyle5 wow fadeInUp">
-                                  <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/homepage16/sp7.png" alt="guza" /><img className="imageHover" src="/assets/imgs/page/homepage16/sp2.png" alt="guza" /></a>
+                                  <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/homepage16/sp7.png" alt="Indovia" /><img className="imageHover" src="/assets/imgs/page/homepage16/sp2.png" alt="Indovia" /></a>
                                     <div className="button-select"><a href="#">Select Options</a></div>
                                     <div className="box-quick-button"><a className="btn" href="#">
                                         <svg className="d-inline-flex align-items-center justify-content-center" width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
@@ -1698,7 +1698,7 @@ const Index16 = () => (
                               </div>
                               <div className="col-lg-3 col-md-4 col-sm-6"> 
                                 <div className="cardProductStyle3 cardProductStyle5 wow fadeInUp">
-                                  <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/homepage16/sp8.png" alt="guza" /><img className="imageHover" src="/assets/imgs/page/homepage16/sp1.png" alt="guza" /></a>
+                                  <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/homepage16/sp8.png" alt="Indovia" /><img className="imageHover" src="/assets/imgs/page/homepage16/sp1.png" alt="Indovia" /></a>
                                     <div className="button-select"><a href="#">Select Options</a></div>
                                     <div className="box-quick-button"><a className="btn" href="#">
                                         <svg className="d-inline-flex align-items-center justify-content-center" width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
@@ -1755,7 +1755,7 @@ const Index16 = () => (
                             <div className="row"> 
                               <div className="col-lg-3 col-md-4 col-sm-6"> 
                                 <div className="cardProductStyle3 cardProductStyle5 wow fadeInUp">
-                                  <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/homepage16/sp1.png" alt="guza" /><img className="imageHover" src="/assets/imgs/page/homepage16/sp8.png" alt="guza" /></a>
+                                  <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/homepage16/sp1.png" alt="Indovia" /><img className="imageHover" src="/assets/imgs/page/homepage16/sp8.png" alt="Indovia" /></a>
                                     <div className="button-select"><a href="#">Select Options</a></div>
                                     <div className="box-quick-button"><a className="btn" href="#">
                                         <svg className="d-inline-flex align-items-center justify-content-center" width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
@@ -1797,7 +1797,7 @@ const Index16 = () => (
                               </div>
                               <div className="col-lg-3 col-md-4 col-sm-6"> 
                                 <div className="cardProductStyle3 cardProductStyle5 wow fadeInUp">
-                                  <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/homepage16/sp2.png" alt="guza" /><img className="imageHover" src="/assets/imgs/page/homepage16/sp7.png" alt="guza" /></a>
+                                  <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/homepage16/sp2.png" alt="Indovia" /><img className="imageHover" src="/assets/imgs/page/homepage16/sp7.png" alt="Indovia" /></a>
                                     <div className="button-select"><a href="#">Select Options</a></div>
                                     <div className="box-quick-button"><a className="btn" href="#">
                                         <svg className="d-inline-flex align-items-center justify-content-center" width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
@@ -1839,7 +1839,7 @@ const Index16 = () => (
                               </div>
                               <div className="col-lg-3 col-md-4 col-sm-6"> 
                                 <div className="cardProductStyle3 cardProductStyle5 wow fadeInUp">
-                                  <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/homepage16/sp3.png" alt="guza" /><img className="imageHover" src="/assets/imgs/page/homepage16/sp6.png" alt="guza" /></a>
+                                  <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/homepage16/sp3.png" alt="Indovia" /><img className="imageHover" src="/assets/imgs/page/homepage16/sp6.png" alt="Indovia" /></a>
                                     <div className="button-select"><a href="#">Select Options</a></div>
                                     <div className="box-quick-button"><a className="btn" href="#">
                                         <svg className="d-inline-flex align-items-center justify-content-center" width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
@@ -1881,7 +1881,7 @@ const Index16 = () => (
                               </div>
                               <div className="col-lg-3 col-md-4 col-sm-6"> 
                                 <div className="cardProductStyle3 cardProductStyle5 wow fadeInUp">
-                                  <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/homepage16/sp4.png" alt="guza" /><img className="imageHover" src="/assets/imgs/page/homepage16/sp5.png" alt="guza" /></a>
+                                  <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/homepage16/sp4.png" alt="Indovia" /><img className="imageHover" src="/assets/imgs/page/homepage16/sp5.png" alt="Indovia" /></a>
                                     <div className="button-select"><a href="#">Select Options</a></div>
                                     <div className="box-quick-button"><a className="btn" href="#">
                                         <svg className="d-inline-flex align-items-center justify-content-center" width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
@@ -1923,7 +1923,7 @@ const Index16 = () => (
                               </div>
                               <div className="col-lg-3 col-md-4 col-sm-6"> 
                                 <div className="cardProductStyle3 cardProductStyle5 wow fadeInUp">
-                                  <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/homepage16/sp5.png" alt="guza" /><img className="imageHover" src="/assets/imgs/page/homepage16/sp4.png" alt="guza" /></a>
+                                  <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/homepage16/sp5.png" alt="Indovia" /><img className="imageHover" src="/assets/imgs/page/homepage16/sp4.png" alt="Indovia" /></a>
                                     <div className="button-select"><a href="#">Select Options</a></div>
                                     <div className="box-quick-button"><a className="btn" href="#">
                                         <svg className="d-inline-flex align-items-center justify-content-center" width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
@@ -1965,7 +1965,7 @@ const Index16 = () => (
                               </div>
                               <div className="col-lg-3 col-md-4 col-sm-6"> 
                                 <div className="cardProductStyle3 cardProductStyle5 wow fadeInUp">
-                                  <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/homepage16/sp6.png" alt="guza" /><img className="imageHover" src="/assets/imgs/page/homepage16/sp3.png" alt="guza" /></a>
+                                  <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/homepage16/sp6.png" alt="Indovia" /><img className="imageHover" src="/assets/imgs/page/homepage16/sp3.png" alt="Indovia" /></a>
                                     <div className="button-select"><a href="#">Select Options</a></div>
                                     <div className="box-quick-button"><a className="btn" href="#">
                                         <svg className="d-inline-flex align-items-center justify-content-center" width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
@@ -2007,7 +2007,7 @@ const Index16 = () => (
                               </div>
                               <div className="col-lg-3 col-md-4 col-sm-6"> 
                                 <div className="cardProductStyle3 cardProductStyle5 wow fadeInUp">
-                                  <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/homepage16/sp7.png" alt="guza" /><img className="imageHover" src="/assets/imgs/page/homepage16/sp2.png" alt="guza" /></a>
+                                  <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/homepage16/sp7.png" alt="Indovia" /><img className="imageHover" src="/assets/imgs/page/homepage16/sp2.png" alt="Indovia" /></a>
                                     <div className="button-select"><a href="#">Select Options</a></div>
                                     <div className="box-quick-button"><a className="btn" href="#">
                                         <svg className="d-inline-flex align-items-center justify-content-center" width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
@@ -2049,7 +2049,7 @@ const Index16 = () => (
                               </div>
                               <div className="col-lg-3 col-md-4 col-sm-6"> 
                                 <div className="cardProductStyle3 cardProductStyle5 wow fadeInUp">
-                                  <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/homepage16/sp8.png" alt="guza" /><img className="imageHover" src="/assets/imgs/page/homepage16/sp1.png" alt="guza" /></a>
+                                  <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/homepage16/sp8.png" alt="Indovia" /><img className="imageHover" src="/assets/imgs/page/homepage16/sp1.png" alt="Indovia" /></a>
                                     <div className="button-select"><a href="#">Select Options</a></div>
                                     <div className="box-quick-button"><a className="btn" href="#">
                                         <svg className="d-inline-flex align-items-center justify-content-center" width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
@@ -2095,7 +2095,7 @@ const Index16 = () => (
                             <div className="row"> 
                               <div className="col-lg-3 col-md-4 col-sm-6"> 
                                 <div className="cardProductStyle3 cardProductStyle5 wow fadeInUp">
-                                  <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/homepage16/sp1.png" alt="guza" /><img className="imageHover" src="/assets/imgs/page/homepage16/sp8.png" alt="guza" /></a>
+                                  <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/homepage16/sp1.png" alt="Indovia" /><img className="imageHover" src="/assets/imgs/page/homepage16/sp8.png" alt="Indovia" /></a>
                                     <div className="button-select"><a href="#">Select Options</a></div>
                                     <div className="box-quick-button"><a className="btn" href="#">
                                         <svg className="d-inline-flex align-items-center justify-content-center" width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
@@ -2137,7 +2137,7 @@ const Index16 = () => (
                               </div>
                               <div className="col-lg-3 col-md-4 col-sm-6"> 
                                 <div className="cardProductStyle3 cardProductStyle5 wow fadeInUp">
-                                  <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/homepage16/sp2.png" alt="guza" /><img className="imageHover" src="/assets/imgs/page/homepage16/sp7.png" alt="guza" /></a>
+                                  <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/homepage16/sp2.png" alt="Indovia" /><img className="imageHover" src="/assets/imgs/page/homepage16/sp7.png" alt="Indovia" /></a>
                                     <div className="button-select"><a href="#">Select Options</a></div>
                                     <div className="box-quick-button"><a className="btn" href="#">
                                         <svg className="d-inline-flex align-items-center justify-content-center" width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
@@ -2179,7 +2179,7 @@ const Index16 = () => (
                               </div>
                               <div className="col-lg-3 col-md-4 col-sm-6"> 
                                 <div className="cardProductStyle3 cardProductStyle5 wow fadeInUp">
-                                  <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/homepage16/sp3.png" alt="guza" /><img className="imageHover" src="/assets/imgs/page/homepage16/sp6.png" alt="guza" /></a>
+                                  <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/homepage16/sp3.png" alt="Indovia" /><img className="imageHover" src="/assets/imgs/page/homepage16/sp6.png" alt="Indovia" /></a>
                                     <div className="button-select"><a href="#">Select Options</a></div>
                                     <div className="box-quick-button"><a className="btn" href="#">
                                         <svg className="d-inline-flex align-items-center justify-content-center" width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
@@ -2221,7 +2221,7 @@ const Index16 = () => (
                               </div>
                               <div className="col-lg-3 col-md-4 col-sm-6"> 
                                 <div className="cardProductStyle3 cardProductStyle5 wow fadeInUp">
-                                  <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/homepage16/sp4.png" alt="guza" /><img className="imageHover" src="/assets/imgs/page/homepage16/sp5.png" alt="guza" /></a>
+                                  <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/homepage16/sp4.png" alt="Indovia" /><img className="imageHover" src="/assets/imgs/page/homepage16/sp5.png" alt="Indovia" /></a>
                                     <div className="button-select"><a href="#">Select Options</a></div>
                                     <div className="box-quick-button"><a className="btn" href="#">
                                         <svg className="d-inline-flex align-items-center justify-content-center" width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
@@ -2263,7 +2263,7 @@ const Index16 = () => (
                               </div>
                               <div className="col-lg-3 col-md-4 col-sm-6"> 
                                 <div className="cardProductStyle3 cardProductStyle5 wow fadeInUp">
-                                  <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/homepage16/sp5.png" alt="guza" /><img className="imageHover" src="/assets/imgs/page/homepage16/sp4.png" alt="guza" /></a>
+                                  <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/homepage16/sp5.png" alt="Indovia" /><img className="imageHover" src="/assets/imgs/page/homepage16/sp4.png" alt="Indovia" /></a>
                                     <div className="button-select"><a href="#">Select Options</a></div>
                                     <div className="box-quick-button"><a className="btn" href="#">
                                         <svg className="d-inline-flex align-items-center justify-content-center" width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
@@ -2305,7 +2305,7 @@ const Index16 = () => (
                               </div>
                               <div className="col-lg-3 col-md-4 col-sm-6"> 
                                 <div className="cardProductStyle3 cardProductStyle5 wow fadeInUp">
-                                  <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/homepage16/sp6.png" alt="guza" /><img className="imageHover" src="/assets/imgs/page/homepage16/sp3.png" alt="guza" /></a>
+                                  <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/homepage16/sp6.png" alt="Indovia" /><img className="imageHover" src="/assets/imgs/page/homepage16/sp3.png" alt="Indovia" /></a>
                                     <div className="button-select"><a href="#">Select Options</a></div>
                                     <div className="box-quick-button"><a className="btn" href="#">
                                         <svg className="d-inline-flex align-items-center justify-content-center" width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
@@ -2347,7 +2347,7 @@ const Index16 = () => (
                               </div>
                               <div className="col-lg-3 col-md-4 col-sm-6"> 
                                 <div className="cardProductStyle3 cardProductStyle5 wow fadeInUp">
-                                  <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/homepage16/sp7.png" alt="guza" /><img className="imageHover" src="/assets/imgs/page/homepage16/sp2.png" alt="guza" /></a>
+                                  <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/homepage16/sp7.png" alt="Indovia" /><img className="imageHover" src="/assets/imgs/page/homepage16/sp2.png" alt="Indovia" /></a>
                                     <div className="button-select"><a href="#">Select Options</a></div>
                                     <div className="box-quick-button"><a className="btn" href="#">
                                         <svg className="d-inline-flex align-items-center justify-content-center" width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
@@ -2389,7 +2389,7 @@ const Index16 = () => (
                               </div>
                               <div className="col-lg-3 col-md-4 col-sm-6"> 
                                 <div className="cardProductStyle3 cardProductStyle5 wow fadeInUp">
-                                  <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/homepage16/sp8.png" alt="guza" /><img className="imageHover" src="/assets/imgs/page/homepage16/sp1.png" alt="guza" /></a>
+                                  <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/homepage16/sp8.png" alt="Indovia" /><img className="imageHover" src="/assets/imgs/page/homepage16/sp1.png" alt="Indovia" /></a>
                                     <div className="button-select"><a href="#">Select Options</a></div>
                                     <div className="box-quick-button"><a className="btn" href="#">
                                         <svg className="d-inline-flex align-items-center justify-content-center" width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
@@ -2455,7 +2455,7 @@ const Index16 = () => (
                 <div className="row"> 
                   <div className="col-lg-2 col-md-4 col-sm-6"> 
                     <div className="cardCategoryCircle"> 
-                      <div className="cardImage"><a href="#"><img src="/assets/imgs/page/homepage16/cat.png" alt="Guza" /></a></div>
+                      <div className="cardImage"><a href="#"><img src="/assets/imgs/page/homepage16/cat.png" alt="Indovia" /></a></div>
                       <div className="cardInfo"> 
                         <p className="text-17-medium">Mobile</p>
                       </div>
@@ -2463,7 +2463,7 @@ const Index16 = () => (
                   </div>
                   <div className="col-lg-2 col-md-4 col-sm-6"> 
                     <div className="cardCategoryCircle"> 
-                      <div className="cardImage"><a href="#"><img src="/assets/imgs/page/homepage16/cat2.png" alt="Guza" /></a></div>
+                      <div className="cardImage"><a href="#"><img src="/assets/imgs/page/homepage16/cat2.png" alt="Indovia" /></a></div>
                       <div className="cardInfo"> 
                         <p className="text-17-medium">Smart home</p>
                       </div>
@@ -2471,7 +2471,7 @@ const Index16 = () => (
                   </div>
                   <div className="col-lg-2 col-md-4 col-sm-6"> 
                     <div className="cardCategoryCircle"> 
-                      <div className="cardImage"><a href="#"><img src="/assets/imgs/page/homepage16/cat3.png" alt="Guza" /></a></div>
+                      <div className="cardImage"><a href="#"><img src="/assets/imgs/page/homepage16/cat3.png" alt="Indovia" /></a></div>
                       <div className="cardInfo"> 
                         <p className="text-17-medium">Home Audio</p>
                       </div>
@@ -2479,7 +2479,7 @@ const Index16 = () => (
                   </div>
                   <div className="col-lg-2 col-md-4 col-sm-6"> 
                     <div className="cardCategoryCircle"> 
-                      <div className="cardImage"><a href="#"><img src="/assets/imgs/page/homepage16/cat4.png" alt="Guza" /></a></div>
+                      <div className="cardImage"><a href="#"><img src="/assets/imgs/page/homepage16/cat4.png" alt="Indovia" /></a></div>
                       <div className="cardInfo"> 
                         <p className="text-17-medium">Headphones</p>
                       </div>
@@ -2487,7 +2487,7 @@ const Index16 = () => (
                   </div>
                   <div className="col-lg-2 col-md-4 col-sm-6"> 
                     <div className="cardCategoryCircle"> 
-                      <div className="cardImage"><a href="#"><img src="/assets/imgs/page/homepage16/cat5.png" alt="Guza" /></a></div>
+                      <div className="cardImage"><a href="#"><img src="/assets/imgs/page/homepage16/cat5.png" alt="Indovia" /></a></div>
                       <div className="cardInfo"> 
                         <p className="text-17-medium">Tablets</p>
                       </div>
@@ -2495,7 +2495,7 @@ const Index16 = () => (
                   </div>
                   <div className="col-lg-2 col-md-4 col-sm-6"> 
                     <div className="cardCategoryCircle"> 
-                      <div className="cardImage"><a href="#"><img src="/assets/imgs/page/homepage16/cat6.png" alt="Guza" /></a></div>
+                      <div className="cardImage"><a href="#"><img src="/assets/imgs/page/homepage16/cat6.png" alt="Indovia" /></a></div>
                       <div className="cardInfo"> 
                         <p className="text-17-medium">Smart Watch</p>
                       </div>
@@ -2510,25 +2510,25 @@ const Index16 = () => (
                   <div className="col-lg-6 mb-30">
                     <div className="box-banner-3">
                       <div className="box-banner-3-left">
-                        <div className="box-banner-3-image"><img src="/assets/imgs/page/homepage16/speaker.svg" alt="Guza" /></div>
+                        <div className="box-banner-3-image"><img src="/assets/imgs/page/homepage16/speaker.svg" alt="Indovia" /></div>
                         <div className="box-banner-3-info">
                           <h4 className="mb-5">Next-level audio</h4>
                           <p className="text-16 mb-20">Turn up the drama on movie night with speakers & sound barts</p><a className="btn btn-border" href="#">Shop now</a>
                         </div>
                       </div>
-                      <div className="box-banner-3-right"> <img src="/assets/imgs/page/homepage16/speaker2.png" alt="Guza" /></div>
+                      <div className="box-banner-3-right"> <img src="/assets/imgs/page/homepage16/speaker2.png" alt="Indovia" /></div>
                     </div>
                   </div>
                   <div className="col-lg-6 mb-30">
                     <div className="box-banner-3 box-banner-3-2">
                       <div className="box-banner-3-left">
-                        <div className="box-banner-3-image"><img src="/assets/imgs/page/homepage16/smartwatch.svg" alt="Guza" /></div>
+                        <div className="box-banner-3-image"><img src="/assets/imgs/page/homepage16/smartwatch.svg" alt="Indovia" /></div>
                         <div className="box-banner-3-info">
                           <h4 className="mb-5">Apple Watch</h4>
                           <p className="text-16 mb-20">Give Dad the gift of Apple Watch. Now up to $70 off.</p><a className="btn btn-border" href="#">Shop now</a>
                         </div>
                       </div>
-                      <div className="box-banner-3-right"> <img src="/assets/imgs/page/homepage16/smartwatch.png" alt="Guza" /></div>
+                      <div className="box-banner-3-right"> <img src="/assets/imgs/page/homepage16/smartwatch.png" alt="Indovia" /></div>
                     </div>
                   </div>
                 </div>
@@ -2545,12 +2545,12 @@ const Index16 = () => (
                       <div className="swiper-slide">
                         <div className="cardReview"> 
                           <div className="cardAuthor mb-20"> 
-                            <div className="cardImageAuthor"><img src="/assets/imgs/page/homepage12/author.png" alt="Guza" /></div>
+                            <div className="cardImageAuthor"><img src="/assets/imgs/page/homepage12/author.png" alt="Indovia" /></div>
                             <div className="cardNameAuthor">
                               <p className="text-17-medium">Kate Smith</p>
                             </div>
                           </div>
-                          <div className="cardRate mb-10"> <img src="/assets/imgs/template/icons/star.svg" alt="Guza" /><img src="/assets/imgs/template/icons/star.svg" alt="Guza" /><img src="/assets/imgs/template/icons/star.svg" alt="Guza" /><img src="/assets/imgs/template/icons/star.svg" alt="Guza" /><img src="/assets/imgs/template/icons/star.svg" alt="Guza" /></div>
+                          <div className="cardRate mb-10"> <img src="/assets/imgs/template/icons/star.svg" alt="Indovia" /><img src="/assets/imgs/template/icons/star.svg" alt="Indovia" /><img src="/assets/imgs/template/icons/star.svg" alt="Indovia" /><img src="/assets/imgs/template/icons/star.svg" alt="Indovia" /><img src="/assets/imgs/template/icons/star.svg" alt="Indovia" /></div>
                           <h6 className="mb-20">Perfect indoor play tent!</h6>
                           <div className="cardText mb-0"> 
                             <h6 className="text-18">I like the way the staff advises me. Thank you for the very good quality of the case. I will come back and buy more stuff.</h6>
@@ -2560,12 +2560,12 @@ const Index16 = () => (
                       <div className="swiper-slide">
                         <div className="cardReview"> 
                           <div className="cardAuthor mb-20"> 
-                            <div className="cardImageAuthor"><img src="/assets/imgs/page/homepage12/author.png" alt="Guza" /></div>
+                            <div className="cardImageAuthor"><img src="/assets/imgs/page/homepage12/author.png" alt="Indovia" /></div>
                             <div className="cardNameAuthor">
                               <p className="text-17-medium">Kate Smith</p>
                             </div>
                           </div>
-                          <div className="cardRate mb-10"><img src="/assets/imgs/template/icons/star.svg" alt="Guza" /><img src="/assets/imgs/template/icons/star.svg" alt="Guza" /><img src="/assets/imgs/template/icons/star.svg" alt="Guza" /><img src="/assets/imgs/template/icons/star.svg" alt="Guza" /><img src="/assets/imgs/template/icons/star.svg" alt="Guza" /></div>
+                          <div className="cardRate mb-10"><img src="/assets/imgs/template/icons/star.svg" alt="Indovia" /><img src="/assets/imgs/template/icons/star.svg" alt="Indovia" /><img src="/assets/imgs/template/icons/star.svg" alt="Indovia" /><img src="/assets/imgs/template/icons/star.svg" alt="Indovia" /><img src="/assets/imgs/template/icons/star.svg" alt="Indovia" /></div>
                           <h6 className="mb-20">Perfect indoor play tent!</h6>
                           <div className="cardText mb-0"> 
                             <h6 className="text-18">I like the way the staff advises me. Thank you for the very good quality of the case. I will come back and buy more stuff.</h6>
@@ -2575,12 +2575,12 @@ const Index16 = () => (
                       <div className="swiper-slide">
                         <div className="cardReview"> 
                           <div className="cardAuthor mb-20"> 
-                            <div className="cardImageAuthor"><img src="/assets/imgs/page/homepage12/author.png" alt="Guza" /></div>
+                            <div className="cardImageAuthor"><img src="/assets/imgs/page/homepage12/author.png" alt="Indovia" /></div>
                             <div className="cardNameAuthor">
                               <p className="text-17-medium">Kate Smith</p>
                             </div>
                           </div>
-                          <div className="cardRate mb-10"> <img src="/assets/imgs/template/icons/star.svg" alt="Guza" /><img src="/assets/imgs/template/icons/star.svg" alt="Guza" /><img src="/assets/imgs/template/icons/star.svg" alt="Guza" /><img src="/assets/imgs/template/icons/star.svg" alt="Guza" /><img src="/assets/imgs/template/icons/star.svg" alt="Guza" /></div>
+                          <div className="cardRate mb-10"> <img src="/assets/imgs/template/icons/star.svg" alt="Indovia" /><img src="/assets/imgs/template/icons/star.svg" alt="Indovia" /><img src="/assets/imgs/template/icons/star.svg" alt="Indovia" /><img src="/assets/imgs/template/icons/star.svg" alt="Indovia" /><img src="/assets/imgs/template/icons/star.svg" alt="Indovia" /></div>
                           <h6 className="mb-20">Perfect indoor play tent!</h6>
                           <div className="cardText mb-0"> 
                             <h6 className="text-18">I like the way the staff advises me. Thank you for the very good quality of the case. I will come back and buy more stuff.</h6>
@@ -2655,7 +2655,7 @@ const Index16 = () => (
               <div className="container">
                 <div className="footer-bottom">
                   <div className="row align-items-center">
-                    <div className="col-lg-6 col-md-12 text-center text-lg-start mb-20"><span className="body-p1 color-white">© 2023 Guza.Co. All rights reserved</span></div>
+                    <div className="col-lg-6 col-md-12 text-center text-lg-start mb-20"><span className="body-p1 color-white">© 2023 Indovia.Co. All rights reserved</span></div>
                     <div className="col-lg-6 col-md-12 text-center text-lg-end mb-20">
                       <div className="d-flex justify-content-center justify-content-lg-end align-items-center box-all-payments">
                         <div className="d-inline-block box-payments mr-20"><img src="/assets/imgs/template/icons/visa-grey.svg" alt="" /><img src="/assets/imgs/template/icons/master-grey.svg" alt="" /><img src="/assets/imgs/template/icons/stripe-grey.svg" alt="" /><img src="/assets/imgs/template/icons/paypal-grey.svg" alt="" /></div>
@@ -2702,7 +2702,7 @@ const Index16 = () => (
               <div className="preview-product-info">
                 <div className="box-product-info">
                   <h3 className="mb-5">Summer Stripes Shorts</h3>
-                  <div className="block-rating"><img src="/assets/imgs/template/icons/star-fill.svg" alt="Guza" /><img src="/assets/imgs/template/icons/star-fill.svg" alt="Guza" /><img src="/assets/imgs/template/icons/star-fill.svg" alt="Guza" /><img src="/assets/imgs/template/icons/star-fill.svg" alt="Guza" /><img src="/assets/imgs/template/icons/star-none.svg" alt="Guza" /><span className="text-17 neutral-medium-dark">(5)</span></div>
+                  <div className="block-rating"><img src="/assets/imgs/template/icons/star-fill.svg" alt="Indovia" /><img src="/assets/imgs/template/icons/star-fill.svg" alt="Indovia" /><img src="/assets/imgs/template/icons/star-fill.svg" alt="Indovia" /><img src="/assets/imgs/template/icons/star-fill.svg" alt="Indovia" /><img src="/assets/imgs/template/icons/star-none.svg" alt="Indovia" /><span className="text-17 neutral-medium-dark">(5)</span></div>
                   <div className="block-price"><span className="price-main">$15.00</span><span className="price-line">$25.00</span></div>
                   <p className="body-p2 viewed-guest viewed-guest-black mb-25"><span className="text-17-medium">24 guests are viewing this product</span></p>
                   <div className="block-description">
@@ -2750,7 +2750,7 @@ const Index16 = () => (
                 <div className="box-list-product-search">
                   <div className="item-product-search">
                     <div className="cardProductStyle3 cardProductType03 cardProductType02 wow fadeInUp">
-                      <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/popup/product-1.png" alt="guza" /><img className="imageHover" src="/assets/imgs/page/popup/product-5.png" alt="guza" /></a>
+                      <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/popup/product-1.png" alt="Indovia" /><img className="imageHover" src="/assets/imgs/page/popup/product-5.png" alt="Indovia" /></a>
                         <div className="button-select"><a href="#">Select Options</a></div>
                         <div className="box-quick-button"><a className="btn" href="#">
                             <svg className="d-inline-flex align-items-center justify-content-center" width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
@@ -2792,7 +2792,7 @@ const Index16 = () => (
                   </div>
                   <div className="item-product-search">
                     <div className="cardProductStyle3 cardProductType03 cardProductType02 wow fadeInUp">
-                      <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/popup/product-2.png" alt="guza" /><img className="imageHover" src="/assets/imgs/page/popup/product-6.png" alt="guza" /></a>
+                      <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/popup/product-2.png" alt="Indovia" /><img className="imageHover" src="/assets/imgs/page/popup/product-6.png" alt="Indovia" /></a>
                         <div className="button-select"><a href="#">Select Options</a></div>
                         <div className="box-quick-button"><a className="btn" href="#">
                             <svg className="d-inline-flex align-items-center justify-content-center" width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
@@ -2834,7 +2834,7 @@ const Index16 = () => (
                   </div>
                   <div className="item-product-search">
                     <div className="cardProductStyle3 cardProductType03 cardProductType02 wow fadeInUp">
-                      <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/popup/product-3.png" alt="guza" /><img className="imageHover" src="/assets/imgs/page/popup/product-7.png" alt="guza" /></a>
+                      <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/popup/product-3.png" alt="Indovia" /><img className="imageHover" src="/assets/imgs/page/popup/product-7.png" alt="Indovia" /></a>
                         <div className="button-select"><a href="#">Select Options</a></div>
                         <div className="box-quick-button"><a className="btn" href="#">
                             <svg className="d-inline-flex align-items-center justify-content-center" width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
@@ -2876,7 +2876,7 @@ const Index16 = () => (
                   </div>
                   <div className="item-product-search">
                     <div className="cardProductStyle3 cardProductType03 cardProductType02 wow fadeInUp">
-                      <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/popup/product-4.png" alt="guza" /><img className="imageHover" src="/assets/imgs/page/popup/product-8.png" alt="guza" /></a>
+                      <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/popup/product-4.png" alt="Indovia" /><img className="imageHover" src="/assets/imgs/page/popup/product-8.png" alt="Indovia" /></a>
                         <div className="button-select"><a href="#">Select Options</a></div>
                         <div className="box-quick-button"><a className="btn" href="#">
                             <svg className="d-inline-flex align-items-center justify-content-center" width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
@@ -2996,14 +2996,14 @@ const Index16 = () => (
               </div>
               <div className="box-products-cart">
                 <div className="box-empty-cart d-none">
-                  <div className="icon-empty-cart"><img src="/assets/imgs/template/icons/empty-cart.svg" alt="Guza" /></div>
+                  <div className="icon-empty-cart"><img src="/assets/imgs/template/icons/empty-cart.svg" alt="Indovia" /></div>
                   <div className="info-empty-cart">
                     <p className="text-17 neutral-medium-dark">Your cart is empty</p><a className="link-underline" href="#">Add from Wishlist</a>
                   </div>
                 </div>
                 <div className="list-items-cart">
                   <div className="item-cart">
-                    <div className="item-cart-image"><img src="/assets/imgs/page/cart/sp.png" alt="Guza" /></div>
+                    <div className="item-cart-image"><img src="/assets/imgs/page/cart/sp.png" alt="Indovia" /></div>
                     <div className="item-cart-info">
                       <div className="item-cart-info-1"><a className="text-16-medium" href="#">Ball Crew Shirt</a>
                         <div className="box-info-size-color-product">
@@ -3023,7 +3023,7 @@ const Index16 = () => (
                     </div>
                   </div>
                   <div className="item-cart">
-                    <div className="item-cart-image"><img src="/assets/imgs/page/cart/sp2.png" alt="Guza" /></div>
+                    <div className="item-cart-image"><img src="/assets/imgs/page/cart/sp2.png" alt="Indovia" /></div>
                     <div className="item-cart-info">
                       <div className="item-cart-info-1"><a className="text-16-medium" href="#">Ball Crew Shirt</a>
                         <div className="box-info-size-color-product">
@@ -3049,7 +3049,7 @@ const Index16 = () => (
                 <div className="box-list-product-search">
                   <div className="item-product-search">
                     <div className="cardProductStyle3 cardProductType03 cardProductType02 wow fadeInUp">
-                      <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/shop1/sp.png" alt="guza" /><img className="imageHover" src="/assets/imgs/page/shop1/sp.png" alt="guza" /></a>
+                      <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/shop1/sp.png" alt="Indovia" /><img className="imageHover" src="/assets/imgs/page/shop1/sp.png" alt="Indovia" /></a>
                         <div className="button-select"><a href="#">Select Options</a></div>
                         <div className="box-quick-button"><a className="btn" href="#">
                             <svg className="d-inline-flex align-items-center justify-content-center" width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
@@ -3091,7 +3091,7 @@ const Index16 = () => (
                   </div>
                   <div className="item-product-search">
                     <div className="cardProductStyle3 cardProductType03 cardProductType02 wow fadeInUp">
-                      <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/shop1/sp2.png" alt="guza" /><img className="imageHover" src="/assets/imgs/page/shop1/sp2.png" alt="guza" /></a>
+                      <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/shop1/sp2.png" alt="Indovia" /><img className="imageHover" src="/assets/imgs/page/shop1/sp2.png" alt="Indovia" /></a>
                         <div className="button-select"><a href="#">Select Options</a></div>
                         <div className="box-quick-button"><a className="btn" href="#">
                             <svg className="d-inline-flex align-items-center justify-content-center" width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
@@ -3152,14 +3152,14 @@ const Index16 = () => (
               <h5 className="mb-15">Your Wishlist</h5>
               <div className="box-products-cart">
                 <div className="box-empty-cart d-none">
-                  <div className="icon-empty-cart"><img src="/assets/imgs/template/icons/empty-cart.svg" alt="Guza" /></div>
+                  <div className="icon-empty-cart"><img src="/assets/imgs/template/icons/empty-cart.svg" alt="Indovia" /></div>
                   <div className="info-empty-cart">
                     <p className="text-17 neutral-medium-dark">Your cart is empty</p><a className="link-underline" href="#">Add from Wishlist</a>
                   </div>
                 </div>
                 <div className="list-items-cart">
                   <div className="item-cart">
-                    <div className="item-cart-image"><img src="/assets/imgs/page/cart/sp.png" alt="Guza" /></div>
+                    <div className="item-cart-image"><img src="/assets/imgs/page/cart/sp.png" alt="Indovia" /></div>
                     <div className="item-cart-info">
                       <div className="item-cart-info-1"><a className="text-16-medium" href="#">Ball Crew Shirt</a>
                         <div className="box-info-size-color-product">
@@ -3177,7 +3177,7 @@ const Index16 = () => (
                     </div>
                   </div>
                   <div className="item-cart">
-                    <div className="item-cart-image"><img src="/assets/imgs/page/cart/sp2.png" alt="Guza" /></div>
+                    <div className="item-cart-image"><img src="/assets/imgs/page/cart/sp2.png" alt="Indovia" /></div>
                     <div className="item-cart-info">
                       <div className="item-cart-info-1"><a className="text-16-medium" href="#">Ball Crew Shirt</a>
                         <div className="box-info-size-color-product">
@@ -3195,7 +3195,7 @@ const Index16 = () => (
                     </div>
                   </div>
                   <div className="item-cart">
-                    <div className="item-cart-image"><img src="/assets/imgs/page/cart/sp3.png" alt="Guza" /></div>
+                    <div className="item-cart-image"><img src="/assets/imgs/page/cart/sp3.png" alt="Indovia" /></div>
                     <div className="item-cart-info">
                       <div className="item-cart-info-1"><a className="text-16-medium" href="#">Ball Crew Shirt</a>
                         <div className="box-info-size-color-product">
@@ -3219,7 +3219,7 @@ const Index16 = () => (
                 <div className="box-list-product-search">
                   <div className="item-product-search">
                     <div className="cardProductStyle3 cardProductType03 cardProductType02 wow fadeInUp">
-                      <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/popup/product-1.png" alt="guza" /><img className="imageHover" src="/assets/imgs/page/popup/product-5.png" alt="guza" /></a>
+                      <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/popup/product-1.png" alt="Indovia" /><img className="imageHover" src="/assets/imgs/page/popup/product-5.png" alt="Indovia" /></a>
                         <div className="button-select"><a href="#">Select Options</a></div>
                         <div className="box-quick-button"><a className="btn" href="#">
                             <svg className="d-inline-flex align-items-center justify-content-center" width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
@@ -3261,7 +3261,7 @@ const Index16 = () => (
                   </div>
                   <div className="item-product-search">
                     <div className="cardProductStyle3 cardProductType03 cardProductType02 wow fadeInUp">
-                      <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/popup/product-2.png" alt="guza" /><img className="imageHover" src="/assets/imgs/page/popup/product-6.png" alt="guza" /></a>
+                      <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/popup/product-2.png" alt="Indovia" /><img className="imageHover" src="/assets/imgs/page/popup/product-6.png" alt="Indovia" /></a>
                         <div className="button-select"><a href="#">Select Options</a></div>
                         <div className="box-quick-button"><a className="btn" href="#">
                             <svg className="d-inline-flex align-items-center justify-content-center" width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">

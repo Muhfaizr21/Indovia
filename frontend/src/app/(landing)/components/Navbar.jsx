@@ -31,10 +31,10 @@ const Navbar = () => {
     >
       <Container>
         <Link to="/" className="navbar-brand d-flex align-items-center gap-2 me-4">
-          <img src={logoSm} alt="Larkon Logo" width={32} height={30} />
+          <img src={logoSm} alt="Indovia Logo" width={32} height={30} />
           <img
             src={theme === 'dark' ? logoLight : logoDark}
-            alt="Larkon"
+            alt="Indovia"
             height={24}
             className="d-none d-sm-inline-block"
           />

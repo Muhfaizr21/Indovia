@@ -181,7 +181,7 @@ export const testimonialsData = [
   {
     name: 'Ahmad Fauzi',
     role: 'Founder & CEO di RetailTech',
-    content: 'Larkon merevolusi cara kami memantau 15 toko cabang. Dashboard-nya sangat intuitif dan performanya luar biasa cepat!',
+    content: 'Indovia merevolusi cara kami memantau 15 toko cabang. Dashboard-nya sangat intuitif dan performanya luar biasa cepat!',
     rating: 5,
     avatar: '/images/users/avatar-1.jpg'
   },

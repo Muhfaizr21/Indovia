@@ -3,13 +3,13 @@ import { Helmet } from 'react-helmet';
 const BlogSingle = () => (
   <>
     <Helmet>
-      <title>Blog Single | Larkon Store</title>
+      <title>Blog Single | Indovia Store</title>
     </Helmet>
     <div className="landing-page-blog-single">
       <header className="header sticky-bar header-type1">
             <div className="container">
               <div className="main-header">
-                <div className="header-logo"> <a className="d-flex" href="/"><img alt="luxride" src="/assets/imgs/template/logo.svg" /></a></div>
+                <div className="header-logo"> <a className="d-flex" href="/"><img alt="Indovia" src="/assets/imgs/template/logo.svg" /></a></div>
                 <div className="header-menu"> 
                   <div className="header-nav">
                     <nav className="nav-main-menu d-none d-xl-block">
@@ -29,7 +29,7 @@ const BlogSingle = () => (
                               <div className="col-menu">
                                 <h6 className="text-16-semibold mb-10 text-uppercase">Home Demo IV</h6><a href="/index-12">Oganic Store</a><a href="/index-13">Toys Store</a><a href="/index-14">Skateboard Store</a><a href="/index-19">Plants Store</a><a href="/index-20">Bikes Store</a><a href="/index-21">Baby Clothing</a><a href="/index-23">Travel gear</a><a href="/index-24">Coffee Shop</a>
                               </div>
-                              <div className="col-menu"><img src="/assets/imgs/template/banner-menu.webp" alt="Guza" /></div>
+                              <div className="col-menu"><img src="/assets/imgs/template/banner-menu.webp" alt="Indovia" /></div>
                             </div>
                           </div>
                         </li>
@@ -53,7 +53,7 @@ const BlogSingle = () => (
                               <div className="col-menu"><a href="/product-single-7">Product Single 7</a><a href="/product-single-8">Product Single 8</a><a href="/product-single-9">Product Single 9</a><a href="/product-single-10">Product Single 10</a><a href="/product-single-11">Product Single 11</a><a href="/product-single-12">Product Single 12</a></div>
                               <div className="col-menu"><a href="/product-single-13">Product Single 13</a><a href="/product-single-14">Product Single 14</a><a href="/product-single-15">Product Single 15</a><a href="/product-single-16">Product Single 16</a><a href="/product-single-17">Product Single 17</a><a href="/product-single-18">Product Single 18</a></div>
                               <div className="col-menu"><a href="/product-single-21">Product Single 21</a><a href="/product-single-20">Product Single 20</a><a href="/product-single-21">Product Single 21</a><a href="/product-single-22">Product Single 22</a><a href="/product-single-23">Product Single 23</a><a href="/product-single-24">Product Single 24</a></div>
-                              <div className="col-menu"><img src="/assets/imgs/template/banner-menu-2.png" alt="Guza" /></div>
+                              <div className="col-menu"><img src="/assets/imgs/template/banner-menu-2.png" alt="Indovia" /></div>
                             </div>
                           </div>
                         </li>
@@ -138,8 +138,8 @@ const BlogSingle = () => (
             <div className="mobile-header-wrapper-inner">
               <div className="mobile-header-content-area">
                 <div className="mobile-menu-head">
-                  <div className="box-head-1"><a className="link-underline mr-20 account-icon account" href="#">Login</a><a className="link-underline account-icon account" href="#">Sign Up</a><a className="close-mobile" href="#"><img src="/assets/imgs/template/icons/close.svg" alt="Guza" /></a></div>
-                  <div className="box-head-2"><a className="back-mobile" href="#"><img src="/assets/imgs/template/icons/back.svg" alt="Guza" /></a></div>
+                  <div className="box-head-1"><a className="link-underline mr-20 account-icon account" href="#">Login</a><a className="link-underline account-icon account" href="#">Sign Up</a><a className="close-mobile" href="#"><img src="/assets/imgs/template/icons/close.svg" alt="Indovia" /></a></div>
+                  <div className="box-head-2"><a className="back-mobile" href="#"><img src="/assets/imgs/template/icons/back.svg" alt="Indovia" /></a></div>
                 </div>
                 <div className="perfect-scroll">
                   <div className="mobile-menu-wrap mobile-header-border">
@@ -279,7 +279,7 @@ const BlogSingle = () => (
                     <div className="meta-post text-17"><span className="neutral-medium">Posted by</span><span>Kevin</span><span className="neutral-medium">on</span><span>March 30, 2022</span></div>
                   </div>
                 </div>
-                <div className="blog-content"><img className="w-100" src="/assets/imgs/page/blog/single.png" alt="Guza" />
+                <div className="blog-content"><img className="w-100" src="/assets/imgs/page/blog/single.png" alt="Indovia" />
                   <div className="blog-content-inner">
                     <h5>Tree doesn’t good void, waters without created</h5>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc pretium nisi sed ante convallis scelerisque. Donec aliquet massa vel mollis sagittis. Fusce eu lectus ac magna vehicula malesuada. Aenean accumsan maximus feugiat. Phasellus laoreet, ipsum eget egestas euismod, quam nulla pretium turpis, quis posuere tortor mi eget orci. quam nulla pretium turpis, quis posuere tortor mi eget orci.</p>
@@ -290,8 +290,8 @@ const BlogSingle = () => (
                       <li>Fly make saw creeping evening make void own seasons behold.</li>
                     </ul>
                     <div className="row">
-                      <div className="col-md-6"><img className="w-100" src="/assets/imgs/page/blog/single-1.png" alt="Guza" /></div>
-                      <div className="col-md-6"><img className="w-100" src="/assets/imgs/page/blog/single-2.png" alt="Guza" /></div>
+                      <div className="col-md-6"><img className="w-100" src="/assets/imgs/page/blog/single-1.png" alt="Indovia" /></div>
+                      <div className="col-md-6"><img className="w-100" src="/assets/imgs/page/blog/single-2.png" alt="Indovia" /></div>
                     </div>
                     <h5>Tree doesn’t good void, waters without created</h5>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc pretium nisi sed ante convallis scelerisque. Donec aliquet massa vel mollis sagittis. Fusce eu lectus ac magna vehicula malesuada. Aenean accumsan maximus feugiat. Phasellus laoreet, ipsum eget egestas euismod, quam nulla pretium turpis, quis posuere tortor mi eget orci. Aliquam cursus enim urna, ut congue leo tristique id. Quisque quis diam at ipsum facilisis mollis. Nulla bibendum ornare libero, sed eleifend urna tincidunt sed. Vestibulum sit amet malesuada neque, vitae tincidunt enim. Etiam ut vestibulum felis. Nulla bibendum ornare libero, sed eleifend urna tincidunt sed. Vestibulum sit amet malesuada neque, vitae tincidunt enim.</p>
@@ -300,7 +300,7 @@ const BlogSingle = () => (
                     <div className="block-tag-share">
                       <div className="block-tags"><span className="text-17 mr-20">Tags</span><a className="btn btn-tag-filter" href="#">Collection</a><a className="btn btn-tag-filter" href="#">Makeup</a><a className="btn btn-tag-filter" href="#">Jacket</a></div>
                       <div className="block-shares"><span className="text-17 mr-20">Share</span>
-                        <div className="socials"><a href="#"><img src="/assets/imgs/template/icons/fb.svg" alt="Guza" /></a><a href="#"><img src="/assets/imgs/template/icons/insta.svg" alt="Guza" /></a><a href="#"><img src="/assets/imgs/template/icons/tw.svg" alt="Guza" /></a></div>
+                        <div className="socials"><a href="#"><img src="/assets/imgs/template/icons/fb.svg" alt="Indovia" /></a><a href="#"><img src="/assets/imgs/template/icons/insta.svg" alt="Indovia" /></a><a href="#"><img src="/assets/imgs/template/icons/tw.svg" alt="Indovia" /></a></div>
                       </div>
                     </div>
                     <div className="block-related-post">
@@ -308,7 +308,7 @@ const BlogSingle = () => (
                       <div className="row">
                         <div className="col-lg-4 col-md-6">
                           <div className="cardBlog wow fadeInUp">
-                            <div className="cardImage"><a href="#"><img src="/assets/imgs/page/homepage2/blog1.png" alt="guza" /></a></div>
+                            <div className="cardImage"><a href="#"><img src="/assets/imgs/page/homepage2/blog1.png" alt="Indovia" /></a></div>
                             <div className="cardInfo">
                               <div className="cardTags"><a href="#">Fashion</a><span className="date-post">DEC 1, 2022</span></div><a className="cardTitle" href="#">
                                 <h6>The Best Winter Trend for 2022/2023</h6></a>
@@ -317,7 +317,7 @@ const BlogSingle = () => (
                         </div>
                         <div className="col-lg-4 col-md-6">
                           <div className="cardBlog wow fadeInUp">
-                            <div className="cardImage"><a href="#"><img src="/assets/imgs/page/homepage2/blog2.png" alt="guza" /></a></div>
+                            <div className="cardImage"><a href="#"><img src="/assets/imgs/page/homepage2/blog2.png" alt="Indovia" /></a></div>
                             <div className="cardInfo">
                               <div className="cardTags"><a href="#">Fashion</a><span className="date-post">DEC 1, 2022</span></div><a className="cardTitle" href="#">
                                 <h6>The Best Winter Trend for 2022/2023</h6></a>
@@ -326,7 +326,7 @@ const BlogSingle = () => (
                         </div>
                         <div className="col-lg-4 col-md-6">
                           <div className="cardBlog wow fadeInUp">
-                            <div className="cardImage"><a href="#"><img src="/assets/imgs/page/homepage2/blog3.png" alt="guza" /></a></div>
+                            <div className="cardImage"><a href="#"><img src="/assets/imgs/page/homepage2/blog3.png" alt="Indovia" /></a></div>
                             <div className="cardInfo">
                               <div className="cardTags"><a href="#">Fashion</a><span className="date-post">DEC 1, 2022</span></div><a className="cardTitle" href="#">
                                 <h6>The Best Winter Trend for 2022/2023</h6></a>
@@ -339,7 +339,7 @@ const BlogSingle = () => (
                       <h4 className="mb-30">Comments</h4>
                       <div className="list-comments">
                         <div className="item-comment">
-                          <div className="comment-image"><img src="/assets/imgs/page/blog/avatar.png" alt="Guza" /></div>
+                          <div className="comment-image"><img src="/assets/imgs/page/blog/avatar.png" alt="Indovia" /></div>
                           <div className="comment-info">
                             <div className="comment-info-top">
                               <div className="comment-author-name">Ryan Lubin</div>
@@ -351,7 +351,7 @@ const BlogSingle = () => (
                           </div>
                         </div>
                         <div className="item-comment">
-                          <div className="comment-image"><img src="/assets/imgs/page/blog/avatar2.png" alt="Guza" /></div>
+                          <div className="comment-image"><img src="/assets/imgs/page/blog/avatar2.png" alt="Indovia" /></div>
                           <div className="comment-info">
                             <div className="comment-info-top">
                               <div className="comment-author-name">Talan Korsgaard</div>
@@ -363,7 +363,7 @@ const BlogSingle = () => (
                           </div>
                         </div>
                         <div className="item-comment">
-                          <div className="comment-image"><img src="/assets/imgs/page/blog/avatar3.png" alt="Guza" /></div>
+                          <div className="comment-image"><img src="/assets/imgs/page/blog/avatar3.png" alt="Indovia" /></div>
                           <div className="comment-info">
                             <div className="comment-info-top">
                               <div className="comment-author-name">Skylar Press</div>
@@ -477,10 +477,10 @@ const BlogSingle = () => (
               <div className="container">
                 <div className="footer-bottom">
                   <div className="row align-items-center">
-                    <div className="col-lg-6 col-md-12 text-center text-lg-start mb-20"><img className="mr-25 d-inline-block align-middle logo-footer-img" src="/assets/imgs/template/logo-light.svg" alt="Guza" /><span className="body-p1 color-white d-inline-block align-middle">© 2023 Guza.Co. All rights reserved</span></div>
+                    <div className="col-lg-6 col-md-12 text-center text-lg-start mb-20"><img className="mr-25 d-inline-block align-middle logo-footer-img" src="/assets/imgs/template/logo-light.svg" alt="Indovia" /><span className="body-p1 color-white d-inline-block align-middle">© 2023 Indovia.Co. All rights reserved</span></div>
                     <div className="col-lg-6 col-md-12 text-center text-lg-end mb-20">
                       <div className="d-flex justify-content-center justify-content-lg-end align-items-center box-all-payments">
-                        <div className="d-inline-block box-payments mr-20"><img src="/assets/imgs/template/icons/visa.svg" alt="Guza" /><img src="/assets/imgs/template/icons/master.svg" alt="Guza" /><img src="/assets/imgs/template/icons/stripe.svg" alt="Guza" /><img src="/assets/imgs/template/icons/paypal.svg" alt="Guza" /></div>
+                        <div className="d-inline-block box-payments mr-20"><img src="/assets/imgs/template/icons/visa.svg" alt="Indovia" /><img src="/assets/imgs/template/icons/master.svg" alt="Indovia" /><img src="/assets/imgs/template/icons/stripe.svg" alt="Indovia" /><img src="/assets/imgs/template/icons/paypal.svg" alt="Indovia" /></div>
                         <div className="dropdown mr-20">
                           <button className="btn btn-line-bottom dropdown-toggle" id="dropdownLang" type="button" data-bs-toggle="dropdown" aria-expanded="false">EN</button>
                           <ul className="dropdown-menu" aria-labelledby="dropdownLang">
@@ -524,7 +524,7 @@ const BlogSingle = () => (
               <div className="preview-product-info">
                 <div className="box-product-info">
                   <h3 className="mb-5">Summer Stripes Shorts</h3>
-                  <div className="block-rating"><img src="/assets/imgs/template/icons/star-fill.svg" alt="Guza" /><img src="/assets/imgs/template/icons/star-fill.svg" alt="Guza" /><img src="/assets/imgs/template/icons/star-fill.svg" alt="Guza" /><img src="/assets/imgs/template/icons/star-fill.svg" alt="Guza" /><img src="/assets/imgs/template/icons/star-none.svg" alt="Guza" /><span className="text-17 neutral-medium-dark">(5)</span></div>
+                  <div className="block-rating"><img src="/assets/imgs/template/icons/star-fill.svg" alt="Indovia" /><img src="/assets/imgs/template/icons/star-fill.svg" alt="Indovia" /><img src="/assets/imgs/template/icons/star-fill.svg" alt="Indovia" /><img src="/assets/imgs/template/icons/star-fill.svg" alt="Indovia" /><img src="/assets/imgs/template/icons/star-none.svg" alt="Indovia" /><span className="text-17 neutral-medium-dark">(5)</span></div>
                   <div className="block-price"><span className="price-main">$15.00</span><span className="price-line">$25.00</span></div>
                   <p className="body-p2 viewed-guest viewed-guest-black mb-25"><span className="text-17-medium">24 guests are viewing this product</span></p>
                   <div className="block-description">
@@ -572,7 +572,7 @@ const BlogSingle = () => (
                 <div className="box-list-product-search">
                   <div className="item-product-search">
                     <div className="cardProductStyle3 cardProductType03 cardProductType02 wow fadeInUp">
-                      <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/popup/product-1.png" alt="guza" /><img className="imageHover" src="/assets/imgs/page/popup/product-5.png" alt="guza" /></a>
+                      <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/popup/product-1.png" alt="Indovia" /><img className="imageHover" src="/assets/imgs/page/popup/product-5.png" alt="Indovia" /></a>
                         <div className="button-select"><a href="#">Select Options</a></div>
                         <div className="box-quick-button"><a className="btn" href="#">
                             <svg className="d-inline-flex align-items-center justify-content-center" width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
@@ -614,7 +614,7 @@ const BlogSingle = () => (
                   </div>
                   <div className="item-product-search">
                     <div className="cardProductStyle3 cardProductType03 cardProductType02 wow fadeInUp">
-                      <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/popup/product-2.png" alt="guza" /><img className="imageHover" src="/assets/imgs/page/popup/product-6.png" alt="guza" /></a>
+                      <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/popup/product-2.png" alt="Indovia" /><img className="imageHover" src="/assets/imgs/page/popup/product-6.png" alt="Indovia" /></a>
                         <div className="button-select"><a href="#">Select Options</a></div>
                         <div className="box-quick-button"><a className="btn" href="#">
                             <svg className="d-inline-flex align-items-center justify-content-center" width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
@@ -656,7 +656,7 @@ const BlogSingle = () => (
                   </div>
                   <div className="item-product-search">
                     <div className="cardProductStyle3 cardProductType03 cardProductType02 wow fadeInUp">
-                      <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/popup/product-3.png" alt="guza" /><img className="imageHover" src="/assets/imgs/page/popup/product-7.png" alt="guza" /></a>
+                      <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/popup/product-3.png" alt="Indovia" /><img className="imageHover" src="/assets/imgs/page/popup/product-7.png" alt="Indovia" /></a>
                         <div className="button-select"><a href="#">Select Options</a></div>
                         <div className="box-quick-button"><a className="btn" href="#">
                             <svg className="d-inline-flex align-items-center justify-content-center" width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
@@ -698,7 +698,7 @@ const BlogSingle = () => (
                   </div>
                   <div className="item-product-search">
                     <div className="cardProductStyle3 cardProductType03 cardProductType02 wow fadeInUp">
-                      <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/popup/product-4.png" alt="guza" /><img className="imageHover" src="/assets/imgs/page/popup/product-8.png" alt="guza" /></a>
+                      <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/popup/product-4.png" alt="Indovia" /><img className="imageHover" src="/assets/imgs/page/popup/product-8.png" alt="Indovia" /></a>
                         <div className="button-select"><a href="#">Select Options</a></div>
                         <div className="box-quick-button"><a className="btn" href="#">
                             <svg className="d-inline-flex align-items-center justify-content-center" width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
@@ -818,14 +818,14 @@ const BlogSingle = () => (
               </div>
               <div className="box-products-cart">
                 <div className="box-empty-cart d-none">
-                  <div className="icon-empty-cart"><img src="/assets/imgs/template/icons/empty-cart.svg" alt="Guza" /></div>
+                  <div className="icon-empty-cart"><img src="/assets/imgs/template/icons/empty-cart.svg" alt="Indovia" /></div>
                   <div className="info-empty-cart">
                     <p className="text-17 neutral-medium-dark">Your cart is empty</p><a className="link-underline" href="#">Add from Wishlist</a>
                   </div>
                 </div>
                 <div className="list-items-cart">
                   <div className="item-cart">
-                    <div className="item-cart-image"><img src="/assets/imgs/page/cart/sp.png" alt="Guza" /></div>
+                    <div className="item-cart-image"><img src="/assets/imgs/page/cart/sp.png" alt="Indovia" /></div>
                     <div className="item-cart-info">
                       <div className="item-cart-info-1"><a className="text-16-medium" href="#">Ball Crew Shirt</a>
                         <div className="box-info-size-color-product">
@@ -845,7 +845,7 @@ const BlogSingle = () => (
                     </div>
                   </div>
                   <div className="item-cart">
-                    <div className="item-cart-image"><img src="/assets/imgs/page/cart/sp2.png" alt="Guza" /></div>
+                    <div className="item-cart-image"><img src="/assets/imgs/page/cart/sp2.png" alt="Indovia" /></div>
                     <div className="item-cart-info">
                       <div className="item-cart-info-1"><a className="text-16-medium" href="#">Ball Crew Shirt</a>
                         <div className="box-info-size-color-product">
@@ -871,7 +871,7 @@ const BlogSingle = () => (
                 <div className="box-list-product-search">
                   <div className="item-product-search">
                     <div className="cardProductStyle3 cardProductType03 cardProductType02 wow fadeInUp">
-                      <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/shop1/sp.png" alt="guza" /><img className="imageHover" src="/assets/imgs/page/shop1/sp.png" alt="guza" /></a>
+                      <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/shop1/sp.png" alt="Indovia" /><img className="imageHover" src="/assets/imgs/page/shop1/sp.png" alt="Indovia" /></a>
                         <div className="button-select"><a href="#">Select Options</a></div>
                         <div className="box-quick-button"><a className="btn" href="#">
                             <svg className="d-inline-flex align-items-center justify-content-center" width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
@@ -913,7 +913,7 @@ const BlogSingle = () => (
                   </div>
                   <div className="item-product-search">
                     <div className="cardProductStyle3 cardProductType03 cardProductType02 wow fadeInUp">
-                      <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/shop1/sp2.png" alt="guza" /><img className="imageHover" src="/assets/imgs/page/shop1/sp2.png" alt="guza" /></a>
+                      <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/shop1/sp2.png" alt="Indovia" /><img className="imageHover" src="/assets/imgs/page/shop1/sp2.png" alt="Indovia" /></a>
                         <div className="button-select"><a href="#">Select Options</a></div>
                         <div className="box-quick-button"><a className="btn" href="#">
                             <svg className="d-inline-flex align-items-center justify-content-center" width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
@@ -974,14 +974,14 @@ const BlogSingle = () => (
               <h5 className="mb-15">Your Wishlist</h5>
               <div className="box-products-cart">
                 <div className="box-empty-cart d-none">
-                  <div className="icon-empty-cart"><img src="/assets/imgs/template/icons/empty-cart.svg" alt="Guza" /></div>
+                  <div className="icon-empty-cart"><img src="/assets/imgs/template/icons/empty-cart.svg" alt="Indovia" /></div>
                   <div className="info-empty-cart">
                     <p className="text-17 neutral-medium-dark">Your cart is empty</p><a className="link-underline" href="#">Add from Wishlist</a>
                   </div>
                 </div>
                 <div className="list-items-cart">
                   <div className="item-cart">
-                    <div className="item-cart-image"><img src="/assets/imgs/page/cart/sp.png" alt="Guza" /></div>
+                    <div className="item-cart-image"><img src="/assets/imgs/page/cart/sp.png" alt="Indovia" /></div>
                     <div className="item-cart-info">
                       <div className="item-cart-info-1"><a className="text-16-medium" href="#">Ball Crew Shirt</a>
                         <div className="box-info-size-color-product">
@@ -999,7 +999,7 @@ const BlogSingle = () => (
                     </div>
                   </div>
                   <div className="item-cart">
-                    <div className="item-cart-image"><img src="/assets/imgs/page/cart/sp2.png" alt="Guza" /></div>
+                    <div className="item-cart-image"><img src="/assets/imgs/page/cart/sp2.png" alt="Indovia" /></div>
                     <div className="item-cart-info">
                       <div className="item-cart-info-1"><a className="text-16-medium" href="#">Ball Crew Shirt</a>
                         <div className="box-info-size-color-product">
@@ -1017,7 +1017,7 @@ const BlogSingle = () => (
                     </div>
                   </div>
                   <div className="item-cart">
-                    <div className="item-cart-image"><img src="/assets/imgs/page/cart/sp3.png" alt="Guza" /></div>
+                    <div className="item-cart-image"><img src="/assets/imgs/page/cart/sp3.png" alt="Indovia" /></div>
                     <div className="item-cart-info">
                       <div className="item-cart-info-1"><a className="text-16-medium" href="#">Ball Crew Shirt</a>
                         <div className="box-info-size-color-product">
@@ -1041,7 +1041,7 @@ const BlogSingle = () => (
                 <div className="box-list-product-search">
                   <div className="item-product-search">
                     <div className="cardProductStyle3 cardProductType03 cardProductType02 wow fadeInUp">
-                      <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/popup/product-1.png" alt="guza" /><img className="imageHover" src="/assets/imgs/page/popup/product-5.png" alt="guza" /></a>
+                      <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/popup/product-1.png" alt="Indovia" /><img className="imageHover" src="/assets/imgs/page/popup/product-5.png" alt="Indovia" /></a>
                         <div className="button-select"><a href="#">Select Options</a></div>
                         <div className="box-quick-button"><a className="btn" href="#">
                             <svg className="d-inline-flex align-items-center justify-content-center" width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
@@ -1083,7 +1083,7 @@ const BlogSingle = () => (
                   </div>
                   <div className="item-product-search">
                     <div className="cardProductStyle3 cardProductType03 cardProductType02 wow fadeInUp">
-                      <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/popup/product-2.png" alt="guza" /><img className="imageHover" src="/assets/imgs/page/popup/product-6.png" alt="guza" /></a>
+                      <div className="cardImage"><a href="#"><img className="imageMain" src="/assets/imgs/page/popup/product-2.png" alt="Indovia" /><img className="imageHover" src="/assets/imgs/page/popup/product-6.png" alt="Indovia" /></a>
                         <div className="button-select"><a href="#">Select Options</a></div>
                         <div className="box-quick-button"><a className="btn" href="#">
                             <svg className="d-inline-flex align-items-center justify-content-center" width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">

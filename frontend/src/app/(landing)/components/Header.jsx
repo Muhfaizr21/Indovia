@@ -27,7 +27,7 @@ const Header = () => {
                         <div className="col-menu">
                           <h6 className="text-16-semibold mb-10 text-uppercase">Home Demo IV</h6><a href="index-12.html">Oganic Store</a><a href="index-13.html">Toys Store</a><a href="index-14.html">Skateboard Store</a><a href="index-19.html">Plants Store</a><a href="index-20.html">Bikes Store</a><a href="index-21.html">Baby Clothing</a><a href="index-23.html">Travel gear</a><a href="index-24.html">Coffee Shop</a>
                         </div>
-                        <div className="col-menu"><img src="/assets/imgs/template/banner-menu.webp" alt="Guza" /></div>
+                        <div className="col-menu"><img src="/assets/imgs/template/banner-menu.webp" alt="Indovia" /></div>
                       </div>
                     </div>
                   </li>
@@ -51,7 +51,7 @@ const Header = () => {
                         <div className="col-menu"><a href="product-single-7.html">Product Single 7</a><a href="product-single-8.html">Product Single 8</a><a href="product-single-9.html">Product Single 9</a><a href="product-single-10.html">Product Single 10</a><a href="product-single-11.html">Product Single 11</a><a href="product-single-12.html">Product Single 12</a></div>
                         <div className="col-menu"><a href="product-single-13.html">Product Single 13</a><a href="product-single-14.html">Product Single 14</a><a href="product-single-15.html">Product Single 15</a><a href="product-single-16.html">Product Single 16</a><a href="product-single-17.html">Product Single 17</a><a href="product-single-18.html">Product Single 18</a></div>
                         <div className="col-menu"><a href="product-single-21.html">Product Single 21</a><a href="product-single-20.html">Product Single 20</a><a href="product-single-21.html">Product Single 21</a><a href="product-single-22.html">Product Single 22</a><a href="product-single-23.html">Product Single 23</a><a href="product-single-24.html">Product Single 24</a></div>
-                        <div className="col-menu"><img src="/assets/imgs/template/banner-menu-2.png" alt="Guza" /></div>
+                        <div className="col-menu"><img src="/assets/imgs/template/banner-menu-2.png" alt="Indovia" /></div>
                       </div>
                     </div>
                   </li>

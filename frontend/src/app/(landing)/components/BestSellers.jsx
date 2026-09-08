@@ -26,7 +26,7 @@ const BestSellers = () => {
               <div className="row"> 
                 <div className="col-lg-3 col-md-4 col-sm-6"> 
                   <div className="cardProduct wow fadeInUp">
-                    <div className="cardImage"><Link to="#"><img className="imageMain" src="/assets/imgs/page/homepage1/product1.png" alt="guza" /><img className="imageHover" src="/assets/imgs/page/homepage1/product1-hover.png" alt="guza" /></Link>
+                    <div className="cardImage"><Link to="#"><img className="imageMain" src="/assets/imgs/page/homepage1/product1.png" alt="indovia" /><img className="imageHover" src="/assets/imgs/page/homepage1/product1-hover.png" alt="indovia" /></Link>
                       <div className="button-select"><Link to="#">Select Options</Link></div>
                       <div className="box-quick-button"><Link className="btn" to="#">
                           <svg className="d-inline-flex align-items-center justify-content-center" width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
@@ -73,7 +73,7 @@ const BestSellers = () => {
                 </div>
                 <div className="col-lg-3 col-md-4 col-sm-6"> 
                   <div className="cardProduct wow fadeInUp">
-                    <div className="cardImage"><Link to="#"><img className="imageMain" src="/assets/imgs/page/homepage1/product2.png" alt="guza" /><img className="imageHover" src="/assets/imgs/page/homepage1/product2-hover.png" alt="guza" /></Link>
+                    <div className="cardImage"><Link to="#"><img className="imageMain" src="/assets/imgs/page/homepage1/product2.png" alt="indovia" /><img className="imageHover" src="/assets/imgs/page/homepage1/product2-hover.png" alt="indovia" /></Link>
                       <div className="button-select"><Link to="#">Select Options</Link></div>
                       <div className="box-quick-button"><Link className="btn" to="#">
                           <svg className="d-inline-flex align-items-center justify-content-center" width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
@@ -120,7 +120,7 @@ const BestSellers = () => {
                 </div>
                 <div className="col-lg-3 col-md-4 col-sm-6"> 
                   <div className="cardProduct wow fadeInUp">
-                    <div className="cardImage"><Link to="#"><img className="imageMain" src="/assets/imgs/page/homepage1/product3.png" alt="guza" /><img className="imageHover" src="/assets/imgs/page/homepage1/product1-hover.png" alt="guza" /></Link>
+                    <div className="cardImage"><Link to="#"><img className="imageMain" src="/assets/imgs/page/homepage1/product3.png" alt="indovia" /><img className="imageHover" src="/assets/imgs/page/homepage1/product1-hover.png" alt="indovia" /></Link>
                       <div className="button-select"><Link to="#">Select Options</Link></div>
                       <div className="box-quick-button"><Link className="btn" to="#">
                           <svg className="d-inline-flex align-items-center justify-content-center" width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
@@ -167,7 +167,7 @@ const BestSellers = () => {
                 </div>
                 <div className="col-lg-3 col-md-4 col-sm-6"> 
                   <div className="cardProduct wow fadeInUp">
-                    <div className="cardImage"><Link to="#"><img className="imageMain" src="/assets/imgs/page/homepage1/product4.png" alt="guza" /><img className="imageHover" src="/assets/imgs/page/homepage1/product2-hover.png" alt="guza" /></Link>
+                    <div className="cardImage"><Link to="#"><img className="imageMain" src="/assets/imgs/page/homepage1/product4.png" alt="indovia" /><img className="imageHover" src="/assets/imgs/page/homepage1/product2-hover.png" alt="indovia" /></Link>
                       <div className="button-select"><Link to="#">Select Options</Link></div>
                       <div className="box-quick-button"><Link className="btn" to="#">
                           <svg className="d-inline-flex align-items-center justify-content-center" width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
@@ -214,7 +214,7 @@ const BestSellers = () => {
                 </div>
                 <div className="col-lg-3 col-md-4 col-sm-6"> 
                   <div className="cardProduct wow fadeInUp">
-                    <div className="cardImage"><Link to="#"><img className="imageMain" src="/assets/imgs/page/homepage1/product5.png" alt="guza" /><img className="imageHover" src="/assets/imgs/page/homepage1/product1-hover.png" alt="guza" /></Link>
+                    <div className="cardImage"><Link to="#"><img className="imageMain" src="/assets/imgs/page/homepage1/product5.png" alt="indovia" /><img className="imageHover" src="/assets/imgs/page/homepage1/product1-hover.png" alt="indovia" /></Link>
                       <div className="button-select"><Link to="#">Select Options</Link></div>
                       <div className="box-quick-button"><Link className="btn" to="#">
                           <svg className="d-inline-flex align-items-center justify-content-center" width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
@@ -261,7 +261,7 @@ const BestSellers = () => {
                 </div>
                 <div className="col-lg-3 col-md-4 col-sm-6"> 
                   <div className="cardProduct wow fadeInUp">
-                    <div className="cardImage"><Link to="#"><img className="imageMain" src="/assets/imgs/page/homepage1/product6.png" alt="guza" /><img className="imageHover" src="/assets/imgs/page/homepage1/product2-hover.png" alt="guza" /></Link>
+                    <div className="cardImage"><Link to="#"><img className="imageMain" src="/assets/imgs/page/homepage1/product6.png" alt="indovia" /><img className="imageHover" src="/assets/imgs/page/homepage1/product2-hover.png" alt="indovia" /></Link>
                       <div className="button-select"><Link to="#">Select Options</Link></div>
                       <div className="box-quick-button"><Link className="btn" to="#">
                           <svg className="d-inline-flex align-items-center justify-content-center" width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
@@ -308,7 +308,7 @@ const BestSellers = () => {
                 </div>
                 <div className="col-lg-3 col-md-4 col-sm-6"> 
                   <div className="cardProduct wow fadeInUp">
-                    <div className="cardImage"><Link to="#"><img className="imageMain" src="/assets/imgs/page/homepage1/product7.png" alt="guza" /><img className="imageHover" src="/assets/imgs/page/homepage1/product1-hover.png" alt="guza" /></Link>
+                    <div className="cardImage"><Link to="#"><img className="imageMain" src="/assets/imgs/page/homepage1/product7.png" alt="indovia" /><img className="imageHover" src="/assets/imgs/page/homepage1/product1-hover.png" alt="indovia" /></Link>
                       <div className="button-select"><Link to="#">Select Options</Link></div>
                       <div className="box-quick-button"><Link className="btn" to="#">
                           <svg className="d-inline-flex align-items-center justify-content-center" width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
@@ -355,7 +355,7 @@ const BestSellers = () => {
                 </div>
                 <div className="col-lg-3 col-md-4 col-sm-6"> 
                   <div className="cardProduct wow fadeInUp">
-                    <div className="cardImage"><Link to="#"><img className="imageMain" src="/assets/imgs/page/homepage1/product8.png" alt="guza" /><img className="imageHover" src="/assets/imgs/page/homepage1/product2-hover.png" alt="guza" /></Link>
+                    <div className="cardImage"><Link to="#"><img className="imageMain" src="/assets/imgs/page/homepage1/product8.png" alt="indovia" /><img className="imageHover" src="/assets/imgs/page/homepage1/product2-hover.png" alt="indovia" /></Link>
                       <div className="button-select"><Link to="#">Select Options</Link></div>
                       <div className="box-quick-button"><Link className="btn" to="#">
                           <svg className="d-inline-flex align-items-center justify-content-center" width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
@@ -407,7 +407,7 @@ const BestSellers = () => {
               <div className="row"> 
                 <div className="col-lg-3 col-md-4 col-sm-6"> 
                   <div className="cardProduct wow fadeInUp">
-                    <div className="cardImage"><Link to="#"><img className="imageMain" src="/assets/imgs/page/homepage1/product8.png" alt="guza" /><img className="imageHover" src="/assets/imgs/page/homepage1/product1-hover.png" alt="guza" /></Link>
+                    <div className="cardImage"><Link to="#"><img className="imageMain" src="/assets/imgs/page/homepage1/product8.png" alt="indovia" /><img className="imageHover" src="/assets/imgs/page/homepage1/product1-hover.png" alt="indovia" /></Link>
                       <div className="button-select"><Link to="#">Select Options</Link></div>
                       <div className="box-quick-button"><Link className="btn" to="#">
                           <svg className="d-inline-flex align-items-center justify-content-center" width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
@@ -454,7 +454,7 @@ const BestSellers = () => {
                 </div>
                 <div className="col-lg-3 col-md-4 col-sm-6"> 
                   <div className="cardProduct wow fadeInUp">
-                    <div className="cardImage"><Link to="#"><img className="imageMain" src="/assets/imgs/page/homepage1/product7.png" alt="guza" /><img className="imageHover" src="/assets/imgs/page/homepage1/product2-hover.png" alt="guza" /></Link>
+                    <div className="cardImage"><Link to="#"><img className="imageMain" src="/assets/imgs/page/homepage1/product7.png" alt="indovia" /><img className="imageHover" src="/assets/imgs/page/homepage1/product2-hover.png" alt="indovia" /></Link>
                       <div className="button-select"><Link to="#">Select Options</Link></div>
                       <div className="box-quick-button"><Link className="btn" to="#">
                           <svg className="d-inline-flex align-items-center justify-content-center" width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
@@ -501,7 +501,7 @@ const BestSellers = () => {
                 </div>
                 <div className="col-lg-3 col-md-4 col-sm-6"> 
                   <div className="cardProduct wow fadeInUp">
-                    <div className="cardImage"><Link to="#"><img className="imageMain" src="/assets/imgs/page/homepage1/product6.png" alt="guza" /><img className="imageHover" src="/assets/imgs/page/homepage1/product1-hover.png" alt="guza" /></Link>
+                    <div className="cardImage"><Link to="#"><img className="imageMain" src="/assets/imgs/page/homepage1/product6.png" alt="indovia" /><img className="imageHover" src="/assets/imgs/page/homepage1/product1-hover.png" alt="indovia" /></Link>
                       <div className="button-select"><Link to="#">Select Options</Link></div>
                       <div className="box-quick-button"><Link className="btn" to="#">
                           <svg className="d-inline-flex align-items-center justify-content-center" width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
@@ -548,7 +548,7 @@ const BestSellers = () => {
                 </div>
                 <div className="col-lg-3 col-md-4 col-sm-6"> 
                   <div className="cardProduct wow fadeInUp">
-                    <div className="cardImage"><Link to="#"><img className="imageMain" src="/assets/imgs/page/homepage1/product5.png" alt="guza" /><img className="imageHover" src="/assets/imgs/page/homepage1/product2-hover.png" alt="guza" /></Link>
+                    <div className="cardImage"><Link to="#"><img className="imageMain" src="/assets/imgs/page/homepage1/product5.png" alt="indovia" /><img className="imageHover" src="/assets/imgs/page/homepage1/product2-hover.png" alt="indovia" /></Link>
                       <div className="button-select"><Link to="#">Select Options</Link></div>
                       <div className="box-quick-button"><Link className="btn" to="#">
                           <svg className="d-inline-flex align-items-center justify-content-center" width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
@@ -595,7 +595,7 @@ const BestSellers = () => {
                 </div>
                 <div className="col-lg-3 col-md-4 col-sm-6"> 
                   <div className="cardProduct wow fadeInUp">
-                    <div className="cardImage"><Link to="#"><img className="imageMain" src="/assets/imgs/page/homepage1/product4.png" alt="guza" /><img className="imageHover" src="/assets/imgs/page/homepage1/product1-hover.png" alt="guza" /></Link>
+                    <div className="cardImage"><Link to="#"><img className="imageMain" src="/assets/imgs/page/homepage1/product4.png" alt="indovia" /><img className="imageHover" src="/assets/imgs/page/homepage1/product1-hover.png" alt="indovia" /></Link>
                       <div className="button-select"><Link to="#">Select Options</Link></div>
                       <div className="box-quick-button"><Link className="btn" to="#">
                           <svg className="d-inline-flex align-items-center justify-content-center" width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
@@ -642,7 +642,7 @@ const BestSellers = () => {
                 </div>
                 <div className="col-lg-3 col-md-4 col-sm-6"> 
                   <div className="cardProduct wow fadeInUp">
-                    <div className="cardImage"><Link to="#"><img className="imageMain" src="/assets/imgs/page/homepage1/product3.png" alt="guza" /><img className="imageHover" src="/assets/imgs/page/homepage1/product2-hover.png" alt="guza" /></Link>
+                    <div className="cardImage"><Link to="#"><img className="imageMain" src="/assets/imgs/page/homepage1/product3.png" alt="indovia" /><img className="imageHover" src="/assets/imgs/page/homepage1/product2-hover.png" alt="indovia" /></Link>
                       <div className="button-select"><Link to="#">Select Options</Link></div>
                       <div className="box-quick-button"><Link className="btn" to="#">
                           <svg className="d-inline-flex align-items-center justify-content-center" width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
@@ -689,7 +689,7 @@ const BestSellers = () => {
                 </div>
                 <div className="col-lg-3 col-md-4 col-sm-6"> 
                   <div className="cardProduct wow fadeInUp">
-                    <div className="cardImage"><Link to="#"><img className="imageMain" src="/assets/imgs/page/homepage1/product2.png" alt="guza" /><img className="imageHover" src="/assets/imgs/page/homepage1/product1-hover.png" alt="guza" /></Link>
+                    <div className="cardImage"><Link to="#"><img className="imageMain" src="/assets/imgs/page/homepage1/product2.png" alt="indovia" /><img className="imageHover" src="/assets/imgs/page/homepage1/product1-hover.png" alt="indovia" /></Link>
                       <div className="button-select"><Link to="#">Select Options</Link></div>
                       <div className="box-quick-button"><Link className="btn" to="#">
                           <svg className="d-inline-flex align-items-center justify-content-center" width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
@@ -736,7 +736,7 @@ const BestSellers = () => {
                 </div>
                 <div className="col-lg-3 col-md-4 col-sm-6"> 
                   <div className="cardProduct wow fadeInUp">
-                    <div className="cardImage"><Link to="#"><img className="imageMain" src="/assets/imgs/page/homepage1/product1.png" alt="guza" /><img className="imageHover" src="/assets/imgs/page/homepage1/product2-hover.png" alt="guza" /></Link>
+                    <div className="cardImage"><Link to="#"><img className="imageMain" src="/assets/imgs/page/homepage1/product1.png" alt="indovia" /><img className="imageHover" src="/assets/imgs/page/homepage1/product2-hover.png" alt="indovia" /></Link>
                       <div className="button-select"><Link to="#">Select Options</Link></div>
                       <div className="box-quick-button"><Link className="btn" to="#">
                           <svg className="d-inline-flex align-items-center justify-content-center" width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
@@ -788,7 +788,7 @@ const BestSellers = () => {
               <div className="row"> 
                 <div className="col-lg-3 col-md-4 col-sm-6"> 
                   <div className="cardProduct wow fadeInUp">
-                    <div className="cardImage"><Link to="#"><img className="imageMain" src="/assets/imgs/page/homepage1/product5.png" alt="guza" /><img className="imageHover" src="/assets/imgs/page/homepage1/product1-hover.png" alt="guza" /></Link>
+                    <div className="cardImage"><Link to="#"><img className="imageMain" src="/assets/imgs/page/homepage1/product5.png" alt="indovia" /><img className="imageHover" src="/assets/imgs/page/homepage1/product1-hover.png" alt="indovia" /></Link>
                       <div className="button-select"><Link to="#">Select Options</Link></div>
                       <div className="box-quick-button"><Link className="btn" to="#">
                           <svg className="d-inline-flex align-items-center justify-content-center" width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
@@ -835,7 +835,7 @@ const BestSellers = () => {
                 </div>
                 <div className="col-lg-3 col-md-4 col-sm-6"> 
                   <div className="cardProduct wow fadeInUp">
-                    <div className="cardImage"><Link to="#"><img className="imageMain" src="/assets/imgs/page/homepage1/product2.png" alt="guza" /><img className="imageHover" src="/assets/imgs/page/homepage1/product2-hover.png" alt="guza" /></Link>
+                    <div className="cardImage"><Link to="#"><img className="imageMain" src="/assets/imgs/page/homepage1/product2.png" alt="indovia" /><img className="imageHover" src="/assets/imgs/page/homepage1/product2-hover.png" alt="indovia" /></Link>
                       <div className="button-select"><Link to="#">Select Options</Link></div>
                       <div className="box-quick-button"><Link className="btn" to="#">
                           <svg className="d-inline-flex align-items-center justify-content-center" width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
@@ -882,7 +882,7 @@ const BestSellers = () => {
                 </div>
                 <div className="col-lg-3 col-md-4 col-sm-6"> 
                   <div className="cardProduct wow fadeInUp">
-                    <div className="cardImage"><Link to="#"><img className="imageMain" src="/assets/imgs/page/homepage1/product6.png" alt="guza" /><img className="imageHover" src="/assets/imgs/page/homepage1/product1-hover.png" alt="guza" /></Link>
+                    <div className="cardImage"><Link to="#"><img className="imageMain" src="/assets/imgs/page/homepage1/product6.png" alt="indovia" /><img className="imageHover" src="/assets/imgs/page/homepage1/product1-hover.png" alt="indovia" /></Link>
                       <div className="button-select"><Link to="#">Select Options</Link></div>
                       <div className="box-quick-button"><Link className="btn" to="#">
                           <svg className="d-inline-flex align-items-center justify-content-center" width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
@@ -929,7 +929,7 @@ const BestSellers = () => {
                 </div>
                 <div className="col-lg-3 col-md-4 col-sm-6"> 
                   <div className="cardProduct wow fadeInUp">
-                    <div className="cardImage"><Link to="#"><img className="imageMain" src="/assets/imgs/page/homepage1/product4.png" alt="guza" /><img className="imageHover" src="/assets/imgs/page/homepage1/product2-hover.png" alt="guza" /></Link>
+                    <div className="cardImage"><Link to="#"><img className="imageMain" src="/assets/imgs/page/homepage1/product4.png" alt="indovia" /><img className="imageHover" src="/assets/imgs/page/homepage1/product2-hover.png" alt="indovia" /></Link>
                       <div className="button-select"><Link to="#">Select Options</Link></div>
                       <div className="box-quick-button"><Link className="btn" to="#">
                           <svg className="d-inline-flex align-items-center justify-content-center" width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
@@ -976,7 +976,7 @@ const BestSellers = () => {
                 </div>
                 <div className="col-lg-3 col-md-4 col-sm-6"> 
                   <div className="cardProduct wow fadeInUp">
-                    <div className="cardImage"><Link to="#"><img className="imageMain" src="/assets/imgs/page/homepage1/product8.png" alt="guza" /><img className="imageHover" src="/assets/imgs/page/homepage1/product1-hover.png" alt="guza" /></Link>
+                    <div className="cardImage"><Link to="#"><img className="imageMain" src="/assets/imgs/page/homepage1/product8.png" alt="indovia" /><img className="imageHover" src="/assets/imgs/page/homepage1/product1-hover.png" alt="indovia" /></Link>
                       <div className="button-select"><Link to="#">Select Options</Link></div>
                       <div className="box-quick-button"><Link className="btn" to="#">
                           <svg className="d-inline-flex align-items-center justify-content-center" width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
@@ -1023,7 +1023,7 @@ const BestSellers = () => {
                 </div>
                 <div className="col-lg-3 col-md-4 col-sm-6"> 
                   <div className="cardProduct wow fadeInUp">
-                    <div className="cardImage"><Link to="#"><img className="imageMain" src="/assets/imgs/page/homepage1/product3.png" alt="guza" /><img className="imageHover" src="/assets/imgs/page/homepage1/product2-hover.png" alt="guza" /></Link>
+                    <div className="cardImage"><Link to="#"><img className="imageMain" src="/assets/imgs/page/homepage1/product3.png" alt="indovia" /><img className="imageHover" src="/assets/imgs/page/homepage1/product2-hover.png" alt="indovia" /></Link>
                       <div className="button-select"><Link to="#">Select Options</Link></div>
                       <div className="box-quick-button"><Link className="btn" to="#">
                           <svg className="d-inline-flex align-items-center justify-content-center" width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
@@ -1070,7 +1070,7 @@ const BestSellers = () => {
                 </div>
                 <div className="col-lg-3 col-md-4 col-sm-6"> 
                   <div className="cardProduct wow fadeInUp">
-                    <div className="cardImage"><Link to="#"><img className="imageMain" src="/assets/imgs/page/homepage1/product7.png" alt="guza" /><img className="imageHover" src="/assets/imgs/page/homepage1/product1-hover.png" alt="guza" /></Link>
+                    <div className="cardImage"><Link to="#"><img className="imageMain" src="/assets/imgs/page/homepage1/product7.png" alt="indovia" /><img className="imageHover" src="/assets/imgs/page/homepage1/product1-hover.png" alt="indovia" /></Link>
                       <div className="button-select"><Link to="#">Select Options</Link></div>
                       <div className="box-quick-button"><Link className="btn" to="#">
                           <svg className="d-inline-flex align-items-center justify-content-center" width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
@@ -1117,7 +1117,7 @@ const BestSellers = () => {
                 </div>
                 <div className="col-lg-3 col-md-4 col-sm-6"> 
                   <div className="cardProduct wow fadeInUp">
-                    <div className="cardImage"><Link to="#"><img className="imageMain" src="/assets/imgs/page/homepage1/product1.png" alt="guza" /><img className="imageHover" src="/assets/imgs/page/homepage1/product2-hover.png" alt="guza" /></Link>
+                    <div className="cardImage"><Link to="#"><img className="imageMain" src="/assets/imgs/page/homepage1/product1.png" alt="indovia" /><img className="imageHover" src="/assets/imgs/page/homepage1/product2-hover.png" alt="indovia" /></Link>
                       <div className="button-select"><Link to="#">Select Options</Link></div>
                       <div className="box-quick-button"><Link className="btn" to="#">
                           <svg className="d-inline-flex align-items-center justify-content-center" width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
