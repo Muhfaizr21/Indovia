@@ -627,12 +627,32 @@ export const authRoutes = [{
   path: '/auth/sign-in',
   element: <SignIn />
 }, {
+  name: 'Login',
+  path: '/login',
+  element: <SignIn />
+}, {
+  name: 'Sign In Direct',
+  path: '/sign-in',
+  element: <SignIn />
+}, {
   name: 'Sign Up',
   path: '/auth/sign-up',
   element: <SignUp />
 }, {
+  name: 'Register',
+  path: '/register',
+  element: <SignUp />
+}, {
+  name: 'Sign Up Direct',
+  path: '/sign-up',
+  element: <SignUp />
+}, {
   name: 'Reset Password',
   path: '/auth/reset-pass',
+  element: <ResetPassword />
+}, {
+  name: 'Forgot Password',
+  path: '/forgot-password',
   element: <ResetPassword />
 }, {
   name: 'Lock Screen',
