@@ -1,7 +1,7 @@
 # ⚡ Indovia
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Muhfaizr21/Indovia/main/frontend/public/logo-dark.png" alt="Indovia Logo" width="180" onerror="this.style.display='none'"/>
+  <img src="assets/logo.svg" alt="Indovia Logo" width="460" />
 </p>
 
 <p align="center">
