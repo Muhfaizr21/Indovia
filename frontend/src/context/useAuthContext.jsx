@@ -9,7 +9,7 @@ export function useAuthContext() {
   }
   return context;
 }
-const authSessionKey = '_LARKON_AUTH_KEY_';
+const authSessionKey = '_INDOVIA_AUTH_KEY_';
 export function AuthProvider({
   children
 }) {
@@ -17,7 +17,15 @@ export function AuthProvider({
   const getSession = () => {
     const fetchedCookie = Cookies.get(authSessionKey);
     if (!fetchedCookie) return undefined;
-    return JSON.parse(fetchedCookie);
+    try {
+      const parsed = JSON.parse(fetchedCookie);
+      if (parsed && typeof parsed === 'object' && (parsed.token || parsed.email || parsed.id)) {
+        return parsed;
+      }
+      return undefined;
+    } catch {
+      return undefined;
+    }
   };
   const [user, setUser] = useState(getSession());
   const saveSession = user => {
@@ -27,13 +35,18 @@ export function AuthProvider({
     setUser(user);
   };
   const removeSession = () => {
-    Cookies.remove(authSessionKey);
+    Cookies.remove(authSessionKey, { path: '/' });
+    Cookies.remove('_LARKON_AUTH_KEY_', { path: '/' });
+    try {
+      localStorage.removeItem(authSessionKey);
+      localStorage.removeItem('_LARKON_AUTH_KEY_');
+    } catch {}
     setUser(undefined);
     navigate('/auth/sign-in');
   };
   return <AuthContext.Provider value={{
     user,
-    isAuthenticated: Boolean(Cookies.get(authSessionKey)),
+    isAuthenticated: Boolean(user && (user.token || user.email || user.id)),
     saveSession,
     removeSession
   }}>

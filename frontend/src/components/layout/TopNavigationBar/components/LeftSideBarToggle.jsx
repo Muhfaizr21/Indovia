@@ -15,14 +15,33 @@ const LeftSideBarToggle = () => {
   const pathname = useLocation();
   const isFirstRender = useRef(true);
   const handleMenuSize = () => {
-    if (size === 'hidden') toggleBackdrop();
-    if (size === 'condensed') changeMenuSize('default');else if (size === 'default') changeMenuSize('condensed');
+    if (window.innerWidth <= 1140) {
+      toggleBackdrop();
+    } else {
+      // Desktop: toggle between default and condensed
+      if (size === 'condensed') {
+        changeMenuSize('default');
+      } else if (size === 'default') {
+        changeMenuSize('condensed');
+      } else if (size === 'hidden') {
+        changeMenuSize('default');
+        const htmlTag = document.getElementsByTagName('html')[0];
+        if (htmlTag?.classList.contains('sidebar-enable')) {
+          htmlTag.classList.remove('sidebar-enable');
+        }
+      } else {
+        changeMenuSize('condensed');
+      }
+    }
   };
   useEffect(() => {
     if (isFirstRender.current) {
       isFirstRender.current = false;
-    } else if (size === 'hidden') {
-      toggleBackdrop();
+    } else if (window.innerWidth <= 1140 && size === 'hidden') {
+      const htmlTag = document.getElementsByTagName('html')[0];
+      if (htmlTag?.classList.contains('sidebar-enable')) {
+        toggleBackdrop();
+      }
     }
   }, [pathname]);
   return <div className="topbar-item">

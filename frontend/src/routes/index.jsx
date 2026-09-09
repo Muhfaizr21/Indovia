@@ -104,6 +104,12 @@ const SellerDetails = lazy(() => import('@/app/(admin)/seller/seller-details/pag
 const SellerEdit = lazy(() => import('@/app/(admin)/seller/seller-edit/page'));
 const SellerAdd = lazy(() => import('@/app/(admin)/seller/seller-add/page'));
 
+// Billing & SaaS Monetization Routes
+const BillingEngine = lazy(() => import('@/app/(admin)/billing/billing-dashboard/page'));
+const BillingPlans = lazy(() => import('@/app/(admin)/billing/plans/page'));
+const BillingDunning = lazy(() => import('@/app/(admin)/billing/dunning/page'));
+const BillingTakeRate = lazy(() => import('@/app/(admin)/billing/take-rate/page'));
+
 // Coupons Routes
 const CouponsList = lazy(() => import('@/app/(admin)/coupons/coupons-list/page'));
 const CouponsAdd = lazy(() => import('@/app/(admin)/coupons/coupons-add/page'));
@@ -613,6 +619,23 @@ const SellerRoutes = [{
   path: '/seller/seller-add',
   element: <SellerAdd />
 }];
+const BillingRoutes = [{
+  name: 'Billing Engine',
+  path: '/billing',
+  element: <BillingEngine />
+}, {
+  name: 'Billing Plans',
+  path: '/billing/plans',
+  element: <BillingPlans />
+}, {
+  name: 'Billing Dunning',
+  path: '/billing/dunning',
+  element: <BillingDunning />
+}, {
+  name: 'Billing Take Rate',
+  path: '/billing/take-rate',
+  element: <BillingTakeRate />
+}];
 const CouponRoutes = [{
   name: 'Coupons List',
   path: '/coupons/coupons-list',
@@ -677,4 +700,4 @@ export const authRoutes = [{
   path: '/coming-soon',
   element: <ComingSoon />
 }];
-export const appRoutes = [...initialRoutes, ...generalRoutes, ...appsRoutes, ...customRoutes, ...baseUIRoutes, ...advancedUIRoutes, ...chartsNMapsRoutes, ...formsRoutes, ...tableRoutes, ...iconRoutes, ...productRoutes, ...CategoryRoutes, ...InventoryRoutes, ...OrdersRoutes, ...AttributeRoutes, ...PurchaseRoutes, ...InvoiceRoutes, ...RoleRoutes, ...CustomerRoutes, ...SellerRoutes, ...CouponRoutes];
+export const appRoutes = [...initialRoutes, ...generalRoutes, ...appsRoutes, ...customRoutes, ...baseUIRoutes, ...advancedUIRoutes, ...chartsNMapsRoutes, ...formsRoutes, ...tableRoutes, ...iconRoutes, ...productRoutes, ...CategoryRoutes, ...InventoryRoutes, ...OrdersRoutes, ...AttributeRoutes, ...PurchaseRoutes, ...InvoiceRoutes, ...RoleRoutes, ...CustomerRoutes, ...SellerRoutes, ...BillingRoutes, ...CouponRoutes];

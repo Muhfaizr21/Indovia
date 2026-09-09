@@ -38,11 +38,13 @@ const ProfileDropdown = () => {
           <span className="align-middle">Lock screen</span>
         </DropdownItem>
         <div className="dropdown-divider my-1" />
-        <DropdownItem as={Link} className=" text-danger" to="/auth/sign-in">
+        <DropdownItem
+          className="text-danger"
+          role="button"
+          onClick={() => removeSession()}
+        >
           <IconifyIcon icon="bx:log-out" className="fs-18 align-middle me-1" />
-          <span className="align-middle" onClick={removeSession}>
-            Logout
-          </span>
+          <span className="align-middle">Logout</span>
         </DropdownItem>
       </DropdownMenu>
     </Dropdown>;

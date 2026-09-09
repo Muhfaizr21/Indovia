@@ -1,7 +1,6 @@
 import AppProvidersWrapper from './components/wrappers/AppProvidersWrapper';
-import configureFakeBackend from './helpers/fake-backend';
 import AppRouter from './routes/router';
-configureFakeBackend();
+
 function App() {
   return <>
       <AppProvidersWrapper>
@@ -9,4 +8,5 @@ function App() {
       </AppProvidersWrapper>
     </>;
 }
+// Indovia SaaS E-Commerce Platform
 export default App;

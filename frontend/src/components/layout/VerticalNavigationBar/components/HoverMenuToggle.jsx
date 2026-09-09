@@ -17,8 +17,16 @@ const HoverMenuToggle = () => {
   useEffect(() => {
     if (width <= 1140) {
       if (size !== 'hidden') changeMenuSize('hidden');
+    } else {
+      if (size === 'hidden') {
+        changeMenuSize('default');
+        const htmlTag = document.getElementsByTagName('html')[0];
+        if (htmlTag?.classList.contains('sidebar-enable')) {
+          htmlTag.classList.remove('sidebar-enable');
+        }
+      }
     }
-  }, [width]);
+  }, [width, size]);
   const handleHoverMenu = () => {
     if (size === 'sm-hover-active') changeMenuSize('sm-hover');else changeMenuSize('sm-hover-active');
   };

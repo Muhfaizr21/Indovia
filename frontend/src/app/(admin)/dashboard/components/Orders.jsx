@@ -1,102 +1,123 @@
 import IconifyIcon from '@/components/wrappers/IconifyIcon';
-import { getAllOrders } from '@/helpers/data';
-import { useFetchData } from '@/hooks/useFetchData';
 import { Button, Card, CardBody, CardFooter, CardTitle, Col, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { recentIndoviaOrders } from '../data';
+
 const Orders = () => {
-  const orderData = useFetchData(getAllOrders);
-  return <Col>
-      <Card>
-        <CardBody>
-          <div className="d-flex align-items-center justify-content-between">
-            <CardTitle as={'h4'}>Recent Orders</CardTitle>
-            <Button variant="soft-primary" size="sm">
-              <IconifyIcon icon="bx:plus" className="me-1" />
-              Create Order
-            </Button>
+  return (
+    <Col xs={12}>
+      <Card className="border-0 shadow-sm">
+        <CardBody className="pb-0">
+          <div className="d-flex flex-wrap align-items-center justify-content-between mb-3">
+            <div>
+              <CardTitle as="h5" className="fw-bold mb-1 text-body">
+                Pesanan Masuk Terbaru
+              </CardTitle>
+              <p className="text-muted fs-12 mb-0">
+                Aktivitas Transaksi Realtime Seluruh Toko & Merchant Indovia
+              </p>
+            </div>
+            <div className="d-flex gap-2 mt-2 mt-sm-0">
+              <Button variant="outline-secondary" size="sm" className="d-flex align-items-center">
+                <IconifyIcon icon="solar:export-bold" className="me-1" />
+                Ekspor Data
+              </Button>
+              <Button variant="primary" size="sm" className="d-flex align-items-center text-white" style={{ backgroundColor: '#ff6c2f', borderColor: '#ff6c2f' }}>
+                <IconifyIcon icon="solar:add-circle-bold" className="me-1" />
+                Buat Pesanan Manual
+              </Button>
+            </div>
           </div>
         </CardBody>
+
         <div className="table-responsive table-centered">
-          <table className="table mb-0">
+          <table className="table table-hover align-middle mb-0">
             <thead className="bg-light bg-opacity-50">
               <tr>
-                <th className="ps-3">Order ID.</th>
-                <th>Date</th>
-                <th>Product</th>
-                <th>Customer Name</th>
-                <th>Email ID</th>
-                <th>Phone No.</th>
-                <th>Address</th>
-                <th>Payment Type</th>
-                <th>Status</th>
+                <th className="ps-3 fs-12 text-uppercase text-muted">ID Pesanan</th>
+                <th className="fs-12 text-uppercase text-muted">Waktu Transaksi</th>
+                <th className="fs-12 text-uppercase text-muted">Produk</th>
+                <th className="fs-12 text-uppercase text-muted">Pelanggan</th>
+                <th className="fs-12 text-uppercase text-muted">Kota Tujuan</th>
+                <th className="fs-12 text-uppercase text-muted">Kanal Penjualan</th>
+                <th className="fs-12 text-uppercase text-muted">Total Pembayaran</th>
+                <th className="fs-12 text-uppercase text-muted">Metode</th>
+                <th className="fs-12 text-uppercase text-muted">Status Pesanan</th>
               </tr>
             </thead>
             <tbody>
-              {orderData?.slice(0, 5).map((item, idx) => <tr key={idx}>
-                  <td className="ps-3">
-                    <Link to="/orders/order-detail">#{item.id}</Link>
+              {recentIndoviaOrders.map((item, idx) => (
+                <tr key={idx}>
+                  <td className="ps-3 fw-bold">
+                    <Link to="/orders/order-detail" className="text-primary text-decoration-none">
+                      {item.id}
+                    </Link>
                   </td>
-                  <td>29 April 2024</td>
-                  <td>{item.product?.image && <img src={item.product?.image} alt="product-1(1)" className="img-fluid avatar-sm" />}</td>
+                  <td className="fs-12 text-muted">{item.date}</td>
                   <td>
-                    <Link to="#!">{item.customer?.name}</Link>
+                    <div className="d-flex align-items-center">
+                      {item.image && (
+                        <img
+                          src={item.image}
+                          alt={item.product}
+                          className="avatar-xs rounded-2 me-2 border"
+                          onError={(e) => {
+                            e.target.style.display = 'none';
+                          }}
+                        />
+                      )}
+                      <span className="fw-medium text-body fs-13 text-truncate" style={{ maxWidth: '180px' }}>
+                        {item.product}
+                      </span>
+                    </div>
                   </td>
-                  <td>{item.customer?.email}</td>
-                  <td>{item.customer?.phone}</td>
-                  <td>{item.customer?.address}</td>
-                  <td>{item.paymentMethod}</td>
                   <td>
-                    <IconifyIcon icon="bxs:circle" className={`text-${item.status == 'Completed' ? 'success' : item.status == 'Processing' ? 'warning' : 'primary'} me-1`} />
-                    {item.status}
+                    <div className="lh-sm">
+                      <span className="fw-semibold text-body fs-13 d-block">{item.customer}</span>
+                      <small className="text-muted fs-11">{item.phone}</small>
+                    </div>
                   </td>
-                </tr>)}
+                  <td className="fs-13 text-body">{item.city}</td>
+                  <td>
+                    <span className={`badge bg-soft-${item.channelColor} text-${item.channelColor} px-2 py-1 fs-11`}>
+                      {item.channel}
+                    </span>
+                  </td>
+                  <td className="fw-bold text-body fs-13">{item.amount}</td>
+                  <td className="fs-12 text-muted">{item.payment}</td>
+                  <td>
+                    <span className={`badge bg-soft-${item.statusColor} text-${item.statusColor} px-2 py-1 fs-11 d-inline-flex align-items-center`}>
+                      <span
+                        className={`bg-${item.statusColor} rounded-circle me-1`}
+                        style={{ width: '6px', height: '6px' }}
+                      />
+                      {item.status}
+                    </span>
+                  </td>
+                </tr>
+              ))}
             </tbody>
           </table>
         </div>
-        <CardFooter className="border-top">
-          {}
-          <Row className="g-3">
-            <div className="col-sm">
-              <div className="text-muted">
-                Showing
-                <span className="fw-semibold">5</span>
-                of
-                <span className="fw-semibold">90,521</span>
-                orders
+
+        <CardFooter className="border-top py-3">
+          <Row className="align-items-center g-2">
+            <Col sm>
+              <div className="text-muted fs-12">
+                Menampilkan <span className="fw-bold text-body">5</span> dari{' '}
+                <span className="fw-bold text-body">18.420</span> pesanan masuk bulan ini
               </div>
-            </div>
-            <Col sm={'auto'}>
-              <ul className="pagination m-0">
-                <li className="page-item">
-                  <span role="button" className="page-link">
-                    <IconifyIcon icon="bx:left-arrow-alt" />
-                  </span>
-                </li>
-                <li className="page-item active">
-                  <span role="button" className="page-link">
-                    1
-                  </span>
-                </li>
-                <li className="page-item">
-                  <span role="button" className="page-link">
-                    2
-                  </span>
-                </li>
-                <li className="page-item">
-                  <span role="button" className="page-link">
-                    3
-                  </span>
-                </li>
-                <li className="page-item">
-                  <span role="button" className="page-link">
-                    <IconifyIcon icon="bx:right-arrow-alt" />
-                  </span>
-                </li>
-              </ul>
+            </Col>
+            <Col sm="auto">
+              <Link to="/orders/orders-list" className="btn btn-sm btn-outline-primary">
+                Lihat Semua Pesanan &rarr;
+              </Link>
             </Col>
           </Row>
         </CardFooter>
       </Card>
-    </Col>;
+    </Col>
+  );
 };
+
 export default Orders;

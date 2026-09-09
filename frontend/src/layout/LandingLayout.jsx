@@ -154,8 +154,17 @@ const LandingLayout = ({ children }) => {
 
       // Restore previous admin styles and theme attributes
       enableAdminStyles();
-      if (prevTheme) root.setAttribute('data-bs-theme', prevTheme);
-      else root.removeAttribute('data-bs-theme');
+      root.removeAttribute('data-theme');
+      body.removeAttribute('data-theme');
+      body.removeAttribute('data-bs-theme');
+
+      if (prevTheme) {
+        root.setAttribute('data-bs-theme', prevTheme);
+        body.setAttribute('data-bs-theme', prevTheme);
+      } else {
+        root.removeAttribute('data-bs-theme');
+        body.removeAttribute('data-bs-theme');
+      }
 
       if (prevMenuColor) root.setAttribute('data-menu-color', prevMenuColor);
       else root.removeAttribute('data-menu-color');

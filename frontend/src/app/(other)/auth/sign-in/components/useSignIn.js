@@ -26,36 +26,41 @@ const useSignIn = () => {
   } = useForm({
     resolver: yupResolver(loginFormSchema),
     defaultValues: {
-      email: 'user@demo.com',
-      password: '123456'
+      email: 'admin@indovia.com',
+      password: 'admin'
     }
   });
   const redirectUser = () => {
     const redirectLink = searchParams.get('redirectTo');
-    if (redirectLink) navigate(redirectLink);else navigate('/');
+    if (redirectLink) navigate(redirectLink);
+    else navigate('/dashboard');
   };
   const login = handleSubmit(async values => {
     try {
-      const res = await httpClient.post('/login', values);
-      if (res.data.token) {
+      setLoading(true);
+      const res = await httpClient.post('/auth/login', values);
+      const responseData = res.data;
+      const token = responseData.data?.token || responseData.token;
+      const user = responseData.data?.user || responseData.user || responseData;
+
+      if (token) {
         saveSession({
-          ...(res.data ?? {}),
-          token: res.data.token
+          ...user,
+          token: token
         });
         redirectUser();
         showNotification({
-          message: 'Successfully logged in. Redirecting....',
+          message: 'Berhasil login sebagai Super Admin Indovia! Mengalihkan ke dashboard...',
           variant: 'success'
         });
       }
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (e) {
-      if (e.response?.data?.error) {
-        showNotification({
-          message: e.response?.data?.error,
-          variant: 'danger'
-        });
-      }
+      console.error('Login error:', e);
+      const errorMsg = e.response?.data?.message || e.response?.data?.error || (e.message ? `Koneksi gagal: ${e.message}` : 'Email atau password salah');
+      showNotification({
+        message: errorMsg,
+        variant: 'danger'
+      });
     } finally {
       setLoading(false);
     }

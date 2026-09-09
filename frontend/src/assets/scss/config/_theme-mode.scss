@@ -27,21 +27,96 @@
 
 
 /* Color system - Dark Mode only */
-html[data-bs-theme="dark"], [data-bs-theme="dark"] {
+html[data-bs-theme="dark"], 
+[data-bs-theme="dark"],
+body[data-bs-theme="dark"] {
+    color-scheme: dark;
+
+    --#{$prefix}body-bg:                        #22282e;
+    --#{$prefix}body-bg-rgb:                    34, 40, 46;
+    --#{$prefix}body-color:                     #aab8c5;
+    --#{$prefix}body-color-rgb:                 170, 184, 197;
+
+    --#{$prefix}secondary-bg:                   #282f36;
+    --#{$prefix}secondary-bg-rgb:               40, 47, 54;
+
+    --#{$prefix}tertiary-bg:                    #2f3943;
+    --#{$prefix}tertiary-bg-rgb:                47, 57, 67;
+
+    --#{$prefix}card-bg:                        #282f36;
+    --#{$prefix}card-color:                     #aab8c5;
+    --#{$prefix}card-title-color:               #dee2e6;
+    --#{$prefix}card-border-color:              #2f3944;
 
     --#{$prefix}border-color:                   #2f3944;
+    --#{$prefix}border-color-translucent:       rgba(255, 255, 255, 0.08);
 
-    --#{$prefix}light:                     #{$body-tertiary-bg-dark};
-    --#{$prefix}dark:                      #{$body-tertiary-color-dark};
+    --#{$prefix}light:                          #2f3943;
+    --#{$prefix}dark:                           #f1f1f1;
     
-    --#{$prefix}light-rgb:                 #{to-rgb($body-tertiary-bg-dark)};
-    --#{$prefix}dark-rgb:                  #{to-rgb($body-tertiary-color-dark)};
+    --#{$prefix}light-rgb:                      47, 57, 67;
+    --#{$prefix}dark-rgb:                       241, 241, 241;
 
     // Heading Variable
-    --#{$prefix}headings-color:            #{$body-color-dark};
+    --#{$prefix}headings-color:                 #dee2e6;
+    --#{$prefix}heading-color:                  #dee2e6;
 
+    --#{$prefix}input-bg:                       #282f36;
+    --#{$prefix}input-color:                    #dee2e6;
     --#{$prefix}input-border-color:             #3a4551;
     --#{$prefix}input-focus-border-color:       #4a5663;
+
+    --#{$prefix}table-color:                    #aab8c5;
+    --#{$prefix}table-bg:                       transparent;
+    --#{$prefix}table-border-color:             #2f3944;
+}
+
+html[data-bs-theme="dark"] body {
+    background-color: #22282e !important;
+    color: #aab8c5 !important;
+}
+
+html[data-bs-theme="dark"] .page-content {
+    background-color: #22282e !important;
+}
+
+html[data-bs-theme="dark"] .card {
+    background-color: #282f36 !important;
+    border-color: #2f3944 !important;
+    color: #aab8c5;
+}
+
+html[data-bs-theme="dark"] .card-header,
+html[data-bs-theme="dark"] .card-footer {
+    background-color: transparent;
+    border-color: #2f3944 !important;
+}
+
+html[data-bs-theme="dark"] .bg-body {
+    background-color: #282f36 !important;
+}
+
+html[data-bs-theme="dark"] .text-body {
+    color: #dee2e6 !important;
+}
+
+html[data-bs-theme="dark"] .table {
+    --#{$prefix}table-color: #aab8c5;
+    --#{$prefix}table-bg: transparent;
+    --#{$prefix}table-border-color: #2f3944;
+}
+
+html[data-bs-theme="dark"] .form-control,
+html[data-bs-theme="dark"] .form-select {
+    background-color: #282f36;
+    border-color: #3a4551;
+    color: #dee2e6;
+
+    &:focus {
+        background-color: #282f36;
+        border-color: #ff6c2f;
+        color: #dee2e6;
+    }
 }
 
 

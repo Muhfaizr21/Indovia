@@ -1,293 +1,302 @@
-import { WorldVectorMap } from '@/components/VectorMap';
 import ReactApexChart from 'react-apexcharts';
-import { pagesList } from '../data';
-import { Button, Card, CardBody, CardHeader, CardTitle, Col, Row } from 'react-bootstrap';
+import { Card, CardBody, CardTitle, Col, Row } from 'react-bootstrap';
 import IconifyIcon from '@/components/wrappers/IconifyIcon';
-import { currency } from '@/context/constants';
-import { Link } from 'react-router-dom';
-const Conversions = () => {
-  const chartOptions = {
+import { regionalDistribution, salesChannels } from '../data';
+import { useLayoutContext } from '@/context/useLayoutContext';
+
+// CHART 4 [WHO]: Segmentasi & Loyalitas Pelanggan (Col xl={5})
+// Signature Indovia Orange Palette: Warm Amber to Vibrant Orange (#ff6c2f & #f97316)
+export const CustomerLoyaltyChart = () => {
+  const { theme } = useLayoutContext();
+  const isDark = theme === 'dark';
+
+  const customerChartOptions = {
     chart: {
-      height: 292,
-      type: 'radialBar'
+      height: 220,
+      type: 'radialBar',
+      background: 'transparent'
+    },
+    theme: {
+      mode: isDark ? 'dark' : 'light'
     },
     plotOptions: {
       radialBar: {
         startAngle: -135,
         endAngle: 135,
+        hollow: { size: '65%' },
+        track: {
+          background: isDark ? 'rgba(255, 255, 255, 0.08)' : 'rgba(226, 232, 240, 0.6)',
+          strokeWidth: '100%'
+        },
         dataLabels: {
           name: {
-            fontSize: '14px',
-            color: 'undefined',
-            offsetY: 100
+            fontSize: '11px',
+            color: isDark ? '#94a3b8' : '#64748b',
+            offsetY: 25,
+            fontWeight: 500
           },
           value: {
-            offsetY: 55,
-            fontSize: '20px',
-            color: undefined,
-            formatter: function (val) {
-              return val + '%';
-            }
+            offsetY: -10,
+            fontSize: '24px',
+            fontWeight: 700,
+            color: isDark ? '#ffffff' : '#0f172a',
+            formatter: (val) => `${val}%`
           }
-        },
-        track: {
-          background: 'rgba(170,184,197, 0.2)',
-          margin: 0
         }
       }
     },
     fill: {
+      type: 'gradient',
       gradient: {
-        // enabled: true,
-        shade: 'dark',
-        shadeIntensity: 0.2,
+        shade: isDark ? 'dark' : 'light',
+        type: 'horizontal',
+        shadeIntensity: 0.3,
+        gradientToColors: ['#fb923c'],
         inverseColors: false,
         opacityFrom: 1,
         opacityTo: 1,
-        stops: [0, 50, 65, 91]
+        stops: [0, 100]
       }
     },
-    stroke: {
-      dashArray: 4
+    stroke: { dashArray: 4 },
+    colors: ['#ff6c2f'],
+    series: [68.4],
+    labels: ['Pelanggan Setia (Repeat)'],
+    grid: {
+      padding: { top: -15, bottom: -15 }
+    }
+  };
+
+  return (
+    <Col xl={5} className="mb-3">
+      <Card className="border-0 shadow-sm h-100">
+        <CardBody className="p-3">
+          <div className="d-flex justify-content-between align-items-center mb-1">
+            <div>
+              <CardTitle as="h5" className="fw-bold mb-0 text-body fs-15">
+                Segmentasi & Loyalitas Pelanggan
+              </CardTitle>
+              <p className="text-muted fs-11 mb-0">
+                Rasio Retensi Pembeli Berulang vs Pelanggan Baru
+              </p>
+            </div>
+            <span
+              className="px-2 py-0.5 rounded fs-11 fw-semibold"
+              style={{ backgroundColor: 'rgba(255, 108, 47, 0.1)', color: '#ff6c2f' }}
+            >
+              Retensi 68.4%
+            </span>
+          </div>
+
+          <Row className="align-items-center g-2 mt-1">
+            <Col sm={5} className="text-center">
+              <div dir="ltr">
+                <ReactApexChart
+                  options={customerChartOptions}
+                  series={customerChartOptions.series}
+                  height={200}
+                  type="radialBar"
+                />
+              </div>
+            </Col>
+            <Col sm={7}>
+              <div
+                className="p-2 mb-2 rounded-2 bg-light bg-opacity-25 border"
+              >
+                <div className="d-flex align-items-center">
+                  <div
+                    className="avatar-xs rounded-circle d-flex align-items-center justify-content-center me-2 text-white"
+                    style={{ backgroundColor: '#ff6c2f', width: 24, height: 24 }}
+                  >
+                    <IconifyIcon icon="solar:user-check-bold" className="fs-12" />
+                  </div>
+                  <div>
+                    <p className="text-muted mb-0 fs-11">Pembeli Berulang</p>
+                    <h6 className="mb-0 fw-bold text-body fs-12">12.599 Akun (68.4%)</h6>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                className="p-2 rounded-2 bg-light bg-opacity-25 border"
+              >
+                <div className="d-flex align-items-center">
+                  <div
+                    className="avatar-xs rounded-circle d-flex align-items-center justify-content-center me-2 text-white"
+                    style={{ backgroundColor: '#64748b', width: 24, height: 24 }}
+                  >
+                    <IconifyIcon icon="solar:user-plus-bold" className="fs-12" />
+                  </div>
+                  <div>
+                    <p className="text-muted mb-0 fs-11">Pelanggan Baru</p>
+                    <h6 className="mb-0 fw-bold text-body fs-12">5.821 Akun (31.6%)</h6>
+                  </div>
+                </div>
+              </div>
+            </Col>
+          </Row>
+
+          <div
+            className="p-2 mt-2 rounded-2 d-flex align-items-center justify-content-between bg-light bg-opacity-25 border"
+          >
+            <span className="fs-11 text-muted">
+              Rata-rata Belanja Ulang: <strong>3.4x / tahun</strong> &bull; LTV: <strong>Rp 940k</strong>
+            </span>
+            <span
+              className="px-2 py-0.5 rounded fs-11 fw-medium"
+              style={{ backgroundColor: 'rgba(34, 197, 94, 0.1)', color: '#16a34a' }}
+            >
+              Target Tercapai
+            </span>
+          </div>
+        </CardBody>
+      </Card>
+    </Col>
+  );
+};
+
+// CHART 3 [WHERE]: Sebaran Wilayah & Kanal Penjualan (Col xl={12})
+// Signature Indovia Warm Palette: Bright Orange (#ff6c2f), Warm Amber (#ea580c), Soft Peach (#fdba74)
+export const RegionalDistributionChart = () => {
+  const { theme } = useLayoutContext();
+  const isDark = theme === 'dark';
+
+  const channelChartOptions = {
+    chart: { type: 'donut', height: 200, background: 'transparent' },
+    theme: {
+      mode: isDark ? 'dark' : 'light'
     },
-    colors: ['#ff6c2f', '#22c55e'],
-    series: [65.2],
-    labels: ['Returning Customer'],
-    responsive: [{
-      breakpoint: 380,
-      options: {
-        chart: {
-          height: 180
+    series: [48, 34, 18],
+    labels: ['Web Storefront', 'WhatsApp Direct', 'Multi-Channel Sync'],
+    colors: ['#ff6c2f', '#ea580c', '#fdba74'],
+    dataLabels: { enabled: false },
+    legend: { show: false },
+    stroke: {
+      colors: [isDark ? '#1e252b' : '#ffffff'],
+      width: 2
+    },
+    plotOptions: {
+      pie: {
+        donut: {
+          size: '76%',
+          labels: {
+            show: true,
+            total: {
+              show: true,
+              label: 'Total Saluran',
+              fontSize: '11px',
+              color: isDark ? '#94a3b8' : '#64748b',
+              formatter: () => '100%'
+            },
+            value: {
+              color: isDark ? '#ffffff' : '#0f172a',
+              fontSize: '16px',
+              fontWeight: 700
+            }
+          }
         }
       }
-    }],
-    grid: {
-      padding: {
-        top: 0,
-        right: 0,
-        bottom: 0,
-        left: 0
+    },
+    tooltip: {
+      theme: isDark ? 'dark' : 'light',
+      y: {
+        formatter: (val) => `${val}% Kontribusi Omset`
       }
     }
   };
-  const options = {
-    map: 'world',
-    zoomOnScroll: true,
-    zoomButtons: false,
-    markersSelectable: true,
-    markers: [{
-      name: 'Canada',
-      coords: [56.1304, -106.3468]
-    }, {
-      name: 'Brazil',
-      coords: [-14.235, -51.9253]
-    }, {
-      name: 'Russia',
-      coords: [61, 105]
-    }, {
-      name: 'China',
-      coords: [35.8617, 104.1954]
-    }, {
-      name: 'United States',
-      coords: [37.0902, -95.7129]
-    }],
-    markerStyle: {
-      initial: {
-        fill: '#7f56da'
-      },
-      selected: {
-        fill: '#22c55e'
-      }
-    },
-    labels: {
-      markers: {
-        render: marker => marker.name
-      }
-    },
-    regionStyle: {
-      initial: {
-        fill: 'rgba(169,183,197, 0.3)',
-        fillOpacity: 1
-      }
-    }
-  };
-  return <>
-      <Col lg={4}>
-        <Card>
-          <CardBody>
-            <CardTitle as={'h5'}>Conversions</CardTitle>
-            <ReactApexChart options={chartOptions} series={chartOptions.series} height={292} type="radialBar" className="apex-charts mb-2 mt-n2" />
-            <Row className="text-center">
-              <Col xs={6}>
-                <p className="text-muted mb-2">This Week</p>
-                <h3 className="text-dark mb-3">23.5k</h3>
-              </Col>
-              <Col xs={6}>
-                <p className="text-muted mb-2">Last Week</p>
-                <h3 className="text-dark mb-3">41.05k</h3>
-              </Col>
-            </Row>
-            <div className="text-center">
-              <button type="button" className="btn btn-light shadow-none w-100">
-                View Details
-              </button>
-            </div>
-          </CardBody>
-        </Card>
-      </Col>
-      <Col lg={4}>
-        <Card>
-          <CardBody>
-            <CardTitle as={'h5'}>Sessions by Country</CardTitle>
-            <div id="world-map-markers" style={{
-            height: 316
-          }}>
-              <WorldVectorMap height="300px" width="100%" options={options} />
-            </div>
-            <Row className="text-center">
-              <Col xs={6}>
-                <p className="text-muted mb-2">This Week</p>
-                <h3 className="text-dark mb-3">23.5k</h3>
-              </Col>
-              <Col xs={6}>
-                <p className="text-muted mb-2">Last Week</p>
-                <h3 className="text-dark mb-3">41.05k</h3>
-              </Col>
-            </Row>
-          </CardBody>
-        </Card>
-      </Col>
-      <Col lg={4}>
-        <Card className="card-height-100">
-          <CardHeader className="d-flex align-items-center justify-content-between gap-2">
-            <CardTitle as={'h4'} className="flex-grow-1">
-              Top Pages
-            </CardTitle>
-            <Button variant="soft-primary" size="sm">
-              View All
-            </Button>
-          </CardHeader>
-          <div className="table-responsive">
-            <table className="table table-hover table-nowrap table-centered m-0">
-              <thead className="bg-light bg-opacity-50">
-                <tr>
-                  <th className="text-muted ps-3">Page Path</th>
-                  <th className="text-muted">Page Views</th>
-                  <th className="text-muted">Exit Rate</th>
-                </tr>
-              </thead>
-              <tbody>
-                {pagesList.map((item, idx) => <tr key={idx}>
-                    <td className="ps-3">
-                      <Link to="#" className="text-muted">
-                        {item.path}
-                      </Link>
-                    </td>
-                    <td>{item.views} </td>
-                    <td>
-                      <span className={`badge badge-soft-${item.variant}`}>{item.rate}%</span>
-                    </td>
-                  </tr>)}
-              </tbody>
-            </table>
-          </div>
-        </Card>
-      </Col>
-      <Col xl={4} className="d-none">
-        <Card>
-          <CardHeader className="d-flex justify-content-between align-items-center">
-            <CardTitle as={'h4'}>Recent Transactions</CardTitle>
+
+  const regionTones = ['#ea580c', '#ff6c2f', '#f97316', '#fb923c', '#fdba74'];
+
+  return (
+    <Col xl={12} className="mb-3">
+      <Card className="border-0 shadow-sm h-100">
+        <CardBody className="p-3">
+          <div className="d-flex justify-content-between align-items-center mb-2">
             <div>
-              <Button variant="primary" size="sm">
-                <IconifyIcon icon="bx:plus" className="me-1" />
-                Add
-              </Button>
+              <CardTitle as="h5" className="fw-bold mb-0 text-body fs-15">
+                Sebaran Wilayah & Kanal Penjualan
+              </CardTitle>
+              <p className="text-muted fs-11 mb-0">
+                Konsentrasi Pesanan Nusantara & Integrasi Saluran Toko Indovia
+              </p>
             </div>
-          </CardHeader>
-          <CardBody className="p-0">
-            <div className="px-3" data-simplebar style={{
-            maxHeight: 398
-          }}>
-              <table className="table table-hover mb-0 table-centered">
-                <tbody>
-                  <tr>
-                    <td>24 April, 2024</td>
-                    <td>{currency}120.55</td>
-                    <td>
-                      <span className="badge bg-success">Cr</span>
-                    </td>
-                    <td>Commisions </td>
-                  </tr>
-                  <tr>
-                    <td>24 April, 2024</td>
-                    <td>{currency}9.68</td>
-                    <td>
-                      <span className="badge bg-success">Cr</span>
-                    </td>
-                    <td>Affiliates </td>
-                  </tr>
-                  <tr>
-                    <td>20 April, 2024</td>
-                    <td>{currency}105.22</td>
-                    <td>
-                      <span className="badge bg-danger">Dr</span>
-                    </td>
-                    <td>Grocery </td>
-                  </tr>
-                  <tr>
-                    <td>18 April, 2024</td>
-                    <td>{currency}80.59</td>
-                    <td>
-                      <span className="badge bg-success">Cr</span>
-                    </td>
-                    <td>Refunds </td>
-                  </tr>
-                  <tr>
-                    <td>18 April, 2024</td>
-                    <td>{currency}750.95</td>
-                    <td>
-                      <span className="badge bg-danger">Dr</span>
-                    </td>
-                    <td>Bill Payments </td>
-                  </tr>
-                  <tr>
-                    <td>17 April, 2024</td>
-                    <td>{currency}455.62</td>
-                    <td>
-                      <span className="badge bg-danger">Dr</span>
-                    </td>
-                    <td>Electricity </td>
-                  </tr>
-                  <tr>
-                    <td>17 April, 2024</td>
-                    <td>{currency}102.77</td>
-                    <td>
-                      <span className="badge bg-success">Cr</span>
-                    </td>
-                    <td>Interest </td>
-                  </tr>
-                  <tr>
-                    <td>16 April, 2024</td>
-                    <td>{currency}79.49</td>
-                    <td>
-                      <span className="badge bg-success">Cr</span>
-                    </td>
-                    <td>Refunds </td>
-                  </tr>
-                  <tr>
-                    <td>05 April, 2024</td>
-                    <td>{currency}980.00</td>
-                    <td>
-                      <span className="badge bg-danger">Dr</span>
-                    </td>
-                    <td>Shopping</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </CardBody>
-        </Card>
-      </Col>
-    </>;
+            <span
+              className="px-2 py-0.5 rounded fs-11 fw-medium"
+              style={{ backgroundColor: 'rgba(255, 108, 47, 0.1)', color: '#ff6c2f' }}
+            >
+              Nasional &bull; 34 Provinsi
+            </span>
+          </div>
+
+          <Row className="align-items-center g-3">
+            {/* Donut Saluran Penjualan */}
+            <Col md={4} className="text-center">
+              <div dir="ltr">
+                <ReactApexChart
+                  options={channelChartOptions}
+                  series={channelChartOptions.series}
+                  height={190}
+                  type="donut"
+                />
+              </div>
+              <div className="d-flex justify-content-center gap-3 mt-1">
+                <span className="fs-11 text-muted">
+                  <span style={{ color: '#ff6c2f' }}>&bull;</span> Web (48%)
+                </span>
+                <span className="fs-11 text-muted">
+                  <span style={{ color: '#ea580c' }}>&bull;</span> WhatsApp (34%)
+                </span>
+                <span className="fs-11 text-muted">
+                  <span style={{ color: '#fdba74' }}>&bull;</span> Sync (18%)
+                </span>
+              </div>
+            </Col>
+
+            {/* Progress Wilayah */}
+            <Col md={8}>
+              <p className="fs-11 fw-bold text-uppercase text-muted mb-2">
+                5 Wilayah Pesanan Terbesar di Indonesia:
+              </p>
+              <Row className="g-2">
+                {regionalDistribution.map((item, idx) => (
+                  <Col md={6} key={idx} className="mb-1">
+                    <div
+                      className="p-2 rounded-2 bg-light bg-opacity-25 border"
+                    >
+                      <div className="d-flex justify-content-between fs-12 mb-1">
+                        <span className="fw-semibold text-body">{item.region}</span>
+                        <span className="text-muted fw-bold">
+                          {item.orders} order ({item.percentage}%)
+                        </span>
+                      </div>
+                      <div className="progress" style={{ height: '4px' }}>
+                        <div
+                          className="progress-bar"
+                          style={{
+                            width: `${item.percentage}%`,
+                            backgroundColor: regionTones[idx] || '#64748b'
+                          }}
+                        />
+                      </div>
+                    </div>
+                  </Col>
+                ))}
+              </Row>
+            </Col>
+          </Row>
+        </CardBody>
+      </Card>
+    </Col>
+  );
 };
+
+const Conversions = () => {
+  return (
+    <>
+      <CustomerLoyaltyChart />
+      <RegionalDistributionChart />
+    </>
+  );
+};
+
 export default Conversions;

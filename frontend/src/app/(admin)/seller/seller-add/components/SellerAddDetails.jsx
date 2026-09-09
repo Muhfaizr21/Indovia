@@ -1,97 +1,116 @@
-import zaraImg from '@/assets/images/seller/zara.svg';
 import IconifyIcon from '@/components/wrappers/IconifyIcon';
-import { currency } from '@/context/constants';
-import { Card, CardBody, Col, Dropdown, DropdownMenu, DropdownToggle, ProgressBar, Row } from 'react-bootstrap';
+import { Card, CardBody, Col, ProgressBar, Row, Badge } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-const SellerAddDetails = () => {
-  return <Col xl={3} md={6}>
-      <Card>
-        <CardBody>
-          <div className="position-relative bg-light p-2 rounded text-center">
-            <img src={zaraImg} alt="zaraImg" className="avatar-xxl" />
-            <div className="position-absolute top-0 end-0 m-1">
-              <Dropdown>
-                <DropdownToggle as={'a'} className="arrow-none card-drop" data-bs-toggle="dropdown" aria-expanded="false">
-                  <IconifyIcon icon="iconamoon:menu-kebab-vertical-circle-duotone" className="fs-20 align-middle text-muted" />
-                </DropdownToggle>
-                <DropdownMenu className="dropdown-menu-end">
-                  <Link to="" className="dropdown-item">
-                    Download
-                  </Link>
-                  <Link to="" className="dropdown-item">
-                    Export
-                  </Link>
-                  <Link to="" className="dropdown-item">
-                    Import
-                  </Link>
-                </DropdownMenu>
-              </Dropdown>
+import { formatRupiah } from '../../data';
+
+const SellerAddDetails = ({ formData }) => {
+  const data = formData || {
+    name: 'Batik & Fashion Store',
+    subdomain: 'batik-fashion',
+    category: 'Fashion & Pakaian',
+    city: 'Jakarta',
+    address: 'Jl. Sudirman No. 10',
+    owner_name: 'Pemilik Toko',
+    owner_email: 'owner@toko.com',
+    owner_phone: '0812-3456-7890',
+    plan: 'Pro',
+    item_count: 24
+  };
+
+  return (
+    <Col xl={3} md={6}>
+      <div className="position-sticky" style={{ top: 85 }}>
+        <div className="d-flex align-items-center justify-content-between mb-2">
+          <h5 className="mb-0 fs-13 fw-bold text-body text-uppercase">
+            <IconifyIcon icon="solar:eye-bold" className="me-1 text-primary" />
+            Live Preview Kartu Toko
+          </h5>
+          <span className="badge bg-primary-subtle text-primary fs-10">Otomatis Update</span>
+        </div>
+
+        <Card className="border-0 shadow-sm overflow-hidden">
+          <CardBody className="p-3">
+            <div
+              className="position-relative p-3 rounded-2 text-center border bg-light bg-opacity-25"
+              style={{ minHeight: 140 }}
+            >
+              <img
+                src={
+                  data.avatar ||
+                  `https://api.dicebear.com/7.x/identicon/svg?seed=${data.subdomain || 'newstore'}`
+                }
+                alt="Logo Toko"
+                className="avatar-xl rounded-2 shadow-sm"
+                style={{ width: 90, height: 90, objectFit: 'cover' }}
+                onError={(e) => {
+                  e.target.src = `https://api.dicebear.com/7.x/identicon/svg?seed=${data.subdomain || 'newstore'}`;
+                }}
+              />
+              <span
+                className="position-absolute top-0 end-0 m-2 badge text-uppercase fs-10 fw-semibold"
+                style={{
+                  backgroundColor:
+                    data.plan === 'Enterprise' ? '#ff6c2f' : data.plan === 'Pro' ? '#3b82f6' : '#64748b',
+                  color: '#ffffff'
+                }}
+              >
+                Paket {data.plan}
+              </span>
             </div>
-          </div>
-          <div className="d-flex flex-wrap justify-content-between my-3">
-            <div>
-              <h4 className="mb-1">
-                ZARA International<span className="text-muted fs-13 ms-1">(Fashion) </span>
-              </h4>
+
+            <div className="my-3">
+              <h5 className="mb-1 text-body fw-bold fs-15 text-truncate">{data.name || 'Nama Toko Baru'}</h5>
+              <p className="text-muted fs-11 mb-1">
+                <span className="text-body fw-medium">{data.category || 'Kategori Toko'}</span> &bull;{' '}
+                {data.city || 'Indonesia'}
+              </p>
               <div>
-                <Link to="" className="link-primary fs-16 fw-medium">
-                  www.zarafashion.co
-                </Link>
+                <span className="text-primary fs-12 fw-medium font-monospace d-inline-flex align-items-center">
+                  <IconifyIcon icon="solar:link-bold" className="me-1 fs-11" />
+                  https://{data.subdomain || 'nama-toko'}.indovia.com
+                </span>
               </div>
             </div>
-            <div>
-              <p className="mb-0">
-                <span className="badge bg-light text-dark fs-12 me-1">
-                  <IconifyIcon icon="bxs:star" className="align-text-top fs-14 text-warning me-1" /> 4.5
-                </span>
-                3.5k
+
+            <div className="fs-12 text-secondary border-top pt-2.5 mt-2">
+              <p className="d-flex align-items-center gap-1.5 mb-1.5">
+                <IconifyIcon icon="solar:point-on-map-bold-duotone" className="fs-15 text-primary flex-shrink-0" />
+                <span className="text-truncate">{data.address || data.city || 'Alamat Toko Belum Diisi'}</span>
+              </p>
+              <p className="d-flex align-items-center gap-1.5 mb-1.5">
+                <IconifyIcon icon="solar:letter-bold-duotone" className="fs-15 text-primary flex-shrink-0" />
+                <span className="text-truncate">{data.owner_email || 'email@pemilik.com'}</span>
+              </p>
+              <p className="d-flex align-items-center gap-1.5 mb-0">
+                <IconifyIcon icon="solar:chat-round-dots-bold" className="fs-15 text-success flex-shrink-0" />
+                <span className="text-success fw-medium">{data.owner_phone || 'Nomor WhatsApp'}</span>
               </p>
             </div>
-          </div>
-          <div>
-            <p className="d-flex align-items-center gap-2 mb-1">
-              <IconifyIcon icon="solar:point-on-map-bold-duotone" className="fs-18 text-primary" />
-              4604 , Philli Lane Kiowa IN 47404
-            </p>
-            <p className="d-flex align-items-center gap-2 mb-1">
-              <IconifyIcon icon="solar:letter-bold-duotone" className="fs-18 text-primary" />
-              zarafashionworld@dayrep.com
-            </p>
-            <p className="d-flex align-items-center gap-2 mb-0">
-              <IconifyIcon icon="solar:outgoing-call-rounded-bold-duotone" className="fs-20 text-primary" />
-              +243 812-801-9335
-            </p>
-          </div>
-          <div className="d-flex align-items-center justify-content-between mt-3 mb-1">
-            <p className="mb-0 fs-15 fw-medium text-dark">Fashion</p>
-            <div>
-              <p className="mb-0 fs-15 fw-medium text-dark">
-                {currency}200k{' '}
-                <span className="ms-1">
-                  <IconifyIcon icon="solar:course-up-outline" className="text-success" />
-                </span>
-              </p>
+
+            <div className="mt-3 pt-2.5 border-top">
+              <div className="d-flex align-items-center justify-content-between mb-1 fs-11">
+                <span className="text-muted">Target SKU Pertama:</span>
+                <strong className="text-body">{data.item_count || 10} Produk</strong>
+              </div>
+              <ProgressBar
+                variant="warning"
+                now={Math.min(100, Math.max(20, (data.item_count || 10) * 2))}
+                className="progress-sm rounded-pill"
+                style={{ height: 5 }}
+              />
             </div>
-          </div>
-          <ProgressBar variant="danger" striped animated className="progress-soft progress-md" role="progressbar" now={80} aria-valuemin={0} aria-valuemax={100} />
-          <div className="p-2 pb-0 mx-n3 mt-2">
-            <Row className="text-center g-2">
-              <Col lg={4} xs={4} className="border-end">
-                <h5 className="mb-1">865</h5>
-                <p className="text-muted mb-0">Item Stock</p>
-              </Col>
-              <Col lg={4} xs={4} className="border-end">
-                <h5 className="mb-1">+4.5k</h5>
-                <p className="text-muted mb-0">Sells</p>
-              </Col>
-              <Col lg={4} xs={4}>
-                <h5 className="mb-1">+2k</h5>
-                <p className="text-muted mb-0">Happy Client</p>
-              </Col>
-            </Row>
-          </div>
-        </CardBody>
-      </Card>
-    </Col>;
+
+            <div className="p-2.5 rounded-2 mt-3 bg-light bg-opacity-25 border text-center">
+              <span className="text-muted fs-11 d-block mb-0.5">Status Langganan Awal:</span>
+              <span className="badge bg-warning-subtle text-warning fs-11 fw-semibold">
+                Masa Uji Coba (14 Hari Trial Gratis)
+              </span>
+            </div>
+          </CardBody>
+        </Card>
+      </div>
+    </Col>
+  );
 };
+
 export default SellerAddDetails;

@@ -23,7 +23,7 @@ const LayoutProvider = ({
     topbarTheme: queryParams['topbar_theme'] ? queryParams['topbar_theme'] : 'light',
     menu: {
       theme: queryParams['menu_theme'] ? queryParams['menu_theme'] : 'light',
-      size: queryParams['menu_size'] ? queryParams['menu_size'] : 'sm-hover-active'
+      size: queryParams['menu_size'] ? queryParams['menu_size'] : 'default'
     }
   };
   const [settings, setSettings] = useLocalStorage('__REBACK_NEXT_CONFIG__', INIT_STATE, override);
@@ -42,7 +42,12 @@ const LayoutProvider = ({
   // update theme mode
   const changeTheme = newTheme => {
     updateSettings({
-      theme: newTheme
+      theme: newTheme,
+      topbarTheme: newTheme,
+      menu: {
+        ...settings.menu,
+        theme: newTheme
+      }
     });
   };
 
@@ -131,16 +136,23 @@ const LayoutProvider = ({
     }
   }, [queryParams]);
   useEffect(() => {
+    if (typeof window !== 'undefined' && window.innerWidth > 1140) {
+      if (settings.menu?.size === 'hidden') {
+        changeMenuSize('default');
+      }
+      const htmlTag = document.getElementsByTagName('html')[0];
+      if (htmlTag?.classList.contains('sidebar-enable')) {
+        htmlTag.classList.remove('sidebar-enable');
+      }
+      setOffcanvasStates(prev => ({ ...prev, showBackdrop: false }));
+    }
+  }, []);
+
+  useEffect(() => {
     toggleDocumentAttribute('data-bs-theme', settings.theme);
     toggleDocumentAttribute('data-topbar-color', settings.topbarTheme);
     toggleDocumentAttribute('data-menu-color', settings.menu.theme);
     toggleDocumentAttribute('data-menu-size', settings.menu.size);
-    return () => {
-      toggleDocumentAttribute('data-bs-theme', settings.theme, true);
-      toggleDocumentAttribute('data-topbar-color', settings.topbarTheme, true);
-      toggleDocumentAttribute('data-menu-color', settings.menu.theme, true);
-      toggleDocumentAttribute('data-menu-size', settings.menu.size, true);
-    };
   }, [settings]);
   const resetSettings = () => updateSettings(INIT_STATE);
   return <ThemeContext.Provider value={useMemo(() => ({

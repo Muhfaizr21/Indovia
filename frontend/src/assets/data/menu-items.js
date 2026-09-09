@@ -1,6 +1,6 @@
 export const MENU_ITEMS = [{
   key: 'general',
-  label: 'GENERAL',
+  label: 'MENU UTAMA',
   isTitle: true
 }, {
   key: 'dashboard',
@@ -8,87 +8,132 @@ export const MENU_ITEMS = [{
   icon: 'solar:widget-5-bold-duotone',
   url: '/dashboard'
 }, {
+  key: 'seller',
+  label: 'Manajemen Merchant',
+  icon: 'solar:shop-bold-duotone',
+  children: [{
+    key: 'seller-list',
+    label: 'Direktori Toko & Tenant',
+    url: '/seller/seller-list',
+    parentKey: 'seller'
+  }, {
+    key: 'seller-details',
+    label: 'Profil & Audit Toko',
+    url: '/seller/seller-details',
+    parentKey: 'seller'
+  }, {
+    key: 'seller-add',
+    label: 'Provisioning Toko Baru',
+    url: '/seller/seller-add',
+    parentKey: 'seller'
+  }]
+}, {
+  key: 'billing',
+  label: 'Monetisasi & Billing SaaS',
+  icon: 'solar:card-2-bold-duotone',
+  children: [{
+    key: 'billing-engine',
+    label: 'Dashboard Billing & Arus Kas',
+    url: '/billing',
+    parentKey: 'billing'
+  }, {
+    key: 'billing-plans',
+    label: 'Tier Paket & Kuota',
+    url: '/billing/plans',
+    parentKey: 'billing'
+  }, {
+    key: 'billing-dunning',
+    label: 'Dunning & Penagihan',
+    url: '/billing/dunning',
+    parentKey: 'billing'
+  }, {
+    key: 'billing-take-rate',
+    label: 'Platform Take-Rate & GMV',
+    url: '/billing/take-rate',
+    parentKey: 'billing'
+  }]
+}, {
   key: 'products',
-  label: 'Products',
+  label: 'Produk',
   icon: 'solar:t-shirt-bold-duotone',
   children: [{
     key: 'product-list',
-    label: 'List',
+    label: 'Daftar Produk',
     url: '/products/product-list',
     parentKey: 'products'
   }, {
     key: 'product-grid',
-    label: 'Grid',
+    label: 'Galeri Grid',
     url: '/products/product-grid',
     parentKey: 'products'
   }, {
     key: 'product-details',
-    label: 'Details',
+    label: 'Detail Produk',
     url: '/products/1',
     parentKey: 'products'
   }, {
     key: 'product-edit',
-    label: 'Edit',
+    label: 'Edit Produk',
     url: '/products/product-edit',
     parentKey: 'products'
   }, {
     key: 'product-add',
-    label: 'Create',
+    label: 'Tambah Produk',
     url: '/products/product-add',
     parentKey: 'products'
   }]
 }, {
   key: 'category',
   icon: 'solar:clipboard-list-bold-duotone',
-  label: 'Category',
+  label: 'Kategori',
   children: [{
     key: 'category-list',
-    label: 'List',
+    label: 'Daftar Kategori',
     url: '/category/category-list',
     parentKey: 'category'
   }, {
     key: 'category-edit',
-    label: 'Edit',
+    label: 'Edit Kategori',
     url: '/category/category-edit',
     parentKey: 'category'
   }, {
     key: 'category-add',
-    label: 'Create',
+    label: 'Tambah Kategori',
     url: '/category/category-add',
     parentKey: 'category'
   }]
 }, {
   key: 'inventory',
-  label: 'Inventory',
+  label: 'Inventaris & Gudang',
   icon: 'solar:box-bold-duotone',
   children: [{
     key: 'warehouse',
-    label: 'Warehouse',
+    label: 'Gudang Penyimpanan',
     url: '/inventory/warehouse',
     parentKey: 'inventory'
   }, {
     key: 'received-orders',
-    label: 'Received Orders',
+    label: 'Pesanan Diterima',
     url: '/inventory/received-orders',
     parentKey: 'inventory'
   }]
 }, {
   key: 'orders',
-  label: 'Orders',
+  label: 'Pesanan',
   icon: 'solar:bag-smile-bold-duotone',
   children: [{
     key: 'orders-list',
-    label: 'List',
+    label: 'Daftar Pesanan',
     url: '/orders/orders-list',
     parentKey: 'orders'
   }, {
     key: 'order-detail',
-    label: 'Detail',
+    label: 'Detail Pesanan',
     url: '/orders/order-detail',
     parentKey: 'orders'
   }, {
     key: 'order-cart',
-    label: 'Cart',
+    label: 'Keranjang',
     url: '/orders/order-cart',
     parentKey: 'orders'
   }, {
@@ -99,170 +144,145 @@ export const MENU_ITEMS = [{
   }]
 }, {
   key: 'purchases',
-  label: 'Purchases',
+  label: 'Pembelian (PO)',
   icon: 'solar:card-send-bold-duotone',
   children: [{
     key: 'purchase-list',
-    label: 'List',
+    label: 'Daftar Pembelian',
     url: '/purchases/purchase-list',
     parentKey: 'purchases'
   }, {
     key: 'purchase-order',
-    label: 'Order',
+    label: 'Pesanan Pembelian',
     url: '/purchases/purchase-order',
     parentKey: 'purchases'
   }, {
     key: 'purchase-returns',
-    label: 'Returns',
+    label: 'Retur Pembelian',
     url: '/purchases/purchase-returns',
     parentKey: 'purchases'
   }]
 }, {
   key: 'attributes',
-  label: 'Attributes',
+  label: 'Atribut Produk',
   icon: 'solar:confetti-minimalistic-bold-duotone',
   children: [{
     key: 'attributes-list',
-    label: 'List',
+    label: 'Daftar Atribut',
     url: '/attributes/attributes-list',
     parentKey: 'attributes'
   }, {
     key: 'attributes-edit',
-    label: 'Edit',
+    label: 'Edit Atribut',
     url: '/attributes/attributes-edit',
     parentKey: 'attributes'
   }, {
     key: 'attributes-add',
-    label: 'Create',
+    label: 'Tambah Atribut',
     url: '/attributes/attributes-add',
     parentKey: 'attributes'
   }]
 }, {
   key: 'invoice',
-  label: 'Invoices',
+  label: 'Faktur & Tagihan',
   icon: 'solar:bill-list-bold-duotone',
   children: [{
     key: 'invoice-list',
-    label: 'List',
+    label: 'Daftar Faktur',
     url: '/invoice/invoice-list',
     parentKey: 'invoice'
   }, {
     key: 'invoice-details',
-    label: 'Details',
+    label: 'Detail Faktur',
     url: '/invoice/invoice-details',
     parentKey: 'invoice'
   }, {
     key: 'invoice-add',
-    label: 'Create',
+    label: 'Buat Faktur',
     url: '/invoice/invoice-add',
     parentKey: 'invoice'
   }]
 }, {
   key: 'settings',
-  label: 'Settings',
+  label: 'Pengaturan Toko',
   icon: 'solar:settings-bold-duotone',
   url: '/settings'
 }, {
   key: 'users',
-  label: 'USERS',
+  label: 'PENGGUNA & TIM',
   isTitle: true
 }, {
   key: 'profile',
-  label: 'Profile',
+  label: 'Profil Pengguna',
   icon: 'solar:chat-square-like-bold-duotone',
   url: '/profile'
 }, {
   key: 'role',
-  label: 'Roles',
+  label: 'Peran & Hak Akses',
   icon: 'solar:user-speak-rounded-bold-duotone',
   children: [{
     key: 'role-list',
-    label: 'List',
+    label: 'Daftar Peran',
     url: '/role/role-list',
     parentKey: 'role'
   }, {
     key: 'role-edit',
-    label: 'Edit',
+    label: 'Edit Peran',
     url: '/role/role-edit',
     parentKey: 'role'
   }, {
     key: 'role-add',
-    label: 'Create',
+    label: 'Tambah Peran',
     url: '/role/role-add',
     parentKey: 'role'
   }]
 }, {
   key: 'permissions',
-  label: 'Permissions',
+  label: 'Izin Akses',
   icon: 'solar:checklist-minimalistic-bold-duotone',
   url: '/permissions'
 }, {
   key: 'customer',
-  label: 'Customers',
+  label: 'Pelanggan',
   icon: 'solar:users-group-two-rounded-bold-duotone',
   children: [{
     key: 'customer-list',
-    label: 'List',
+    label: 'Daftar Pelanggan',
     url: '/customer/customer-list',
     parentKey: 'customer'
   }, {
     key: 'customer-detail',
-    label: 'Details',
+    label: 'Detail Pelanggan',
     url: '/customer/customer-detail',
     parentKey: 'customer'
   }]
 }, {
-  key: 'seller',
-  label: 'Sellers',
-  icon: 'solar:shop-bold-duotone',
-  children: [{
-    key: 'seller-list',
-    label: 'List',
-    url: '/seller/seller-list',
-    parentKey: 'seller'
-  }, {
-    key: 'seller-details',
-    label: 'Details',
-    url: '/seller/seller-details',
-    parentKey: 'seller'
-  }, {
-    key: 'seller-edit',
-    label: 'Edit',
-    url: '/seller/seller-edit',
-    parentKey: 'seller'
-  }, {
-    key: 'seller-add',
-    label: 'Create',
-    url: '/seller/seller-add',
-    parentKey: 'seller'
-  }]
-}, {
   key: 'OTHER',
-  label: 'OTHER',
+  label: 'PROMOSI & LAINNYA',
   isTitle: true
 }, {
   key: 'coupons',
-  label: 'Coupons',
+  label: 'Kupon Diskon',
   icon: 'solar:leaf-bold-duotone',
   children: [{
     key: 'coupons-list',
-    label: 'List',
+    label: 'Daftar Kupon',
     url: '/coupons/coupons-list',
     parentKey: 'coupons'
   }, {
     key: 'coupons-add',
-    label: 'Add',
+    label: 'Tambah Kupon',
     url: '/coupons/coupons-add',
     parentKey: 'coupons'
   }]
 }, {
   key: 'review',
-  label: 'Review',
+  label: 'Ulasan & Rating',
   icon: 'solar:chat-square-like-bold-duotone',
   url: '/review'
 }, {
   key: 'Other-apps',
-  label: 'OTHER APPS',
+  label: 'APLIKASI PENDUKUNG',
   isTitle: true
 }, {
   key: 'apps-chat',

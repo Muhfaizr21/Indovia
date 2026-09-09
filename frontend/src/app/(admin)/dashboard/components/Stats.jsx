@@ -1,206 +1,213 @@
 import IconifyIcon from '@/components/wrappers/IconifyIcon';
 import ReactApexChart from 'react-apexcharts';
-import { Card, CardBody, CardFooter, CardTitle, Col, Row } from 'react-bootstrap';
+import { Card, CardBody, CardFooter, CardTitle, Col } from 'react-bootstrap';
 import { stateData } from '../data';
 import { Link } from 'react-router-dom';
-const StatsCard = ({
-  amount,
-  change,
-  icon,
-  name,
-  variant
-}) => {
-  return <Col md={6}>
-      <Card className="overflow-hidden">
-        <CardBody>
-          <Row>
-            <Col xs={6}>
-              <div className="avatar-md bg-soft-primary rounded  flex-centered">
-                <IconifyIcon icon={icon} className=" fs-24 text-primary" />
+import { useState } from 'react';
+import { useLayoutContext } from '@/context/useLayoutContext';
+
+// 4 KPI Cards in signature Indovia warm orange branding
+export const KpiCards = () => {
+  return (
+    <>
+      {stateData.map((item, idx) => (
+        <Col sm={6} xl={3} key={idx} className="mb-3">
+          <Card className="overflow-hidden border-0 shadow-sm h-100">
+            <CardBody className="p-3">
+              <div className="d-flex align-items-center justify-content-between">
+                <div
+                  className="avatar-md rounded-3 d-flex align-items-center justify-content-center"
+                  style={{ backgroundColor: 'rgba(255, 108, 47, 0.1)' }}
+                >
+                  <IconifyIcon icon={item.icon} className="fs-26" style={{ color: '#ff6c2f' }} />
+                </div>
+                <div className="text-end">
+                  <p className="text-muted mb-1 text-truncate fs-12 fw-medium">{item.name}</p>
+                  <h4 className="mt-0 mb-0 fw-bold fs-18 text-body">{item.amount}</h4>
+                </div>
               </div>
-            </Col>
-            <Col xs={6} className="text-end">
-              <p className="text-muted mb-0 text-truncate">{name}</p>
-              <h3 className="text-dark mt-1 mb-0">{amount}</h3>
-            </Col>
-          </Row>
-        </CardBody>
-        <CardFooter className="py-2 bg-light bg-opacity-50">
-          <div className="d-flex align-items-center justify-content-between">
-            <div>
-              <span className={`text-${variant} icons-center`}>
-                {variant == 'danger' ? <IconifyIcon icon="bxs:down-arrow" className="fs-12" /> : <IconifyIcon icon="bxs:up-arrow" className="fs-12" />}
-                &nbsp;{change}%
-              </span>
-              <span className="text-muted ms-1 fs-12">Last Week</span>
-            </div>
-            <Link to="#!" className="text-reset fw-semibold fs-12">
-              View More
-            </Link>
-          </div>
-        </CardFooter>
-      </Card>
-    </Col>;
+            </CardBody>
+            <CardFooter className="py-1 px-3 bg-light bg-opacity-25 border-0">
+              <div className="d-flex align-items-center justify-content-between">
+                <div className="d-flex align-items-center">
+                  <span
+                    className="d-inline-flex align-items-center px-1.5 py-0.5 rounded fs-11 fw-semibold"
+                    style={{
+                      backgroundColor: item.variant === 'danger' ? 'rgba(239, 68, 68, 0.1)' : 'rgba(34, 197, 94, 0.1)',
+                      color: item.variant === 'danger' ? '#dc2626' : '#16a34a'
+                    }}
+                  >
+                    <IconifyIcon icon={item.variant === 'danger' ? 'bxs:down-arrow' : 'bxs:up-arrow'} className="fs-10 me-1" />
+                    {item.change}%
+                  </span>
+                  <span className="text-muted ms-1 fs-11">{item.period || 'vs bln lalu'}</span>
+                </div>
+                <Link to="#!" className="fw-semibold fs-11 text-decoration-none" style={{ color: '#ff6c2f' }}>
+                  Detail &rarr;
+                </Link>
+              </div>
+            </CardFooter>
+          </Card>
+        </Col>
+      ))}
+    </>
+  );
 };
-const Stats = () => {
+
+// CHART 1 [WHAT]: Pertumbuhan Pendapatan & Volume Transaksi (Signature Indovia Orange & Emerald Green)
+export const RevenueChart = () => {
+  const [filterRange, setFilterRange] = useState('1T');
+  const { theme } = useLayoutContext();
+  const isDark = theme === 'dark';
+
   const chartOptions = {
-    series: [{
-      name: 'Page Views',
-      type: 'bar',
-      data: [34, 65, 46, 68, 49, 61, 42, 44, 78, 52, 63, 67]
-    }, {
-      name: 'Clicks',
-      type: 'area',
-      data: [8, 12, 7, 17, 21, 11, 5, 9, 7, 29, 12, 35]
-    }],
-    chart: {
-      height: 313,
-      type: 'line',
-      toolbar: {
-        show: false
+    series: [
+      {
+        name: 'Gross Merchandise Value (GMV)',
+        type: 'column',
+        data: [115, 142, 130, 168, 185, 210, 195, 240, 265, 280, 310, 345]
+      },
+      {
+        name: 'Pendapatan Bersih Platform',
+        type: 'area',
+        data: [38, 46, 42, 55, 61, 70, 64, 79, 88, 93, 102, 114]
+      },
+      {
+        name: 'Target Penjualan',
+        type: 'line',
+        data: [100, 120, 135, 150, 175, 190, 205, 225, 250, 270, 295, 320]
       }
+    ],
+    chart: {
+      height: 290,
+      type: 'line',
+      background: 'transparent',
+      toolbar: { show: false },
+      zoom: { enabled: false }
     },
+    theme: {
+      mode: isDark ? 'dark' : 'light'
+    },
+    // Signature Indovia Palette: Orange (#ff6c2f), Emerald Green (#22c55e), Muted Slate (#64748b)
+    colors: ['#ff6c2f', '#22c55e', isDark ? '#94a3b8' : '#64748b'],
     stroke: {
-      dashArray: [0, 0],
-      width: [0, 2],
+      width: [0, 2.5, 2],
+      dashArray: [0, 0, 4],
       curve: 'smooth'
     },
     fill: {
-      opacity: [1, 1],
-      type: ['solid', 'gradient'],
+      opacity: [0.95, 0.22, 1],
+      type: ['solid', 'gradient', 'solid'],
       gradient: {
         type: 'vertical',
-        inverseColors: false,
-        opacityFrom: 0.5,
-        opacityTo: 0,
-        stops: [0, 90]
+        shadeIntensity: 0.1,
+        opacityFrom: 0.45,
+        opacityTo: 0.05,
+        stops: [0, 95]
       }
     },
-    markers: {
-      size: [0, 0],
-      strokeWidth: 2,
-      hover: {
-        size: 4
+    plotOptions: {
+      bar: {
+        columnWidth: '28%',
+        borderRadius: 4
       }
     },
     xaxis: {
-      categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-      axisTicks: {
-        show: false
-      },
-      axisBorder: {
-        show: false
+      categories: ['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul', 'Agu', 'Sep', 'Okt', 'Nov', 'Des'],
+      axisTicks: { show: false },
+      axisBorder: { show: false },
+      labels: {
+        style: {
+          colors: isDark ? '#94a3b8' : '#64748b',
+          fontSize: '11px',
+          fontWeight: 500
+        }
       }
     },
     yaxis: {
       min: 0,
-      axisBorder: {
-        show: false
+      labels: {
+        formatter: (val) => `Rp ${val}Jt`,
+        style: {
+          colors: isDark ? '#94a3b8' : '#64748b',
+          fontSize: '11px'
+        }
       }
     },
     grid: {
       show: true,
       strokeDashArray: 3,
-      xaxis: {
-        lines: {
-          show: false
-        }
-      },
-      yaxis: {
-        lines: {
-          show: true
-        }
-      },
-      padding: {
-        top: 0,
-        right: -2,
-        bottom: 0,
-        left: 10
-      }
+      borderColor: isDark ? 'rgba(255, 255, 255, 0.08)' : 'rgba(226, 232, 240, 0.7)',
+      xaxis: { lines: { show: false } },
+      yaxis: { lines: { show: true } },
+      padding: { top: 0, right: 10, bottom: 0, left: 10 }
     },
     legend: {
       show: true,
-      horizontalAlign: 'center',
-      offsetX: 0,
-      offsetY: 5,
-      // markers: {
-      //   width: 9,
-      //   height: 9,
-      //   radius: 6,
-      // },
-      itemMargin: {
-        horizontal: 10,
-        vertical: 0
+      position: 'top',
+      horizontalAlign: 'left',
+      fontSize: '12px',
+      markers: { radius: 3 },
+      itemMargin: { horizontal: 10, vertical: 2 },
+      labels: {
+        colors: isDark ? '#e2e8f0' : '#334155'
       }
     },
-    plotOptions: {
-      bar: {
-        columnWidth: '30%',
-        barHeight: '70%',
-        borderRadius: 3
-      }
-    },
-    colors: ['#ff6c2f', '#22c55e'],
     tooltip: {
       shared: true,
-      y: [{
-        formatter: function (y) {
-          if (typeof y !== 'undefined') {
-            return y.toFixed(1) + 'k';
-          }
-          return y;
-        }
-      }, {
-        formatter: function (y) {
-          if (typeof y !== 'undefined') {
-            return y.toFixed(1) + 'k';
-          }
-          return y;
-        }
-      }]
+      intersect: false,
+      theme: isDark ? 'dark' : 'light',
+      y: {
+        formatter: (val) => (typeof val !== 'undefined' ? `Rp ${val} Juta` : '')
+      }
     }
   };
-  return <>
-      <Col xxl={5}>
-        <Row>
-          <Col xs={12}>
-            <div className="alert alert-primary text-truncate mb-3" role="alert">
-              We regret to inform you that our server is currently experiencing technical difficulties.
+
+  return (
+    <Col xl={7} className="mb-3">
+      <Card className="border-0 shadow-sm h-100">
+        <CardBody className="p-3">
+          <div className="d-flex flex-wrap justify-content-between align-items-center mb-2">
+            <div>
+              <CardTitle as="h5" className="fw-bold mb-0 text-body fs-15">
+                Pertumbuhan Pendapatan & Nilai Transaksi
+              </CardTitle>
+              <p className="text-muted fs-11 mb-0">
+                Performa GMV, Pendapatan Bersih Platform, dan Target Finansial Sepanjang 2026
+              </p>
             </div>
-          </Col>
-          {stateData.map((item, idx) => <StatsCard key={idx} {...item} />)}
-        </Row>
-      </Col>
-      <Col xxl={7}>
-        <Card>
-          <CardBody>
-            <div className="d-flex justify-content-between align-items-center">
-              <CardTitle as={'h4'}>Performance</CardTitle>
-              <div>
-                <button type="button" className="btn btn-sm btn-outline-light">
-                  ALL
+            <div className="btn-group mt-1 mt-sm-0" role="group">
+              {['1B', '6B', '1T', 'Semua'].map((range) => (
+                <button
+                  key={range}
+                  type="button"
+                  onClick={() => setFilterRange(range)}
+                  className={`btn btn-xs py-0.5 px-2 fs-11 ${
+                    filterRange === range
+                      ? 'text-white fw-semibold'
+                      : 'btn-outline-light text-muted border'
+                  }`}
+                  style={{
+                    backgroundColor: filterRange === range ? '#ff6c2f' : 'transparent',
+                    borderColor: filterRange === range ? '#ff6c2f' : '#e2e8f0'
+                  }}
+                >
+                  {range}
                 </button>
-                &nbsp;
-                <button type="button" className="btn btn-sm btn-outline-light">
-                  1M
-                </button>
-                &nbsp;
-                <button type="button" className="btn btn-sm btn-outline-light">
-                  6M
-                </button>
-                &nbsp;
-                <button type="button" className="btn btn-sm btn-outline-light active">
-                  1Y
-                </button>
-              </div>
+              ))}
             </div>
-            <div dir="ltr">
-              <div id="dash-performance-chart" className="apex-charts" />
-              <ReactApexChart options={chartOptions} series={chartOptions.series} height={313} type="line" className="apex-charts" />
-            </div>
-          </CardBody>
-        </Card>
-      </Col>
-    </>;
+          </div>
+          <div dir="ltr">
+            <ReactApexChart options={chartOptions} series={chartOptions.series} height={290} type="line" className="apex-charts" />
+          </div>
+        </CardBody>
+      </Card>
+    </Col>
+  );
 };
+
+const Stats = () => {
+  return <KpiCards />;
+};
+
 export default Stats;

@@ -1,51 +1,90 @@
 import IconifyIcon from '@/components/wrappers/IconifyIcon';
-import { currency } from '@/context/constants';
 import ReactApexChart from 'react-apexcharts';
 import { Card, CardBody, Col, ProgressBar, Row } from 'react-bootstrap';
 import { companyReviewsData } from '../data';
-import { Link } from 'react-router-dom';
+import { formatRupiah } from '../../data';
+
 const CompanyReviews = () => {
-  return <>
-      {companyReviewsData.map((item, idx) => <div className="d-flex align-items-center gap-3 my-3" key={idx}>
-          <h5 className="mb-0 flex-shrink-0">{item.star}&nbsp;star :</h5>
-          <ProgressBar variant="warning" className="flex-grow-1 rounded" now={item.progress} />
-        </div>)}
-    </>;
+  return (
+    <>
+      {companyReviewsData.map((item, idx) => (
+        <div className="d-flex align-items-center gap-3 my-2.5" key={idx}>
+          <span className="mb-0 flex-shrink-0 fs-12 fw-medium text-muted" style={{ width: 45 }}>
+            {item.star}&nbsp;bintang:
+          </span>
+          <ProgressBar
+            variant={item.star >= 4 ? 'warning' : 'secondary'}
+            className="flex-grow-1 rounded-pill"
+            style={{ height: 6 }}
+            now={item.progress}
+          />
+          <span className="fs-11 text-muted" style={{ width: 30 }}>
+            {item.progress}%
+          </span>
+        </div>
+      ))}
+    </>
+  );
 };
-const SellerChat = () => {
+
+const SellerChat = ({ merchant }) => {
+  const gmv = merchant?.monthly_gmv || 85400000;
+  const rating = merchant?.rating || 4.9;
+  const reviewCount = merchant?.review_count || 128;
+
+  // Indonesian Rupiah Chart Scale
+  const baseValue = gmv / 1000000; // in Juta Rupiah
+  const incomeSeries = [
+    Math.round(baseValue * 0.65),
+    Math.round(baseValue * 0.7),
+    Math.round(baseValue * 0.72),
+    Math.round(baseValue * 0.8),
+    Math.round(baseValue * 0.85),
+    Math.round(baseValue * 0.78),
+    Math.round(baseValue * 0.92),
+    Math.round(baseValue * 0.88),
+    Math.round(baseValue * 0.95),
+    Math.round(baseValue * 0.9),
+    Math.round(baseValue * 0.98),
+    Math.round(baseValue)
+  ];
+
   const chartOptions = {
     chart: {
       height: 328,
       type: 'area',
       dropShadow: {
         enabled: true,
-        opacity: 0.2,
-        blur: 10,
-        left: -7,
-        top: 22
+        opacity: 0.15,
+        blur: 8,
+        left: -4,
+        top: 10
       },
       toolbar: {
         show: false
       }
     },
-    colors: ['#47ad94', '#ff6c2f'],
+    colors: ['#ff6c2f', '#10b981'],
     dataLabels: {
       enabled: false
     },
     stroke: {
       show: true,
       curve: 'smooth',
-      width: 2,
-      lineCap: 'square'
+      width: 2.5,
+      lineCap: 'round'
     },
-    series: [{
-      name: 'Expenses',
-      data: [16800, 16800, 15500, 17000, 14800, 15500, 19000, 16000, 15000, 17000, 14000, 17000]
-    }, {
-      name: 'Income',
-      data: [16500, 17500, 16200, 21500, 17300, 16000, 16000, 17000, 16000, 19000, 18000, 19000]
-    }],
-    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+    series: [
+      {
+        name: 'Omset Toko (Juta Rp)',
+        data: incomeSeries
+      },
+      {
+        name: 'Target Bulanan (Juta Rp)',
+        data: incomeSeries.map((v) => Math.round(v * 0.85))
+      }
+    ],
+    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul', 'Agu', 'Sep', 'Okt', 'Nov', 'Des'],
     xaxis: {
       axisBorder: {
         show: false
@@ -60,27 +99,27 @@ const SellerChat = () => {
         offsetX: 0,
         offsetY: 5,
         style: {
-          fontSize: '12px',
-          cssClass: 'apexcharts-xaxis-title'
+          fontSize: '11px',
+          fontFamily: 'Inter, sans-serif'
         }
       }
     },
     yaxis: {
       labels: {
         formatter: function (value) {
-          return value / 1000 + 'K';
+          return 'Rp ' + value + ' Jt';
         },
-        offsetX: -15,
+        offsetX: -10,
         offsetY: 0,
         style: {
-          fontSize: '12px',
-          cssClass: 'apexcharts-yaxis-title'
+          fontSize: '11px',
+          fontFamily: 'Inter, sans-serif'
         }
       }
     },
     grid: {
-      borderColor: '#191e3a',
-      strokeDashArray: 5,
+      borderColor: '#e2e8f0',
+      strokeDashArray: 4,
       xaxis: {
         lines: {
           show: true
@@ -92,94 +131,115 @@ const SellerChat = () => {
         }
       },
       padding: {
-        top: -50,
+        top: -20,
         right: 0,
         bottom: 0,
-        left: 5
+        left: 10
       }
     },
     legend: {
-      show: false
+      show: true,
+      position: 'top',
+      horizontalAlign: 'right',
+      fontSize: '12px'
     },
     fill: {
       type: 'gradient',
       gradient: {
         type: 'vertical',
         shadeIntensity: 1,
-        inverseColors: !1,
-        opacityFrom: 0.12,
-        opacityTo: 0.1,
-        stops: [100, 100]
+        inverseColors: false,
+        opacityFrom: 0.25,
+        opacityTo: 0.02,
+        stops: [0, 100]
       }
-    },
-    responsive: [{
-      breakpoint: 575,
-      options: {
-        legend: {
-          offsetY: -50
-        }
-      }
-    }]
+    }
   };
-  return <Row>
+
+  return (
+    <Row className="g-3 mb-3">
+      {/* KOLOM KIRI: GRAFIK TREN PENJUALAN */}
       <Col lg={9}>
-        <Card>
-          <CardBody>
+        <Card className="border-0 shadow-sm h-100">
+          <CardBody className="p-4">
             <div className="d-flex align-items-center justify-content-between mb-3">
               <div>
-                <h3 className="d-flex align-items-center gap-2">
-                  {currency}5,563.786{' '}
-                  <span className="badge text-success bg-success-subtle px-2 py-1 fs-12">
-                    <IconifyIcon icon="bx:up-arrow-alt" />
-                    4.53%
+                <span className="text-muted fs-12 fw-medium">Tren Omset &amp; Volume Penjualan Toko</span>
+                <h3 className="d-flex align-items-center gap-2 mb-0 fw-bold text-body fs-20 mt-1">
+                  {formatRupiah(gmv)}{' '}
+                  <span className="badge text-success bg-success-subtle px-2 py-0.5 fs-11 fw-semibold">
+                    <IconifyIcon icon="bx:up-arrow-alt" className="me-0.5" />
+                    +14.8% vs Bulan Lalu
                   </span>
                 </h3>
-                <p className="mb-0 text-muted">
-                  Gained <span className="text-success">{currency}378.56</span> This Month !
+                <p className="mb-0 text-muted fs-11 mt-1">
+                  Pertumbuhan akumulasi omset dihitung berdasarkan pesanan berstatus sukses bayar.
                 </p>
               </div>
-              <div className="avatar-md bg-light bg-opacity-50 rounded flex-centered">
-                <IconifyIcon width={32} height={32} icon="solar:chart-2-bold-duotone" className="fs-32 text-primary" />
+              <div
+                className="avatar-md rounded-circle d-flex align-items-center justify-content-center"
+                style={{ backgroundColor: 'rgba(255, 108, 47, 0.1)', color: '#ff6c2f' }}
+              >
+                <IconifyIcon icon="solar:chart-2-bold-duotone" className="fs-28" />
               </div>
             </div>
-            <ReactApexChart options={chartOptions} series={chartOptions.series} height={328} type="area" className="apex-charts" />
+            <ReactApexChart
+              options={chartOptions}
+              series={chartOptions.series}
+              height={310}
+              type="area"
+              className="apex-charts"
+            />
           </CardBody>
         </Card>
       </Col>
+
+      {/* KOLOM KANAN: ULASAN TOKO & KEPUASAN */}
       <Col lg={3}>
-        <Card className="text-center">
-          <CardBody>
-            <h4 className="mb-0 text-dark fw-medium">Company Reviews</h4>
-            <div className="p-2 d-flex gap-3 bg-light align-items-center justify-content-center mt-3 rounded">
-              <ul className="d-flex text-warning m-0 fs-24  list-unstyled">
-                <li>
-                  <IconifyIcon icon="bxs:star" />
-                </li>
-                <li>
-                  <IconifyIcon icon="bxs:star" />
-                </li>
-                <li>
-                  <IconifyIcon icon="bxs:star" />
-                </li>
-                <li>
-                  <IconifyIcon icon="bxs:star" />
-                </li>
-                <li>
-                  <IconifyIcon icon="bxs-star-half" />
-                </li>
-              </ul>
-              <p className="mb-0 text-dark fw-medium fs-16">4.5 Out of 5</p>
+        <Card className="border-0 shadow-sm text-center h-100">
+          <CardBody className="p-4 d-flex flex-column justify-content-between">
+            <div>
+              <h5 className="mb-0 text-body fw-bold fs-15">Reputasi &amp; Rating Toko</h5>
+              <p className="text-muted fs-11 mb-2">Evaluasi kepuasan pembeli</p>
+
+              <div className="p-3 d-flex flex-column align-items-center justify-content-center bg-light rounded-3 my-2">
+                <ul className="d-flex text-warning m-0 fs-20 list-unstyled gap-0.5 mb-1">
+                  <li>
+                    <IconifyIcon icon="bxs:star" />
+                  </li>
+                  <li>
+                    <IconifyIcon icon="bxs:star" />
+                  </li>
+                  <li>
+                    <IconifyIcon icon="bxs:star" />
+                  </li>
+                  <li>
+                    <IconifyIcon icon="bxs:star" />
+                  </li>
+                  <li>
+                    <IconifyIcon icon="bxs:star-half" />
+                  </li>
+                </ul>
+                <h4 className="mb-0 text-dark fw-bold fs-18">{rating} / 5.0</h4>
+                <span className="text-muted fs-11">Berdasarkan {reviewCount} Ulasan Pembeli</span>
+              </div>
+
+              <div className="my-3 text-start">
+                <CompanyReviews />
+              </div>
             </div>
-            <p className="text-primary mt-2 fw-medium">Based on +23.5k Review</p>
-            <div className="my-4">
-              <CompanyReviews />
+
+            <div className="pt-2 border-top">
+              <span className="badge bg-success-subtle text-success fs-11 w-100 py-1.5">
+                <IconifyIcon icon="solar:shield-check-bold" className="me-1 fs-12" />
+                Indeks Kepercayaan: 99.4%
+              </span>
             </div>
-            <Link to="" className="text-primary mt-2 fw-medium">
-              How do we calculate ratings ?
-            </Link>
           </CardBody>
         </Card>
       </Col>
-    </Row>;
+    </Row>
+  );
 };
+
 export default SellerChat;

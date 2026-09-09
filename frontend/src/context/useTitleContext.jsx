@@ -3,7 +3,7 @@ const TitleContext = createContext(undefined);
 export const TitleProvider = ({
   children
 }) => {
-  const [title, setTitle] = useState('WELCOME!');
+  const [title, setTitle] = useState('RINGKASAN EKSEKUTIF');
   return <TitleContext.Provider value={{
     title,
     setTitle
