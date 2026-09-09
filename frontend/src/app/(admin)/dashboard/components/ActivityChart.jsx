@@ -4,9 +4,13 @@ import IconifyIcon from '@/components/wrappers/IconifyIcon';
 import { hourlyActivityData } from '../data';
 import { useLayoutContext } from '@/context/useLayoutContext';
 
-const ActivityChart = () => {
+const ActivityChart = ({ activityData = null }) => {
   const { theme } = useLayoutContext();
   const isDark = theme === 'dark';
+
+  const orders = activityData?.orders || hourlyActivityData.orders;
+  const visitors = activityData?.visitors || hourlyActivityData.visitors;
+  const hours = activityData?.hours || hourlyActivityData.hours;
 
   // CHART 2 [WHEN]: Distribusi Waktu & Jam Puncak Transaksi
   // Signature Indovia Palette: Warm Orange (#ff6c2f) & Clean Charcoal Slate / Sky Blue (#334155 / #38bdf8)
@@ -15,12 +19,12 @@ const ActivityChart = () => {
       {
         name: 'Jumlah Transaksi (Order)',
         type: 'column',
-        data: hourlyActivityData.orders
+        data: orders
       },
       {
         name: 'Pengunjung Aktif (Trafik)',
         type: 'line',
-        data: hourlyActivityData.visitors.map((v) => Math.round(v / 3))
+        data: visitors.map((v) => Math.round(v / 3))
       }
     ],
     chart: {
@@ -48,7 +52,7 @@ const ActivityChart = () => {
       type: ['solid', 'solid']
     },
     colors: ['#ff6c2f', isDark ? '#38bdf8' : '#334155'],
-    labels: hourlyActivityData.hours,
+    labels: hours,
     xaxis: {
       type: 'category',
       labels: {

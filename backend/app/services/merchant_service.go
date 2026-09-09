@@ -21,6 +21,7 @@ type MerchantService interface {
 	ReviewKYC(id uint, decision, notes string, actorID uint, actorName string) (*models.Merchant, error)
 	VerifyCustomDomain(id uint, actorID uint, actorName string) (*models.Merchant, error)
 	Impersonate(merchantID uint, actorID uint, actorName string) (string, *models.Merchant, error)
+	UpdateThemeConfig(id uint, themeConfig string, actorID uint, actorName string) (*models.Merchant, error)
 }
 
 type merchantService struct {
@@ -242,6 +243,30 @@ func (s *merchantService) Impersonate(merchantID uint, actorID uint, actorName s
 	})
 
 	return token, merchant, nil
+}
+
+func (s *merchantService) UpdateThemeConfig(id uint, themeConfig string, actorID uint, actorName string) (*models.Merchant, error) {
+	merchant, err := s.repo.FindByID(id)
+	if err != nil {
+		return nil, errors.New("merchant tidak ditemukan")
+	}
+
+	if err := s.repo.UpdateThemeConfig(id, themeConfig); err != nil {
+		return nil, err
+	}
+
+	s.repo.CreateAuditLog(&models.AuditLog{
+		ActorID:      actorID,
+		ActorName:    actorName,
+		ActorRole:    "superadmin",
+		Action:       "MERCHANT_THEME_UPDATED",
+		TargetEntity: "merchants",
+		TargetID:     fmt.Sprintf("%d", merchant.ID),
+		Details:      fmt.Sprintf("Superadmin memperbarui konfigurasi tema & tata letak toko [%s] (Subdomain: %s).", merchant.Name, merchant.Subdomain),
+		CreatedAt:    time.Now(),
+	})
+
+	return s.repo.FindByID(id)
 }
 
 func slugify(text string) string {

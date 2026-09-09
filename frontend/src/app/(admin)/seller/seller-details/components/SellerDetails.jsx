@@ -2,6 +2,7 @@ import { Fragment } from 'react';
 import IconifyIcon from '@/components/wrappers/IconifyIcon';
 import { Card, CardBody, CardTitle, Col, ProgressBar, Row, Badge, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { getMerchantThemeInfo } from '../../data';
 
 const ProductCategory = ({ categories }) => {
   const defaultCategories = [
@@ -52,6 +53,7 @@ const SellerDetails = ({ merchant, metadata, onImpersonate, onOpenKyc, onOpenDom
   if (!merchant) return null;
 
   const meta = metadata || {};
+  const themeInfo = getMerchantThemeInfo(merchant);
 
   return (
     <Row>
@@ -153,6 +155,25 @@ const SellerDetails = ({ merchant, metadata, onImpersonate, onOpenKyc, onOpenDom
                         <span className="badge bg-success-subtle text-success ms-2 fs-10">SSL Terproteksi</span>
                       </div>
                     )}
+
+                    {/* TEMA & LAYOUT AKTIF WIDGET */}
+                    <div className="d-flex align-items-center flex-wrap gap-2 mt-1">
+                      <span className="badge bg-primary-subtle text-primary border border-primary-subtle fs-11 py-1 px-2 d-inline-flex align-items-center">
+                        <IconifyIcon icon="solar:pallete-2-bold" className="me-1 fs-13" />
+                        Tema: {themeInfo.demo_number} ({themeInfo.theme_id === 'fashion-02' ? 'Minimalist' : themeInfo.theme_id === 'fashion-03' ? 'Luxury' : 'Fashion'})
+                      </span>
+                      <span className="badge bg-body-secondary text-body border border-secondary-subtle fs-11 py-1 px-2 d-inline-flex align-items-center">
+                        <IconifyIcon icon="solar:widget-linear" className="me-1 fs-13 text-secondary" />
+                        Layout: {themeInfo.product_layout}
+                      </span>
+                      <Link
+                        to={`/seller/seller-details?id=${merchant.id}&tab=themes`}
+                        className="text-primary fs-11 fw-semibold text-decoration-none d-inline-flex align-items-center hover-underline"
+                        title="Buka Pengaturan Tema & Layout Toko"
+                      >
+                        Ubah Desain &rsaquo;
+                      </Link>
+                    </div>
                   </div>
 
                   <div className="d-flex align-items-center gap-2 mt-2 mb-3">

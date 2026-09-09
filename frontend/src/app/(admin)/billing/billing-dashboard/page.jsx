@@ -1,23 +1,38 @@
 import PageTItle from '@/components/PageTItle';
 import IconifyIcon from '@/components/wrappers/IconifyIcon';
 import { Button } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 import BillingKpiCards from '../components/BillingKpiCards';
-import CashflowOverviewTab from '../components/CashflowOverviewTab';
+import ExecutiveBiAnalyticsTab from '../components/ExecutiveBiAnalyticsTab';
 
 const BillingEnginePage = () => {
+  const navigate = useNavigate();
+
   return (
     <>
-      <PageTItle title="Dashboard Billing & Arus Kas SaaS" />
+      <PageTItle title="Executive BI &amp; Platform Analytics" subName="Monetisasi &amp; Billing SaaS" />
 
       {/* HEADER ACTION BAR */}
       <div className="d-flex flex-wrap justify-content-between align-items-center mb-3">
         <div>
-          <h4 className="fw-bold mb-1 text-body">Dashboard Billing & Arus Kas Platform</h4>
+          <h4 className="fw-bold mb-1 text-body d-flex align-items-center">
+            <IconifyIcon icon="solar:chart-2-bold-duotone" className="me-2 text-primary fs-24" />
+            Executive BI &amp; Platform-Wide Analytics
+          </h4>
           <p className="text-muted fs-12 mb-0">
-            Pusat Rekonsiliasi Finansial & Monetisasi SaaS Indovia: Analisis Arus Kas Operasional, Manajemen Likuiditas, dan Rekonsiliasi Bank
+            Dasar Pengambilan Keputusan Strategis Bisnis bagi Founder, C-Level, dan Investor Indovia: Metrik Finansial SaaS, Tren Perdagangan Makro, &amp; Kepatuhan Fiskal SAK
           </p>
         </div>
         <div className="d-flex gap-2 mt-2 mt-sm-0">
+          <Button
+            variant="outline-primary"
+            size="sm"
+            className="d-flex align-items-center fw-semibold"
+            onClick={() => navigate('/billing/cashflow')}
+          >
+            <IconifyIcon icon="solar:wallet-money-bold-duotone" className="me-1" />
+            Buka Arus Kas &amp; Jurnal SAK
+          </Button>
           <Button
             variant="outline-secondary"
             size="sm"
@@ -25,26 +40,16 @@ const BillingEnginePage = () => {
             onClick={() => window.location.reload()}
           >
             <IconifyIcon icon="solar:refresh-bold" className="me-1" />
-            Muat Ulang Data
-          </Button>
-          <Button
-            variant="primary"
-            size="sm"
-            className="d-flex align-items-center fw-semibold text-white"
-            style={{ backgroundColor: '#ff6c2f', borderColor: '#ff6c2f' }}
-            onClick={() => alert('Mengunduh Laporan Rekonsiliasi Finansial & SaaS Cashflow Berstandar Akuntansi (PDF)...')}
-          >
-            <IconifyIcon icon="solar:download-square-bold" className="me-1" />
-            Unduh Laporan Finansial
+            Muat Ulang
           </Button>
         </div>
       </div>
 
-      {/* FINANCIAL KPI CARDS */}
+      {/* QUICK KPI CARDS */}
       <BillingKpiCards />
 
-      {/* COMPREHENSIVE CASHFLOW & ACCOUNTING DASHBOARD */}
-      <CashflowOverviewTab />
+      {/* MODUL 7: EXECUTIVE BI & MACRO ANALYTICS (DEDICATED FULL VIEW) */}
+      <ExecutiveBiAnalyticsTab />
     </>
   );
 };

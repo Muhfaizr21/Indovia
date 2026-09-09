@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import PageTItle from '@/components/PageTItle';
 import IconifyIcon from '@/components/wrappers/IconifyIcon';
 import {
@@ -20,9 +20,10 @@ import {
   DropdownItem,
   Alert
 } from 'react-bootstrap';
-import { initialMerchantsData, formatRupiah, statusConfig, kycConfig } from '../data';
+import { initialMerchantsData, formatRupiah, statusConfig, kycConfig, getMerchantThemeInfo } from '../data';
 
 const SellerListPage = () => {
+  const [searchParams, setSearchParams] = useSearchParams();
   const [merchants, setMerchants] = useState(initialMerchantsData);
   const [loading, setLoading] = useState(false);
 
@@ -31,6 +32,14 @@ const SellerListPage = () => {
   const [selectedStatus, setSelectedStatus] = useState('all');
   const [selectedKyc, setSelectedKyc] = useState('all');
   const [selectedPlan, setSelectedPlan] = useState('all');
+  const [selectedTheme, setSelectedTheme] = useState(searchParams.get('theme') || 'all');
+
+  useEffect(() => {
+    const themeParam = searchParams.get('theme');
+    if (themeParam) {
+      setSelectedTheme(themeParam);
+    }
+  }, [searchParams]);
 
   // Multi-selection checkboxes
   const [selectedIds, setSelectedIds] = useState([]);
@@ -95,7 +104,10 @@ const SellerListPage = () => {
     const matchKyc = selectedKyc === 'all' || m.kyc_status === selectedKyc;
     const matchPlan = selectedPlan === 'all' || m.plan === selectedPlan;
 
-    return matchSearch && matchStatus && matchKyc && matchPlan;
+    const themeInfo = getMerchantThemeInfo(m);
+    const matchTheme = selectedTheme === 'all' || themeInfo.theme_id === selectedTheme;
+
+    return matchSearch && matchStatus && matchKyc && matchPlan && matchTheme;
   });
 
   // KPI Calculations
@@ -339,18 +351,34 @@ const SellerListPage = () => {
         <Col sm={6} xl>
           <Card
             className="border-0 shadow-sm h-100 cursor-pointer"
-            onClick={() => setSelectedStatus('all')}
-            style={{ borderLeft: '4px solid #ff6c2f' }}
+            onClick={() => {
+              setSelectedStatus('all');
+              setSelectedKyc('all');
+            }}
+            style={{
+              borderLeft: '4px solid #ff6c2f',
+              backgroundColor: selectedStatus === 'all' && selectedKyc === 'all' ? 'rgba(255, 108, 47, 0.06)' : undefined,
+              boxShadow: selectedStatus === 'all' && selectedKyc === 'all' ? '0 4px 14px rgba(255, 108, 47, 0.15)' : undefined,
+              transition: 'all 0.2s ease-in-out'
+            }}
           >
             <CardBody className="p-3">
               <div className="d-flex align-items-center justify-content-between">
                 <div>
                   <p className="text-muted mb-0 fs-11 fw-medium">Total Toko Terdaftar</p>
-                  <h4 className="mt-0 mb-0 fw-bold text-body fs-17">{totalCount} Toko</h4>
+                  <h4 className="mt-0 mb-1 fw-bold text-body fs-17">{totalCount} Toko</h4>
+                  {selectedStatus === 'all' && selectedKyc === 'all' ? (
+                    <span className="badge bg-primary-subtle text-primary fs-10 py-0.5 px-1.5 fw-semibold d-inline-flex align-items-center">
+                      <IconifyIcon icon="solar:filter-bold" className="me-1 fs-11" />
+                      Filter Aktif
+                    </span>
+                  ) : (
+                    <small className="text-muted fs-10">Seluruh tenant</small>
+                  )}
                 </div>
                 <div
-                  className="avatar-sm rounded-circle d-flex align-items-center justify-content-center"
-                  style={{ backgroundColor: 'rgba(255, 108, 47, 0.1)', color: '#ff6c2f' }}
+                  className="avatar-sm rounded-circle d-flex align-items-center justify-content-center flex-shrink-0"
+                  style={{ backgroundColor: 'rgba(255, 108, 47, 0.12)', color: '#ff6c2f' }}
                 >
                   <IconifyIcon icon="solar:shop-bold-duotone" className="fs-18" />
                 </div>
@@ -362,18 +390,34 @@ const SellerListPage = () => {
         <Col sm={6} xl>
           <Card
             className="border-0 shadow-sm h-100 cursor-pointer"
-            onClick={() => setSelectedStatus('active')}
-            style={{ borderLeft: '4px solid #16a34a' }}
+            onClick={() => {
+              setSelectedStatus('active');
+              setSelectedKyc('all');
+            }}
+            style={{
+              borderLeft: '4px solid #16a34a',
+              backgroundColor: selectedStatus === 'active' ? 'rgba(22, 163, 74, 0.06)' : undefined,
+              boxShadow: selectedStatus === 'active' ? '0 4px 14px rgba(22, 163, 74, 0.15)' : undefined,
+              transition: 'all 0.2s ease-in-out'
+            }}
           >
             <CardBody className="p-3">
               <div className="d-flex align-items-center justify-content-between">
                 <div>
                   <p className="text-muted mb-0 fs-11 fw-medium">Aktif Berbayar</p>
-                  <h4 className="mt-0 mb-0 fw-bold text-success fs-17">{activeCount} Toko</h4>
+                  <h4 className="mt-0 mb-1 fw-bold text-success fs-17">{activeCount} Toko</h4>
+                  {selectedStatus === 'active' ? (
+                    <span className="badge bg-success-subtle text-success fs-10 py-0.5 px-1.5 fw-semibold d-inline-flex align-items-center">
+                      <IconifyIcon icon="solar:filter-bold" className="me-1 fs-11" />
+                      Filter Aktif
+                    </span>
+                  ) : (
+                    <small className="text-muted fs-10">SaaS Revenue</small>
+                  )}
                 </div>
                 <div
-                  className="avatar-sm rounded-circle d-flex align-items-center justify-content-center"
-                  style={{ backgroundColor: 'rgba(34, 197, 94, 0.1)', color: '#16a34a' }}
+                  className="avatar-sm rounded-circle d-flex align-items-center justify-content-center flex-shrink-0"
+                  style={{ backgroundColor: 'rgba(34, 197, 94, 0.12)', color: '#16a34a' }}
                 >
                   <IconifyIcon icon="solar:check-circle-bold-duotone" className="fs-18" />
                 </div>
@@ -385,20 +429,36 @@ const SellerListPage = () => {
         <Col sm={6} xl>
           <Card
             className="border-0 shadow-sm h-100 cursor-pointer"
-            onClick={() => setSelectedStatus('trial')}
-            style={{ borderLeft: '4px solid #ea580c' }}
+            onClick={() => {
+              setSelectedStatus('trial');
+              setSelectedKyc('all');
+            }}
+            style={{
+              borderLeft: '4px solid #ea580c',
+              backgroundColor: selectedStatus === 'trial' ? 'rgba(234, 88, 12, 0.06)' : undefined,
+              boxShadow: selectedStatus === 'trial' ? '0 4px 14px rgba(234, 88, 12, 0.15)' : undefined,
+              transition: 'all 0.2s ease-in-out'
+            }}
           >
             <CardBody className="p-3">
               <div className="d-flex align-items-center justify-content-between">
                 <div>
                   <p className="text-muted mb-0 fs-11 fw-medium">Masa Trial (14 Hari)</p>
-                  <h4 className="mt-0 mb-0 fw-bold fs-17" style={{ color: '#ea580c' }}>
+                  <h4 className="mt-0 mb-1 fw-bold fs-17" style={{ color: '#ea580c' }}>
                     {trialCount} Toko
                   </h4>
+                  {selectedStatus === 'trial' ? (
+                    <span className="badge bg-warning-subtle text-warning fs-10 py-0.5 px-1.5 fw-semibold d-inline-flex align-items-center">
+                      <IconifyIcon icon="solar:filter-bold" className="me-1 fs-11" />
+                      Filter Aktif
+                    </span>
+                  ) : (
+                    <small className="text-muted fs-10">Potensi konversi</small>
+                  )}
                 </div>
                 <div
-                  className="avatar-sm rounded-circle d-flex align-items-center justify-content-center"
-                  style={{ backgroundColor: 'rgba(234, 88, 12, 0.1)', color: '#ea580c' }}
+                  className="avatar-sm rounded-circle d-flex align-items-center justify-content-center flex-shrink-0"
+                  style={{ backgroundColor: 'rgba(234, 88, 12, 0.12)', color: '#ea580c' }}
                 >
                   <IconifyIcon icon="solar:clock-circle-bold-duotone" className="fs-18" />
                 </div>
@@ -410,20 +470,36 @@ const SellerListPage = () => {
         <Col sm={6} xl>
           <Card
             className="border-0 shadow-sm h-100 cursor-pointer"
-            onClick={() => setSelectedKyc('pending')}
-            style={{ borderLeft: '4px solid #d97706' }}
+            onClick={() => {
+              setSelectedKyc('pending');
+              setSelectedStatus('all');
+            }}
+            style={{
+              borderLeft: '4px solid #d97706',
+              backgroundColor: selectedKyc === 'pending' ? 'rgba(217, 119, 6, 0.06)' : undefined,
+              boxShadow: selectedKyc === 'pending' ? '0 4px 14px rgba(217, 119, 6, 0.15)' : undefined,
+              transition: 'all 0.2s ease-in-out'
+            }}
           >
             <CardBody className="p-3">
               <div className="d-flex align-items-center justify-content-between">
                 <div>
                   <p className="text-muted mb-0 fs-11 fw-medium">Menunggu Verifikasi KYC</p>
-                  <h4 className="mt-0 mb-0 fw-bold text-warning fs-17">
+                  <h4 className="mt-0 mb-1 fw-bold text-warning fs-17">
                     {kycPendingCount} Toko
                   </h4>
+                  {selectedKyc === 'pending' ? (
+                    <span className="badge bg-warning-subtle text-warning fs-10 py-0.5 px-1.5 fw-semibold d-inline-flex align-items-center">
+                      <IconifyIcon icon="solar:filter-bold" className="me-1 fs-11" />
+                      Filter Aktif
+                    </span>
+                  ) : (
+                    <small className="text-muted fs-10">Perlu tindakan</small>
+                  )}
                 </div>
                 <div
-                  className="avatar-sm rounded-circle d-flex align-items-center justify-content-center"
-                  style={{ backgroundColor: 'rgba(245, 158, 11, 0.1)', color: '#d97706' }}
+                  className="avatar-sm rounded-circle d-flex align-items-center justify-content-center flex-shrink-0"
+                  style={{ backgroundColor: 'rgba(245, 158, 11, 0.12)', color: '#d97706' }}
                 >
                   <IconifyIcon icon="solar:shield-warning-bold-duotone" className="fs-18" />
                 </div>
@@ -435,20 +511,36 @@ const SellerListPage = () => {
         <Col sm={6} xl>
           <Card
             className="border-0 shadow-sm h-100 cursor-pointer"
-            onClick={() => setSelectedStatus('suspended')}
-            style={{ borderLeft: '4px solid #475569' }}
+            onClick={() => {
+              setSelectedStatus('suspended');
+              setSelectedKyc('all');
+            }}
+            style={{
+              borderLeft: '4px solid #475569',
+              backgroundColor: selectedStatus === 'suspended' ? 'rgba(100, 116, 139, 0.06)' : undefined,
+              boxShadow: selectedStatus === 'suspended' ? '0 4px 14px rgba(100, 116, 139, 0.15)' : undefined,
+              transition: 'all 0.2s ease-in-out'
+            }}
           >
             <CardBody className="p-3">
               <div className="d-flex align-items-center justify-content-between">
                 <div>
                   <p className="text-muted mb-0 fs-11 fw-medium">Toko Ditangguhkan</p>
-                  <h4 className="mt-0 mb-0 fw-bold text-secondary fs-17">
+                  <h4 className="mt-0 mb-1 fw-bold text-secondary fs-17">
                     {suspendedCount} Toko
                   </h4>
+                  {selectedStatus === 'suspended' ? (
+                    <span className="badge bg-secondary-subtle text-secondary fs-10 py-0.5 px-1.5 fw-semibold d-inline-flex align-items-center">
+                      <IconifyIcon icon="solar:filter-bold" className="me-1 fs-11" />
+                      Filter Aktif
+                    </span>
+                  ) : (
+                    <small className="text-muted fs-10">Pelanggaran / dunning</small>
+                  )}
                 </div>
                 <div
-                  className="avatar-sm rounded-circle d-flex align-items-center justify-content-center"
-                  style={{ backgroundColor: 'rgba(100, 116, 139, 0.1)', color: '#475569' }}
+                  className="avatar-sm rounded-circle d-flex align-items-center justify-content-center flex-shrink-0"
+                  style={{ backgroundColor: 'rgba(100, 116, 139, 0.12)', color: '#475569' }}
                 >
                   <IconifyIcon icon="solar:close-circle-bold-duotone" className="fs-18" />
                 </div>
@@ -463,7 +555,7 @@ const SellerListPage = () => {
         {/* Integrated Filter & Search Toolbar */}
         <CardHeader className="p-3 border-bottom bg-body">
           <Row className="g-2 align-items-center">
-            <Col lg={4}>
+            <Col xs={12} lg={3}>
               <div className="position-relative">
                 <input
                   type="text"
@@ -523,8 +615,31 @@ const SellerListPage = () => {
               </Form.Select>
             </Col>
 
-            <Col xs={6} md={3} lg={2} className="text-end">
-              {(searchTerm || selectedStatus !== 'all' || selectedKyc !== 'all' || selectedPlan !== 'all') ? (
+            {/* FILTER BERDASARKAN TEMA / TEMPLATE */}
+            <Col xs={6} md={3} lg={2}>
+              <Form.Select
+                size="sm"
+                value={selectedTheme}
+                onChange={(e) => {
+                  setSelectedTheme(e.target.value);
+                  if (e.target.value === 'all') {
+                    searchParams.delete('theme');
+                    setSearchParams(searchParams);
+                  } else {
+                    setSearchParams({ theme: e.target.value });
+                  }
+                }}
+                className="fs-12 fw-medium text-body border-primary-subtle"
+              >
+                <option value="all">Semua Tema / Desain</option>
+                <option value="fashion-01">Demo 01 (Fashion Store)</option>
+                <option value="fashion-02">Demo 02 (Minimalist)</option>
+                <option value="fashion-03">Demo 03 (Luxury)</option>
+              </Form.Select>
+            </Col>
+
+            <Col xs={12} md={12} lg={1} className="text-end">
+              {(searchTerm || selectedStatus !== 'all' || selectedKyc !== 'all' || selectedPlan !== 'all' || selectedTheme !== 'all') ? (
                 <Button
                   variant="outline-danger"
                   size="sm"
@@ -534,16 +649,19 @@ const SellerListPage = () => {
                     setSelectedStatus('all');
                     setSelectedKyc('all');
                     setSelectedPlan('all');
+                    setSelectedTheme('all');
+                    searchParams.delete('theme');
+                    setSearchParams(searchParams);
                   }}
                   title="Reset Filter"
                 >
                   <IconifyIcon icon="solar:restart-bold" className="me-1" />
-                  Reset Filter
+                  Reset
                 </Button>
               ) : (
                 <div className="text-end">
-                  <span className="badge bg-light text-muted border fw-normal py-1 px-2 fs-11">
-                    {filteredMerchants.length} Toko Ditampilkan
+                  <span className="badge bg-body-secondary text-body border border-secondary-subtle fw-medium py-1 px-2 fs-11" title="Jumlah Toko">
+                    {filteredMerchants.length} Toko
                   </span>
                 </div>
               )}
@@ -552,7 +670,7 @@ const SellerListPage = () => {
 
           {/* Bulk Selection Notice */}
           {selectedIds.length > 0 && (
-            <div className="d-flex align-items-center justify-content-between p-2 mt-2 rounded bg-light border">
+            <div className="d-flex align-items-center justify-content-between p-2.5 mt-2 rounded-3 bg-body-secondary border border-secondary-subtle">
               <span className="fs-12 text-body">
                 <strong>{selectedIds.length}</strong> toko terpilih dari tabel
               </span>
@@ -572,7 +690,7 @@ const SellerListPage = () => {
 
         <div className="table-responsive">
           <Table hover className="align-middle mb-0">
-            <thead className="bg-light bg-opacity-50">
+            <thead className="bg-body-tertiary">
               <tr className="fs-11 text-uppercase text-muted border-bottom">
                 <th className="ps-3" style={{ width: '40px' }}>
                   <Form.Check
@@ -581,19 +699,20 @@ const SellerListPage = () => {
                     onChange={handleSelectAll}
                   />
                 </th>
-                <th style={{ minWidth: '240px' }}>Toko & Kategori</th>
-                <th style={{ minWidth: '190px' }}>Subdomain & Domain</th>
-                <th style={{ minWidth: '160px' }}>Pemilik & Kontak</th>
-                <th style={{ minWidth: '120px' }}>Paket & Status</th>
-                <th style={{ minWidth: '150px' }}>Verifikasi KYC</th>
-                <th style={{ minWidth: '130px' }}>Performa (GMV)</th>
-                <th className="text-end pe-3" style={{ minWidth: '180px' }}>Aksi Superadmin</th>
+                <th style={{ minWidth: '220px' }}>Toko &amp; Kategori</th>
+                <th style={{ minWidth: '170px' }}>Subdomain &amp; Domain</th>
+                <th style={{ minWidth: '150px' }}>Pemilik &amp; Kontak</th>
+                <th style={{ minWidth: '175px' }}>Tema &amp; Tata Letak</th>
+                <th style={{ minWidth: '120px' }}>Paket &amp; Status</th>
+                <th style={{ minWidth: '140px' }}>Verifikasi KYC</th>
+                <th style={{ minWidth: '120px' }}>Performa (GMV)</th>
+                <th className="text-end pe-3" style={{ minWidth: '220px' }}>Aksi Superadmin</th>
               </tr>
             </thead>
             <tbody className="fs-12">
               {filteredMerchants.length === 0 ? (
                 <tr>
-                  <td colSpan="8" className="text-center py-5 text-muted">
+                  <td colSpan="9" className="text-center py-5 text-muted">
                     <IconifyIcon icon="solar:shop-2-bold" className="fs-32 text-muted mb-2 d-block mx-auto" />
                     <strong>Tidak ada data toko merchant yang cocok dengan filter.</strong>
                     <p className="fs-12 mb-0">Silakan sesuaikan kata kunci atau reset filter pencarian Anda.</p>
@@ -603,6 +722,7 @@ const SellerListPage = () => {
                 filteredMerchants.map((m) => {
                   const statusInfo = statusConfig[m.status] || statusConfig.trial;
                   const kycInfo = kycConfig[m.kyc_status] || kycConfig.unverified;
+                  const themeInfo = getMerchantThemeInfo(m);
                   const isChecked = selectedIds.includes(m.id);
 
                   return (
@@ -641,7 +761,7 @@ const SellerListPage = () => {
                                 {m.name}
                               </Link>
                               <span
-                                className="badge bg-light text-secondary border font-monospace fs-10 px-1.5 py-0.5 ms-1"
+                                className="badge bg-body-secondary text-secondary border border-secondary-subtle font-monospace fs-10 px-1.5 py-0.5 ms-1"
                                 style={{ letterSpacing: '0.2px' }}
                               >
                                 {m.code}
@@ -659,7 +779,7 @@ const SellerListPage = () => {
                       {/* Subdomain & Domain */}
                       <td>
                         <div className="mb-1">
-                          <span className="d-inline-flex align-items-center px-2 py-0.5 rounded fs-11 fw-medium bg-light bg-opacity-75 text-body border border-light-subtle">
+                          <span className="d-inline-flex align-items-center px-2 py-0.5 rounded fs-11 fw-medium bg-body-secondary text-body border border-secondary-subtle">
                             <IconifyIcon icon="solar:link-bold" className="fs-11 me-1 text-primary" />
                             {m.subdomain}.indovia.com
                             <IconifyIcon
@@ -709,6 +829,46 @@ const SellerListPage = () => {
                             <IconifyIcon icon="solar:chat-round-dots-bold" className="me-1 fs-12" />
                             {m.owner_phone}
                           </a>
+                        </div>
+                      </td>
+
+                      {/* Tema & Tata Letak Toko */}
+                      <td>
+                        <div className="d-flex flex-column gap-1">
+                          <div>
+                            <Badge
+                              bg={
+                                themeInfo.theme_id === 'fashion-01'
+                                  ? 'primary-subtle'
+                                  : themeInfo.theme_id === 'fashion-02'
+                                  ? 'info-subtle'
+                                  : 'warning-subtle'
+                              }
+                              className={`border fs-11 fw-semibold d-inline-flex align-items-center ${
+                                themeInfo.theme_id === 'fashion-01'
+                                  ? 'text-primary border-primary-subtle'
+                                  : themeInfo.theme_id === 'fashion-02'
+                                  ? 'text-info border-info-subtle'
+                                  : 'text-warning border-warning-subtle'
+                              }`}
+                            >
+                              <IconifyIcon icon="solar:pallete-2-bold" className="me-1 fs-12" />
+                              {themeInfo.demo_number} ({themeInfo.theme_id === 'fashion-02' ? 'Minimalist' : themeInfo.theme_id === 'fashion-03' ? 'Luxury' : 'Fashion'})
+                            </Badge>
+                          </div>
+                          <div className="text-muted fs-11 d-flex align-items-center gap-1">
+                            <IconifyIcon icon="solar:widget-linear" className="fs-12 text-secondary" />
+                            <span className="text-truncate" style={{ maxWidth: 110 }} title={themeInfo.product_layout}>
+                              {themeInfo.product_layout}
+                            </span>
+                            <Link
+                              to={`/seller/seller-details?id=${m.id}&tab=themes`}
+                              className="text-primary ms-1 d-inline-flex align-items-center"
+                              title="Ubah Tema & Tata Letak Toko Ini"
+                            >
+                              <IconifyIcon icon="solar:pen-bold" className="fs-11" />
+                            </Link>
+                          </div>
                         </div>
                       </td>
 
@@ -765,11 +925,11 @@ const SellerListPage = () => {
                       </td>
 
                       {/* Aksi Superadmin */}
-                      <td className="text-end pe-3">
-                        <div className="d-inline-flex align-items-center justify-content-end gap-1.5">
+                      <td className="text-end pe-3" style={{ whiteSpace: 'nowrap' }}>
+                        <div className="d-inline-flex align-items-center justify-content-end" style={{ gap: '8px' }}>
                           <Link
                             to={`/seller/seller-details?id=${m.id}`}
-                            className="btn btn-sm btn-outline-secondary py-1 px-2 fs-11 d-inline-flex align-items-center rounded-2"
+                            className="btn btn-sm btn-outline-secondary py-1 px-2.5 fs-11 d-inline-flex align-items-center rounded-2 shadow-none"
                             title="Buka Profil & Audit Toko 360°"
                           >
                             <IconifyIcon icon="solar:eye-bold" className="me-1 fs-12 text-primary" />
@@ -779,8 +939,8 @@ const SellerListPage = () => {
                           <Button
                             variant="primary"
                             size="sm"
-                            className="py-1 px-2 fs-11 fw-semibold text-white d-inline-flex align-items-center rounded-2"
-                            style={{ backgroundColor: '#ff6c2f', borderColor: '#ff6c2f' }}
+                            className="py-1 px-2.5 fs-11 fw-semibold text-white d-inline-flex align-items-center rounded-2 shadow-none border-0"
+                            style={{ backgroundColor: '#ff6c2f' }}
                             onClick={() => handleOpenImpersonate(m)}
                             title="Login as Merchant"
                           >
@@ -788,10 +948,11 @@ const SellerListPage = () => {
                             Masuk Toko
                           </Button>
 
-                          <Dropdown align="end">
+                          <Dropdown align="end" className="d-inline-flex">
                             <DropdownToggle
                               as="button"
-                              className="btn btn-sm btn-outline-secondary py-1 px-1.5 fs-12 border rounded-2"
+                              className="btn btn-sm btn-outline-secondary py-1 px-2 fs-12 border rounded-2 d-inline-flex align-items-center justify-content-center shadow-none"
+                              style={{ minWidth: '30px', height: '28px' }}
                               title="Opsi Lainnya"
                             >
                               <IconifyIcon icon="solar:menu-dots-bold" />
@@ -804,6 +965,14 @@ const SellerListPage = () => {
                               <DropdownItem onClick={() => handleOpenDomain(m)}>
                                 <IconifyIcon icon="solar:global-bold" className="me-2 text-info" />
                                 Domain Kustom & SSL
+                              </DropdownItem>
+                              <DropdownItem
+                                as={Link}
+                                to={`/seller/seller-details?id=${m.id}&tab=themes`}
+                                className="text-primary fw-medium"
+                              >
+                                <IconifyIcon icon="solar:pallete-2-bold" className="me-2 text-primary" />
+                                Kelola Tema &amp; Layout Toko
                               </DropdownItem>
                               <DropdownItem onClick={() => copyToClipboard(`https://${m.subdomain}.indovia.com`)}>
                                 <IconifyIcon icon="solar:copy-linear" className="me-2 text-muted" />
@@ -845,19 +1014,19 @@ const SellerListPage = () => {
           <p className="text-muted fs-12 mb-0">
             Menampilkan <strong>{filteredMerchants.length}</strong> dari <strong>{merchants.length}</strong> toko merchant terdaftar
           </p>
-          <div className="d-flex align-items-center gap-1">
-            <Button variant="outline-light" size="sm" className="text-muted border py-0.5 px-2 fs-11" disabled>
+          <div className="d-flex align-items-center" style={{ gap: '6px' }}>
+            <Button variant="outline-secondary" size="sm" className="py-1 px-2.5 fs-11" disabled>
               &laquo; Sebelumnya
             </Button>
             <Button
               variant="primary"
               size="sm"
-              className="py-0.5 px-2 fs-11 fw-semibold text-white"
-              style={{ backgroundColor: '#ff6c2f', borderColor: '#ff6c2f' }}
+              className="py-1 px-2.5 fs-11 fw-semibold text-white border-0"
+              style={{ backgroundColor: '#ff6c2f' }}
             >
               1
             </Button>
-            <Button variant="outline-light" size="sm" className="text-muted border py-0.5 px-2 fs-11" disabled>
+            <Button variant="outline-secondary" size="sm" className="py-1 px-2.5 fs-11" disabled>
               Selanjutnya &raquo;
             </Button>
           </div>
@@ -866,187 +1035,436 @@ const SellerListPage = () => {
 
       {/* MODAL 1: CRYPTOGRAPHIC IMPERSONATION ("Login as Merchant") */}
       <Modal show={showImpersonateModal} onHide={() => setShowImpersonateModal(false)} centered>
-        <Modal.Header closeButton className="border-0 pb-0">
-          <Modal.Title className="fw-bold fs-16 text-body d-flex align-items-center">
-            <IconifyIcon icon="solar:shield-keyhole-bold" className="me-2 text-warning fs-20" />
-            Sesi Bantuan: Login Sebagai Merchant
+        <Modal.Header closeButton className="border-bottom px-3 py-2.5 bg-body">
+          <Modal.Title className="fw-bold fs-15 text-body d-flex align-items-center">
+            <div
+              className="avatar-xs rounded-circle d-flex align-items-center justify-content-center me-2 bg-warning-subtle text-warning"
+            >
+              <IconifyIcon icon="solar:shield-keyhole-bold" className="fs-16" />
+            </div>
+            Sesi Akses Bantuan: Login Sebagai Merchant
           </Modal.Title>
         </Modal.Header>
-        <Modal.Body className="p-3 pt-2">
+        <Modal.Body className="p-3">
           {selectedMerchant && (
             <>
-              <Alert variant="warning" className="d-flex align-items-start p-2.5 fs-12 mb-3">
+              <Alert variant="warning" className="d-flex align-items-start p-2.5 fs-12 mb-3 border-warning-subtle">
                 <IconifyIcon icon="solar:danger-triangle-bold" className="fs-18 me-2 flex-shrink-0 text-warning" />
                 <div>
-                  <strong>Audit Keamanan Aktif:</strong> Anda akan masuk ke dashboard toko{' '}
+                  <strong>Audit Keamanan Aktif:</strong> Anda akan masuk ke konsol merchant{' '}
                   <strong>{selectedMerchant.name}</strong> (`{selectedMerchant.subdomain}.indovia.com`).
-                  Seluruh perubahan akan terekam di sistem Audit Trail dengan penanda <code>is_impersonation: true</code>.
+                  Seluruh perubahan operasional terekam di sistem Audit Trail dengan metadata <code>is_impersonation: true</code>.
                 </div>
               </Alert>
 
-              <div className="p-2.5 rounded-2 bg-light mb-3 fs-12">
-                <div className="d-flex justify-content-between mb-1">
+              <div className="p-3 rounded-3 bg-body-secondary border mb-3 fs-12">
+                <div className="d-flex justify-content-between align-items-center mb-1.5 pb-1.5 border-bottom">
                   <span className="text-muted">Target Toko:</span>
-                  <strong className="text-body">{selectedMerchant.name}</strong>
+                  <strong className="text-body d-flex align-items-center">
+                    {selectedMerchant.name}
+                    <span className="badge bg-body text-secondary border font-monospace fs-10 px-1.5 py-0.5 ms-1.5">
+                      {selectedMerchant.code}
+                    </span>
+                  </strong>
                 </div>
-                <div className="d-flex justify-content-between mb-1">
-                  <span className="text-muted">Subdomain URL:</span>
-                  <span className="fw-medium text-primary">https://{selectedMerchant.subdomain}.indovia.com</span>
+                <div className="d-flex justify-content-between align-items-center mb-1.5 pb-1.5 border-bottom">
+                  <span className="text-muted">Subdomain Storefront:</span>
+                  <span className="fw-medium text-primary font-monospace">
+                    https://{selectedMerchant.subdomain}.indovia.com
+                  </span>
                 </div>
-                <div className="d-flex justify-content-between mb-1">
+                <div className="d-flex justify-content-between align-items-center mb-1.5 pb-1.5 border-bottom">
                   <span className="text-muted">Masa Berlaku Sesi:</span>
-                  <span className="text-danger fw-semibold">30 Menit (Otomatis Expired)</span>
+                  <span className="badge bg-danger-subtle text-danger fs-10 fw-semibold px-2 py-0.5 border border-danger-subtle">
+                    30 Menit (Auto-Expired)
+                  </span>
                 </div>
-                <div className="d-flex justify-content-between">
+                <div className="d-flex justify-content-between align-items-center">
                   <span className="text-muted">Tingkat Hak Akses:</span>
-                  <span className="text-success fw-medium">Merchant Administrator Terbatas</span>
+                  <span className="badge bg-success-subtle text-success fs-10 fw-medium px-2 py-0.5 border border-success-subtle">
+                    Merchant Administrator Terbatas
+                  </span>
                 </div>
               </div>
 
               {impersonateTokenResult ? (
-                <div className="p-2.5 rounded-2 bg-success bg-opacity-10 border border-success border-opacity-25 mb-3">
-                  <p className="text-success fw-bold fs-12 mb-1">
-                    <IconifyIcon icon="solar:check-circle-bold" className="me-1" />
+                <div className="p-3 rounded-3 bg-success-subtle border border-success-subtle mb-3">
+                  <div className="d-flex align-items-center text-success fw-bold fs-12 mb-1.5">
+                    <IconifyIcon icon="solar:check-circle-bold" className="me-1.5 fs-16" />
                     Token Impersonasi Berhasil Diterbitkan!
-                  </p>
-                  <p className="text-muted fs-11 mb-2">
-                    Gunakan tautan di bawah ini untuk membuka portal merchant:
-                  </p>
-                  <div className="d-flex gap-2">
-                    <Button
-                      variant="success"
-                      size="sm"
-                      className="w-100 fw-semibold"
-                      onClick={() => window.open(impersonateTokenResult.store_url || `/dashboard`, '_blank')}
-                    >
-                      Buka Dashboard Toko Sekarang &rarr;
-                    </Button>
                   </div>
+                  <p className="text-muted fs-11 mb-2">
+                    Gunakan tautan di bawah ini untuk membuka portal merchant secara langsung:
+                  </p>
+                  <Button
+                    variant="success"
+                    size="sm"
+                    className="w-100 fw-bold text-white d-flex align-items-center justify-content-center py-2 rounded-2"
+                    style={{ backgroundColor: '#16a34a', borderColor: '#16a34a' }}
+                    onClick={() => window.open(impersonateTokenResult.store_url || `/dashboard`, '_blank')}
+                  >
+                    <IconifyIcon icon="solar:login-2-bold" className="me-1.5 fs-15" />
+                    Buka Dashboard Toko Sekarang &rarr;
+                  </Button>
                 </div>
               ) : (
-                <p className="text-muted fs-11 mb-0">
-                  Dengan mengklik tombol di bawah, backend Golang akan menerbitkan token otorisasi kriptografi sementara untuk akun Anda.
+                <p className="text-muted fs-11 mb-0 d-flex align-items-center">
+                  <IconifyIcon icon="solar:info-circle-linear" className="me-1 text-primary fs-14 flex-shrink-0" />
+                  Mengklik tombol di bawah akan menerbitkan token otorisasi kriptografi sementara (JWT) untuk sesi audit Superadmin.
                 </p>
               )}
             </>
           )}
         </Modal.Body>
-        <Modal.Footer className="border-0 pt-0">
-          <Button variant="light" size="sm" onClick={() => setShowImpersonateModal(false)}>
+        <Modal.Footer className="border-top px-3 py-2.5 bg-body d-flex justify-content-between align-items-center">
+          <Button variant="outline-secondary" size="sm" className="px-3 py-1.5 fs-12" onClick={() => setShowImpersonateModal(false)}>
             Batal
           </Button>
           {!impersonateTokenResult && (
             <Button
               variant="primary"
               size="sm"
-              className="fw-semibold text-white"
+              className="px-3.5 py-1.5 fs-12 fw-semibold text-white d-inline-flex align-items-center rounded-2 shadow-sm"
               style={{ backgroundColor: '#ff6c2f', borderColor: '#ff6c2f' }}
               onClick={handleExecuteImpersonate}
             >
+              <IconifyIcon icon="solar:login-2-bold" className="me-1.5 fs-14" />
               Mulai Sesi Login As Merchant
             </Button>
           )}
         </Modal.Footer>
       </Modal>
-
       {/* MODAL 2: VERIFIKASI MERCHANT & KYC */}
       <Modal show={showKycModal} onHide={() => setShowKycModal(false)} size="lg" centered>
-        <Modal.Header closeButton className="border-0 pb-0">
-          <Modal.Title className="fw-bold fs-16 text-body d-flex align-items-center">
-            <IconifyIcon icon="solar:shield-check-bold" className="me-2 text-primary fs-20" />
+        <Modal.Header closeButton className="border-bottom px-3 py-2.5 bg-body">
+          <Modal.Title className="fw-bold fs-15 text-body d-flex align-items-center">
+            <div
+              className="avatar-xs rounded-circle d-flex align-items-center justify-content-center me-2"
+              style={{ backgroundColor: 'rgba(255, 108, 47, 0.12)', color: '#ff6c2f' }}
+            >
+              <IconifyIcon icon="solar:shield-check-bold" className="fs-16" />
+            </div>
             Peninjauan Legalitas & Verifikasi KYC Merchant
           </Modal.Title>
         </Modal.Header>
-        <Modal.Body className="p-3 pt-2">
+
+        <Modal.Body className="p-3">
           {selectedMerchant && (
             <>
-              <div className="d-flex justify-content-between align-items-center mb-3 p-2 bg-light rounded-2">
-                <div>
-                  <h6 className="fw-bold mb-0 text-body">{selectedMerchant.name}</h6>
-                  <span className="text-muted fs-11">
-                    Kode: <strong>{selectedMerchant.code}</strong> &bull; Pemilik: <strong>{selectedMerchant.owner_name}</strong>
+              {/* Merchant Info Banner */}
+              <div className="d-flex flex-wrap justify-content-between align-items-center p-3 mb-3 bg-body-secondary border rounded-3">
+                <div className="d-flex align-items-center mb-2 mb-sm-0">
+                  <div
+                    className="avatar-md rounded-3 d-flex align-items-center justify-content-center me-3 fw-bold text-white shadow-sm flex-shrink-0"
+                    style={{
+                      background: 'linear-gradient(135deg, #ff6c2f 0%, #ea580c 100%)',
+                      fontSize: '18px'
+                    }}
+                  >
+                    {selectedMerchant.name.charAt(0).toUpperCase()}
+                  </div>
+                  <div>
+                    <div className="d-flex align-items-center flex-wrap gap-1 mb-1">
+                      <h5 className="fw-bold mb-0 text-body fs-15 me-1">{selectedMerchant.name}</h5>
+                      <span className="badge bg-body text-secondary border font-monospace fs-10 px-1.5 py-0.5">
+                        {selectedMerchant.code}
+                      </span>
+                    </div>
+                    <div className="d-flex align-items-center flex-wrap gap-2 text-muted fs-11">
+                      <span className="d-inline-flex align-items-center">
+                        <IconifyIcon icon="solar:user-bold" className="me-1 text-primary fs-12" />
+                        Pemilik: <strong className="ms-1 text-body">{selectedMerchant.owner_name}</strong>
+                      </span>
+                      <span>&bull;</span>
+                      <span className="d-inline-flex align-items-center text-primary">
+                        <IconifyIcon icon="solar:link-bold" className="me-1 fs-12" />
+                        {selectedMerchant.subdomain}.indovia.com
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="text-sm-end">
+                  <span
+                    className={`d-inline-flex align-items-center px-2.5 py-1 rounded-pill fs-11 fw-semibold border ${
+                      selectedMerchant.kyc_status === 'approved'
+                        ? 'bg-success-subtle text-success border-success-subtle'
+                        : selectedMerchant.kyc_status === 'rejected'
+                        ? 'bg-danger-subtle text-danger border-danger-subtle'
+                        : 'bg-warning-subtle text-warning border-warning-subtle'
+                    }`}
+                  >
+                    <IconifyIcon
+                      icon={
+                        selectedMerchant.kyc_status === 'approved'
+                          ? 'solar:shield-check-bold'
+                          : selectedMerchant.kyc_status === 'rejected'
+                          ? 'solar:shield-cross-bold'
+                          : 'solar:shield-warning-bold'
+                      }
+                      className="me-1 fs-13"
+                    />
+                    {selectedMerchant.kyc_status === 'approved'
+                      ? 'Terverifikasi Resmi'
+                      : selectedMerchant.kyc_status === 'rejected'
+                      ? 'Dokumen Ditolak'
+                      : 'Menunggu Verifikasi'}
                   </span>
                 </div>
-                <Badge bg={selectedMerchant.kyc_status === 'approved' ? 'success' : 'warning'}>
-                  {selectedMerchant.kyc_status?.toUpperCase()}
-                </Badge>
               </div>
 
+              {/* Two Column Grid: KTP vs NPWP/NIB with Equal Heights */}
               <Row className="g-3 mb-3">
+                {/* Column 1: Identitas Kependudukan (e-KTP) */}
                 <Col md={6}>
-                  <div className="p-2.5 rounded border bg-light bg-opacity-25 h-100">
-                    <h6 className="fw-bold text-body fs-12 mb-2 pb-1 border-bottom">
-                      1. Identitas Kependudukan (KTP)
-                    </h6>
-                    <p className="mb-1 fs-12 text-muted">Nomor Induk Kependudukan (NIK):</p>
-                    <p className="fw-bold text-body fs-14 mb-2">
-                      {selectedMerchant.ktp_number || '3372011204850001'}
-                    </p>
-                    <div
-                      className="rounded p-3 text-center bg-light border text-muted fs-11"
-                      style={{ minHeight: 90 }}
-                    >
-                      <IconifyIcon icon="solar:card-2-bold" className="fs-28 text-muted mb-1" />
-                      <br />
-                      Foto KTP Elektronik Terlampir (Terbaca Jelas)
+                  <div className="p-3 rounded-3 border bg-body-secondary h-100 d-flex flex-column justify-content-between">
+                    <div>
+                      <div className="d-flex align-items-center justify-content-between mb-2 pb-2 border-bottom">
+                        <span className="fw-bold text-body fs-12 d-flex align-items-center">
+                          <IconifyIcon icon="solar:user-id-bold" className="me-1.5 text-primary fs-14" />
+                          1. Identitas Kependudukan (KTP)
+                        </span>
+                        <span className="badge bg-success-subtle text-success fs-10 px-1.5 py-0.5 border border-success-subtle">
+                          ✓ Terverifikasi NIK
+                        </span>
+                      </div>
+
+                      <div className="mb-2">
+                        <small className="text-muted fs-11 d-block mb-0.5">Nomor Induk Kependudukan (NIK):</small>
+                        <div className="d-flex align-items-center justify-content-between bg-body p-2 rounded border">
+                          <code className="fs-13 fw-bold text-body font-monospace">
+                            {selectedMerchant.ktp_number || '3372011204850001'}
+                          </code>
+                          <button
+                            type="button"
+                            className="btn btn-xs btn-outline-secondary py-0.5 px-1.5 fs-10 d-inline-flex align-items-center"
+                            onClick={() => copyToClipboard(selectedMerchant.ktp_number || '3372011204850001')}
+                            title="Salin NIK"
+                          >
+                            <IconifyIcon icon="solar:copy-linear" className="me-1" />
+                            Salin
+                          </button>
+                        </div>
+                      </div>
+
+                      <div className="d-flex justify-content-between text-muted fs-11 mb-2">
+                        <span>Nama di KTP: <strong className="text-body">{selectedMerchant.owner_name}</strong></span>
+                        <span className="text-success fw-medium">Seumur Hidup</span>
+                      </div>
+                    </div>
+
+                    {/* e-KTP Simulated Preview Card */}
+                    <div className="mt-2 p-2.5 rounded-2 bg-body border">
+                      <div className="d-flex align-items-center justify-content-between mb-1.5">
+                        <span className="fs-10 fw-bold text-uppercase text-secondary d-flex align-items-center">
+                          <IconifyIcon icon="solar:sim-card-bold" className="me-1 text-warning fs-12" />
+                          E-KTP Elektronik RI
+                        </span>
+                        <span className="badge bg-success-subtle text-success fs-10 py-0.5 px-1.5">
+                          OCR 100% Cocok
+                        </span>
+                      </div>
+                      <div className="d-flex align-items-center justify-content-between pt-1 border-top">
+                        <div className="d-flex align-items-center">
+                          <div
+                            className="rounded d-flex align-items-center justify-content-center bg-secondary bg-opacity-10 text-muted me-2"
+                            style={{ width: 34, height: 34 }}
+                          >
+                            <IconifyIcon icon="solar:gallery-bold" className="fs-18 text-primary" />
+                          </div>
+                          <div>
+                            <span className="fs-11 fw-medium text-body d-block">foto_ktp_depan.jpg</span>
+                            <small className="text-muted fs-10">1.8 MB &bull; Resolusi Tinggi</small>
+                          </div>
+                        </div>
+                        <button
+                          type="button"
+                          className="btn btn-xs btn-outline-primary py-1 px-2 fs-10 d-inline-flex align-items-center"
+                          onClick={() => alert(`Pratinjau KTP Digital untuk ${selectedMerchant.name} telah diverifikasi secara kriptografis.`)}
+                        >
+                          <IconifyIcon icon="solar:eye-bold" className="me-1" />
+                          Lihat KTP
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </Col>
 
+                {/* Column 2: Legalitas Usaha & Pajak (NPWP / NIB) */}
                 <Col md={6}>
-                  <div className="p-2.5 rounded border bg-light bg-opacity-25 h-100">
-                    <h6 className="fw-bold text-body fs-12 mb-2 pb-1 border-bottom">
-                      2. Legalitas Usaha & Pajak (NPWP / NIB)
-                    </h6>
-                    <p className="mb-1 fs-12 text-muted">NPWP Usaha / Perorangan:</p>
-                    <p className="fw-semibold text-body fs-13 mb-2">
-                      {selectedMerchant.npwp_number || '08.123.456.7-526.000'}
-                    </p>
-                    <p className="mb-1 fs-12 text-muted">Nomor Induk Berusaha (NIB):</p>
-                    <p className="fw-semibold text-body fs-13 mb-0">
-                      {selectedMerchant.nib_number || '1209230018273'} &bull; OSS Valid
-                    </p>
+                  <div className="p-3 rounded-3 border bg-body-secondary h-100 d-flex flex-column justify-content-between">
+                    <div>
+                      <div className="d-flex align-items-center justify-content-between mb-2 pb-2 border-bottom">
+                        <span className="fw-bold text-body fs-12 d-flex align-items-center">
+                          <IconifyIcon icon="solar:document-text-bold" className="me-1.5 text-primary fs-14" />
+                          2. Legalitas Usaha & Pajak (NPWP / NIB)
+                        </span>
+                        <span className="badge bg-info-subtle text-info fs-10 px-1.5 py-0.5 border border-info-subtle">
+                          ✓ Terdaftar DJP & OSS
+                        </span>
+                      </div>
+
+                      <div className="mb-2">
+                        <small className="text-muted fs-11 d-block mb-0.5">NPWP Usaha / Perorangan:</small>
+                        <div className="d-flex align-items-center justify-content-between bg-body p-2 rounded border">
+                          <code className="fs-13 fw-bold text-body font-monospace">
+                            {selectedMerchant.npwp_number || '08.123.456.7-526.000'}
+                          </code>
+                          <button
+                            type="button"
+                            className="btn btn-xs btn-outline-secondary py-0.5 px-1.5 fs-10 d-inline-flex align-items-center"
+                            onClick={() => copyToClipboard(selectedMerchant.npwp_number || '08.123.456.7-526.000')}
+                            title="Salin NPWP"
+                          >
+                            <IconifyIcon icon="solar:copy-linear" className="me-1" />
+                            Salin
+                          </button>
+                        </div>
+                      </div>
+
+                      <div className="d-flex justify-content-between text-muted fs-11 mb-2">
+                        <span>NIB: <strong className="text-body">{selectedMerchant.nib_number || '1209230018273'}</strong></span>
+                        <span className="text-primary fw-medium">OSS RBA Valid</span>
+                      </div>
+                    </div>
+
+                    {/* NIB Simulated Certificate Preview Card */}
+                    <div className="mt-2 p-2.5 rounded-2 bg-body border">
+                      <div className="d-flex align-items-center justify-content-between mb-1.5">
+                        <span className="fs-10 fw-bold text-uppercase text-secondary d-flex align-items-center">
+                          <IconifyIcon icon="solar:diploma-verified-bold" className="me-1 text-info fs-12" />
+                          Sertifikat NIB Berbasis Risiko
+                        </span>
+                        <span className="badge bg-info-subtle text-info fs-10 py-0.5 px-1.5">
+                          KBLI 47711
+                        </span>
+                      </div>
+                      <div className="d-flex align-items-center justify-content-between pt-1 border-top">
+                        <div className="d-flex align-items-center">
+                          <div
+                            className="rounded d-flex align-items-center justify-content-center bg-info bg-opacity-10 text-info me-2"
+                            style={{ width: 34, height: 34 }}
+                          >
+                            <IconifyIcon icon="solar:document-bold" className="fs-18" />
+                          </div>
+                          <div>
+                            <span className="fs-11 fw-medium text-body d-block">izin_nib_oss.pdf</span>
+                            <small className="text-muted fs-10">Dokumen Legal Terdaftar</small>
+                          </div>
+                        </div>
+                        <button
+                          type="button"
+                          className="btn btn-xs btn-outline-info py-1 px-2 fs-10 d-inline-flex align-items-center"
+                          onClick={() => alert(`Sertifikat NIB untuk ${selectedMerchant.name} terdaftar pada sistem OSS Republik Indonesia.`)}
+                        >
+                          <IconifyIcon icon="solar:file-download-bold" className="me-1" />
+                          Unduh NIB
+                        </button>
+                      </div>
+                    </div>
                   </div>
                 </Col>
 
+                {/* Section 3: Rekening Bank Pencairan Dana */}
                 <Col md={12}>
-                  <div className="p-2.5 rounded border bg-light bg-opacity-25">
-                    <h6 className="fw-bold text-body fs-12 mb-2 pb-1 border-bottom">
-                      3. Rekening Bank Pencairan Dana (Settlement Payout)
-                    </h6>
-                    <Row className="align-items-center">
-                      <Col sm={8}>
-                        <div className="d-flex align-items-center">
+                  <div className="p-3 rounded-3 border bg-body-secondary">
+                    <div className="d-flex align-items-center justify-content-between mb-2 pb-2 border-bottom">
+                      <span className="fw-bold text-body fs-12 d-flex align-items-center">
+                        <IconifyIcon icon="solar:wallet-bold" className="me-1.5 text-success fs-14" />
+                        3. Rekening Bank Pencairan Dana (Settlement Payout)
+                      </span>
+                      <span className="badge bg-success-subtle text-success fs-10 px-2 py-0.5 border border-success-subtle d-inline-flex align-items-center">
+                        <IconifyIcon icon="solar:check-circle-bold" className="me-1 fs-11" />
+                        Nama Pemilik 100% Cocok Sesuai KTP
+                      </span>
+                    </div>
+
+                    <Row className="align-items-center g-2">
+                      <Col sm={7}>
+                        <div className="d-flex align-items-center p-2.5 rounded bg-body border">
                           <div
-                            className="avatar-sm rounded-2 d-flex align-items-center justify-content-center me-2 bg-dark text-white fw-bold fs-12"
+                            className="avatar-sm rounded-2 d-flex align-items-center justify-content-center me-3 fw-bold text-white fs-12 flex-shrink-0 shadow-sm"
+                            style={{
+                              backgroundColor:
+                                selectedMerchant.bank_name === 'BCA'
+                                  ? '#003d79'
+                                  : selectedMerchant.bank_name === 'Mandiri'
+                                  ? '#002d62'
+                                  : selectedMerchant.bank_name === 'BRI'
+                                  ? '#00529c'
+                                  : '#ff6c2f'
+                            }}
                           >
                             {selectedMerchant.bank_name || 'BCA'}
                           </div>
-                          <div>
-                            <p className="mb-0 fw-bold text-body fs-13">
-                              {selectedMerchant.bank_account_number || '0158829910'}
-                            </p>
-                            <span className="text-muted fs-11">
-                              A.N. {selectedMerchant.bank_account_holder || selectedMerchant.owner_name}
-                            </span>
+                          <div className="flex-grow-1">
+                            <div className="d-flex align-items-center gap-2">
+                              <span className="fw-bold text-body fs-14 font-monospace">
+                                {selectedMerchant.bank_account_number || '0158829910'}
+                              </span>
+                              <button
+                                type="button"
+                                className="btn btn-link p-0 text-muted"
+                                onClick={() => copyToClipboard(selectedMerchant.bank_account_number || '0158829910')}
+                                title="Salin Nomor Rekening"
+                              >
+                                <IconifyIcon icon="solar:copy-linear" className="fs-12" />
+                              </button>
+                            </div>
+                            <small className="text-muted fs-11 d-block">
+                              Atas Nama: <strong className="text-body">{selectedMerchant.bank_account_holder || selectedMerchant.owner_name}</strong>
+                            </small>
                           </div>
                         </div>
                       </Col>
-                      <Col sm={4} className="text-sm-end mt-2 mt-sm-0">
-                        <span className="badge bg-success bg-opacity-10 text-success fs-11 py-1 px-2">
-                          <IconifyIcon icon="solar:check-circle-bold" className="me-1" />
-                          Nama Rekening Sesuai KTP
-                        </span>
+
+                      <Col sm={5}>
+                        <div className="p-2.5 rounded bg-body border fs-11 text-muted">
+                          <div className="d-flex align-items-center justify-content-between mb-1">
+                            <span>Kanal Kliring:</span>
+                            <strong className="text-body">BI-FAST Realtime</strong>
+                          </div>
+                          <div className="d-flex align-items-center justify-content-between">
+                            <span>Siklus Pembayaran:</span>
+                            <span className="text-success fw-medium">T+1 Auto-Disbursement</span>
+                          </div>
+                        </div>
                       </Col>
                     </Row>
                   </div>
                 </Col>
               </Row>
 
-              <Form.Group className="mb-2">
-                <Form.Label className="fs-12 fw-semibold text-body">
-                  Catatan Evaluasi Verifikasi Superadmin:
-                </Form.Label>
+              {/* Section 4: Catatan Evaluasi & Preset Chips */}
+              <div className="p-3 rounded-3 border bg-body-secondary mb-2">
+                <div className="d-flex flex-wrap align-items-center justify-content-between mb-2">
+                  <label className="fs-12 fw-semibold text-body mb-0">
+                    Catatan Evaluasi Verifikasi Superadmin:
+                  </label>
+                  <small className="text-muted fs-11">
+                    Pilih preset catatan cepat di bawah:
+                  </small>
+                </div>
+
+                {/* Quick Presets */}
+                <div className="d-flex flex-wrap mb-2" style={{ gap: '6px' }}>
+                  {[
+                    'Dokumen Lengkap & Terbaca Jelas',
+                    'KTP & NIK Valid Kemendagri',
+                    'Foto KTP Buram / Silau, mohon unggah ulang',
+                    'Nama Rekening Bank Berbeda dengan KTP'
+                  ].map((preset) => (
+                    <button
+                      key={preset}
+                      type="button"
+                      className="btn btn-xs btn-outline-secondary py-0.5 px-2 fs-10 rounded-pill d-inline-flex align-items-center"
+                      onClick={() => setKycNotes(preset)}
+                    >
+                      + {preset}
+                    </button>
+                  ))}
+                </div>
+
                 <Form.Control
                   as="textarea"
                   rows={2}
@@ -1055,124 +1473,201 @@ const SellerListPage = () => {
                   placeholder="Masukkan alasan jika menolak dokumen atau catatan khusus persetujuan..."
                   className="fs-12"
                 />
-              </Form.Group>
+              </div>
             </>
           )}
         </Modal.Body>
-        <Modal.Footer className="border-0 pt-0">
-          <Button variant="light" size="sm" onClick={() => setShowKycModal(false)}>
+
+        <Modal.Footer className="border-top px-3 py-2.5 bg-body d-flex justify-content-between align-items-center">
+          <Button
+            variant="outline-secondary"
+            size="sm"
+            className="px-3 py-1.5 fs-12"
+            onClick={() => setShowKycModal(false)}
+          >
             Tutup
           </Button>
-          <Button
-            variant="outline-danger"
-            size="sm"
-            onClick={() => handleKycDecision('rejected')}
-          >
-            <IconifyIcon icon="solar:close-circle-bold" className="me-1" />
-            Tolak Dokumen
-          </Button>
-          <Button
-            variant="success"
-            size="sm"
-            className="fw-semibold text-white"
-            onClick={() => handleKycDecision('approved')}
-          >
-            <IconifyIcon icon="solar:check-circle-bold" className="me-1" />
-            Setujui Verifikasi KYC
-          </Button>
+
+          <div className="d-flex align-items-center" style={{ gap: '10px' }}>
+            <Button
+              variant="outline-danger"
+              size="sm"
+              className="px-3 py-1.5 fs-12 fw-semibold d-inline-flex align-items-center rounded-2"
+              onClick={() => handleKycDecision('rejected')}
+            >
+              <IconifyIcon icon="solar:close-circle-bold" className="me-1.5 fs-14" />
+              Tolak Dokumen
+            </Button>
+            <Button
+              variant="success"
+              size="sm"
+              className="px-3.5 py-1.5 fs-12 fw-bold text-white d-inline-flex align-items-center rounded-2 shadow-sm"
+              style={{ backgroundColor: '#16a34a', borderColor: '#16a34a' }}
+              onClick={() => handleKycDecision('approved')}
+            >
+              <IconifyIcon icon="solar:check-circle-bold" className="me-1.5 fs-15" />
+              Setujui Verifikasi KYC
+            </Button>
+          </div>
         </Modal.Footer>
       </Modal>
 
       {/* MODAL 3: CUSTOM DOMAIN & ZERO-TOUCH SSL ENGINE */}
-      <Modal show={showDomainModal} onHide={() => setShowDomainModal(false)} centered>
-        <Modal.Header closeButton className="border-0 pb-0">
-          <Modal.Title className="fw-bold fs-16 text-body d-flex align-items-center">
-            <IconifyIcon icon="solar:global-bold" className="me-2 text-primary fs-20" />
-            Manajemen Domain Kustom & SSL Engine
+      <Modal show={showDomainModal} onHide={() => setShowDomainModal(false)} centered size="lg">
+        <Modal.Header closeButton className="border-bottom px-3 py-2.5 bg-body">
+          <Modal.Title className="fw-bold fs-15 text-body d-flex align-items-center">
+            <div
+              className="avatar-xs rounded-circle d-flex align-items-center justify-content-center me-2 bg-info-subtle text-info"
+            >
+              <IconifyIcon icon="solar:global-bold" className="fs-16" />
+            </div>
+            Manajemen Domain Kustom &amp; SSL Engine
           </Modal.Title>
         </Modal.Header>
-        <Modal.Body className="p-3 pt-2">
+        <Modal.Body className="p-3">
           {selectedMerchant && (
             <>
-              <p className="text-muted fs-12 mb-3">
-                Hubungkan domain milik merchant sendiri untuk meningkatkan kredibilitas brand di storefront publik.
-              </p>
+              {/* Target Merchant Header */}
+              <div className="d-flex align-items-center justify-content-between p-3 rounded-3 bg-body-secondary border mb-3">
+                <div className="d-flex align-items-center gap-3">
+                  <div
+                    className="avatar-sm rounded-2 d-flex align-items-center justify-content-center text-white fw-bold fs-13 flex-shrink-0"
+                    style={{ background: 'linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%)' }}
+                  >
+                    {selectedMerchant.name.charAt(0).toUpperCase()}
+                  </div>
+                  <div>
+                    <span className="fw-bold text-body fs-13 d-block">{selectedMerchant.name}</span>
+                    <small className="text-muted fs-11 font-monospace">{selectedMerchant.subdomain}.indovia.com</small>
+                  </div>
+                </div>
+                <span className={`badge ${selectedMerchant.domain_verified ? 'bg-success-subtle text-success border-success-subtle' : 'bg-warning-subtle text-warning border-warning-subtle'} border fs-10 px-2 py-1`}>
+                  {selectedMerchant.domain_verified ? '✓ SSL Terpasang' : 'Menunggu Konfigurasi DNS'}
+                </span>
+              </div>
 
               {domainVerifiedAlert && (
-                <Alert variant={domainVerifiedAlert.type} className="p-2 fs-12 mb-3">
-                  {domainVerifiedAlert.message}
+                <Alert variant={domainVerifiedAlert.type} className="p-2.5 fs-12 mb-3 d-flex align-items-center">
+                  <IconifyIcon icon="solar:check-circle-bold" className="me-2 fs-16 text-success flex-shrink-0" />
+                  <div>{domainVerifiedAlert.message}</div>
                 </Alert>
               )}
 
               <Form.Group className="mb-3">
-                <Form.Label className="fs-12 fw-semibold text-body">
-                  Nama Domain Kustom:
+                <Form.Label className="fs-12 fw-semibold text-body mb-1">
+                  Nama Domain Kustom Merchant:
                 </Form.Label>
-                <Form.Control
-                  type="text"
-                  size="sm"
-                  placeholder="e.g. brandkeren.co.id atau www.toko.id"
-                  value={customDomainInput}
-                  onChange={(e) => setCustomDomainInput(e.target.value)}
-                  className="fs-12"
-                />
+                <div className="input-group input-group-sm">
+                  <span className="input-group-text bg-body-secondary text-muted fs-12 font-monospace">https://</span>
+                  <Form.Control
+                    type="text"
+                    placeholder="e.g. brandkeren.co.id atau www.toko.id"
+                    value={customDomainInput}
+                    onChange={(e) => setCustomDomainInput(e.target.value)}
+                    className="fs-12 font-monospace"
+                  />
+                </div>
+                <Form.Text className="text-muted fs-11 mt-1 d-block">
+                  Mendukung domain lokal (.id, .co.id) maupun TLD internasional (.com, .store, .online).
+                </Form.Text>
               </Form.Group>
 
-              <div className="p-2.5 rounded-2 bg-light border mb-3 fs-11">
-                <strong className="text-body d-block mb-1">Panduan Pengaturan DNS Merchant:</strong>
-                <p className="mb-1 text-muted">
-                  Merchant wajib membuat DNS Record di penyedia domain mereka (Niagahoster, Domainesia, Cloudflare):
-                </p>
-                <div className="bg-light bg-opacity-25 p-2 rounded border font-monospace fs-11 mb-2">
-                  <div><strong>Tipe:</strong> CNAME</div>
-                  <div><strong>Host:</strong> @ atau www</div>
-                  <div><strong>Target:</strong> cname.indovia.com</div>
+              {/* DNS Table Guide */}
+              <div className="p-3 rounded-3 bg-body-secondary border mb-2 fs-11">
+                <div className="d-flex align-items-center justify-content-between mb-2">
+                  <strong className="text-body d-flex align-items-center fs-12">
+                    <IconifyIcon icon="solar:server-square-bold" className="me-1.5 text-primary fs-14" />
+                    Panduan Konfigurasi DNS Record Merchant:
+                  </strong>
+                  <span className="badge bg-info-subtle text-info fs-10">CNAME Routing</span>
                 </div>
-                <div className="d-flex align-items-center text-muted">
-                  <IconifyIcon icon="solar:lock-bold" className="text-success me-1 fs-14" />
-                  Sertifikat SSL Let's Encrypt akan diterbitkan otomatis setelah CNAME valid.
+                <p className="mb-2 text-muted fs-11">
+                  Arahkan rekod DNS di Registrar penyedia domain (Niagahoster, Domainesia, Cloudflare, Namecheap):
+                </p>
+                <div className="table-responsive">
+                  <table className="table table-sm table-bordered bg-body mb-2 fs-11 font-monospace align-middle">
+                    <thead className="bg-body-tertiary text-muted">
+                      <tr>
+                        <th className="py-1.5 px-2">Tipe</th>
+                        <th className="py-1.5 px-2">Host / Name</th>
+                        <th className="py-1.5 px-2">Target Nilai</th>
+                        <th className="py-1.5 px-2 text-center" style={{ width: '90px' }}>Aksi</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td className="fw-bold text-primary py-1.5 px-2">CNAME</td>
+                        <td className="py-1.5 px-2">@ atau www</td>
+                        <td className="py-1.5 px-2 text-body fw-medium">cname.indovia.com</td>
+                        <td className="py-1.5 px-2 text-center">
+                          <button
+                            type="button"
+                            className="btn btn-xs btn-outline-secondary py-0.5 px-2 fs-10 d-inline-flex align-items-center"
+                            onClick={() => copyToClipboard('cname.indovia.com')}
+                            title="Salin Target DNS"
+                          >
+                            <IconifyIcon icon="solar:copy-linear" className="me-1" />
+                            Salin
+                          </button>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div className="d-flex align-items-center text-muted fs-11 pt-1">
+                  <IconifyIcon icon="solar:lock-bold" className="text-success me-1.5 fs-14 flex-shrink-0" />
+                  <span>Sertifikat SSL Let's Encrypt Wildcard diterbitkan otomatis segera setelah CNAME terpropagasi.</span>
                 </div>
               </div>
             </>
           )}
         </Modal.Body>
-        <Modal.Footer className="border-0 pt-0">
-          <Button variant="light" size="sm" onClick={() => setShowDomainModal(false)}>
+        <Modal.Footer className="border-top px-3 py-2.5 bg-body d-flex justify-content-between align-items-center">
+          <Button variant="outline-secondary" size="sm" className="px-3 py-1.5 fs-12" onClick={() => setShowDomainModal(false)}>
             Tutup
           </Button>
           <Button
             variant="primary"
             size="sm"
-            className="fw-semibold text-white"
+            className="px-3.5 py-1.5 fs-12 fw-semibold text-white d-inline-flex align-items-center rounded-2 shadow-sm"
             style={{ backgroundColor: '#ff6c2f', borderColor: '#ff6c2f' }}
             onClick={handleVerifyDomain}
           >
-            <IconifyIcon icon="solar:check-read-bold" className="me-1" />
-            Uji Resolusi DNS & Aktifkan SSL
+            <IconifyIcon icon="solar:check-read-bold" className="me-1.5 fs-14" />
+            Uji Resolusi DNS &amp; Aktifkan SSL
           </Button>
         </Modal.Footer>
       </Modal>
 
       {/* MODAL 4: PROVISIONING MERCHANT BARU */}
       <Modal show={showAddModal} onHide={() => setShowAddModal(false)} size="lg" centered>
-        <Modal.Header closeButton className="border-0 pb-0">
-          <Modal.Title className="fw-bold fs-16 text-body d-flex align-items-center">
-            <IconifyIcon icon="solar:shop-2-bold" className="me-2 text-primary fs-20" />
-            Pendaftaran & Provisioning Toko Baru
+        <Modal.Header closeButton className="border-bottom px-3 py-2.5 bg-body">
+          <Modal.Title className="fw-bold fs-15 text-body d-flex align-items-center">
+            <div
+              className="avatar-xs rounded-circle d-flex align-items-center justify-content-center me-2"
+              style={{ backgroundColor: 'rgba(255, 108, 47, 0.12)', color: '#ff6c2f' }}
+            >
+              <IconifyIcon icon="solar:shop-2-bold" className="fs-16" />
+            </div>
+            Pendaftaran &amp; Provisioning Toko Baru
           </Modal.Title>
         </Modal.Header>
         <form onSubmit={handleCreateMerchant}>
-          <Modal.Body className="p-3 pt-2">
-            <Alert variant="info" className="p-2.5 fs-12 mb-3">
-              <IconifyIcon icon="solar:info-circle-bold" className="me-1 fs-15 text-primary" />
-              Sistem akan otomatis mengalokasikan subdomain unik dan mengaktifkan{' '}
-              <strong>Masa Percobaan (Trial 14 Hari)</strong> secara instan.
+          <Modal.Body className="p-3">
+            <Alert variant="info" className="p-2.5 fs-12 mb-3 border-info-subtle d-flex align-items-center">
+              <IconifyIcon icon="solar:info-circle-bold" className="me-2 fs-18 text-info flex-shrink-0" />
+              <div>
+                Sistem akan otomatis mengalokasikan subdomain unik dan mengaktifkan{' '}
+                <strong>Masa Percobaan (Trial 14 Hari)</strong> secara instan tanpa biaya pendaftaran awal.
+              </div>
             </Alert>
 
-            <Row className="g-2">
+            <Row className="g-3">
               <Col md={6}>
-                <Form.Group className="mb-2">
-                  <Form.Label className="fs-12 fw-semibold">Nama Toko:</Form.Label>
+                <Form.Group>
+                  <Form.Label className="fs-12 fw-semibold text-body mb-1">
+                    Nama Toko: <span className="text-danger">*</span>
+                  </Form.Label>
                   <Form.Control
                     type="text"
                     size="sm"
@@ -1184,13 +1679,16 @@ const SellerListPage = () => {
                       const slug = val.toLowerCase().replace(/[^a-z0-9]/g, '-');
                       setNewMerchant({ ...newMerchant, name: val, subdomain: slug });
                     }}
+                    className="fs-12"
                   />
                 </Form.Group>
               </Col>
 
               <Col md={6}>
-                <Form.Group className="mb-2">
-                  <Form.Label className="fs-12 fw-semibold">Subdomain Indovia:</Form.Label>
+                <Form.Group>
+                  <Form.Label className="fs-12 fw-semibold text-body mb-1">
+                    Subdomain Indovia: <span className="text-danger">*</span>
+                  </Form.Label>
                   <div className="input-group input-group-sm">
                     <Form.Control
                       type="text"
@@ -1198,15 +1696,18 @@ const SellerListPage = () => {
                       placeholder="e.g. butik-azzahra"
                       value={newMerchant.subdomain}
                       onChange={(e) => setNewMerchant({ ...newMerchant, subdomain: e.target.value })}
+                      className="fs-12 font-monospace"
                     />
-                    <span className="input-group-text">.indovia.com</span>
+                    <span className="input-group-text bg-body-secondary text-muted fs-11 font-monospace">.indovia.com</span>
                   </div>
                 </Form.Group>
               </Col>
 
               <Col md={6}>
-                <Form.Group className="mb-2">
-                  <Form.Label className="fs-12 fw-semibold">Nama Pemilik Toko:</Form.Label>
+                <Form.Group>
+                  <Form.Label className="fs-12 fw-semibold text-body mb-1">
+                    Nama Pemilik Toko: <span className="text-danger">*</span>
+                  </Form.Label>
                   <Form.Control
                     type="text"
                     size="sm"
@@ -1214,13 +1715,16 @@ const SellerListPage = () => {
                     placeholder="e.g. Siti Azzahra"
                     value={newMerchant.owner_name}
                     onChange={(e) => setNewMerchant({ ...newMerchant, owner_name: e.target.value })}
+                    className="fs-12"
                   />
                 </Form.Group>
               </Col>
 
               <Col md={6}>
-                <Form.Group className="mb-2">
-                  <Form.Label className="fs-12 fw-semibold">Email Pemilik:</Form.Label>
+                <Form.Group>
+                  <Form.Label className="fs-12 fw-semibold text-body mb-1">
+                    Email Pemilik: <span className="text-danger">*</span>
+                  </Form.Label>
                   <Form.Control
                     type="email"
                     size="sm"
@@ -1228,13 +1732,16 @@ const SellerListPage = () => {
                     placeholder="e.g. azzahra@gmail.com"
                     value={newMerchant.owner_email}
                     onChange={(e) => setNewMerchant({ ...newMerchant, owner_email: e.target.value })}
+                    className="fs-12"
                   />
                 </Form.Group>
               </Col>
 
               <Col md={6}>
-                <Form.Group className="mb-2">
-                  <Form.Label className="fs-12 fw-semibold">No. WhatsApp Toko:</Form.Label>
+                <Form.Group>
+                  <Form.Label className="fs-12 fw-semibold text-body mb-1">
+                    No. WhatsApp Toko: <span className="text-danger">*</span>
+                  </Form.Label>
                   <Form.Control
                     type="text"
                     size="sm"
@@ -1242,48 +1749,52 @@ const SellerListPage = () => {
                     placeholder="e.g. 08123456789"
                     value={newMerchant.owner_phone}
                     onChange={(e) => setNewMerchant({ ...newMerchant, owner_phone: e.target.value })}
+                    className="fs-12"
                   />
                 </Form.Group>
               </Col>
 
               <Col md={6}>
-                <Form.Group className="mb-2">
-                  <Form.Label className="fs-12 fw-semibold">Kota Asal:</Form.Label>
+                <Form.Group>
+                  <Form.Label className="fs-12 fw-semibold text-body mb-1">Kota Asal:</Form.Label>
                   <Form.Control
                     type="text"
                     size="sm"
                     placeholder="e.g. Surakarta, Jawa Tengah"
                     value={newMerchant.city}
                     onChange={(e) => setNewMerchant({ ...newMerchant, city: e.target.value })}
+                    className="fs-12"
                   />
                 </Form.Group>
               </Col>
 
               <Col md={6}>
-                <Form.Group className="mb-2">
-                  <Form.Label className="fs-12 fw-semibold">Kategori Industri:</Form.Label>
+                <Form.Group>
+                  <Form.Label className="fs-12 fw-semibold text-body mb-1">Kategori Industri:</Form.Label>
                   <Form.Select
                     size="sm"
                     value={newMerchant.category}
                     onChange={(e) => setNewMerchant({ ...newMerchant, category: e.target.value })}
+                    className="fs-12"
                   >
-                    <option value="Fashion & Busana">Fashion & Busana</option>
-                    <option value="Elektronik & Gadget">Elektronik & Gadget</option>
-                    <option value="Makanan & Minuman (F&B)">Makanan & Minuman (F&B)</option>
-                    <option value="Kecantikan & Kosmetik">Kecantikan & Kosmetik</option>
-                    <option value="Perabot & Furnitur">Perabot & Furnitur</option>
-                    <option value="Kesehatan & Herbal">Kesehatan & Herbal</option>
+                    <option value="Fashion & Busana">Fashion &amp; Busana</option>
+                    <option value="Elektronik & Gadget">Elektronik &amp; Gadget</option>
+                    <option value="Makanan & Minuman (F&B)">Makanan &amp; Minuman (F&amp;B)</option>
+                    <option value="Kecantikan & Kosmetik">Kecantikan &amp; Kosmetik</option>
+                    <option value="Perabot & Furnitur">Perabot &amp; Furnitur</option>
+                    <option value="Kesehatan & Herbal">Kesehatan &amp; Herbal</option>
                   </Form.Select>
                 </Form.Group>
               </Col>
 
               <Col md={6}>
-                <Form.Group className="mb-2">
-                  <Form.Label className="fs-12 fw-semibold">Paket Langganan Awal:</Form.Label>
+                <Form.Group>
+                  <Form.Label className="fs-12 fw-semibold text-body mb-1">Paket Langganan Awal:</Form.Label>
                   <Form.Select
                     size="sm"
                     value={newMerchant.plan}
                     onChange={(e) => setNewMerchant({ ...newMerchant, plan: e.target.value })}
+                    className="fs-12"
                   >
                     <option value="Starter">Starter (Maks 50 Produk)</option>
                     <option value="Pro">Pro (Maks 500 Produk + Custom Domain)</option>
@@ -1293,18 +1804,19 @@ const SellerListPage = () => {
               </Col>
             </Row>
           </Modal.Body>
-          <Modal.Footer className="border-0 pt-0">
-            <Button variant="light" size="sm" onClick={() => setShowAddModal(false)}>
+          <Modal.Footer className="border-top px-3 py-2.5 bg-body d-flex justify-content-between align-items-center">
+            <Button variant="outline-secondary" size="sm" className="px-3 py-1.5 fs-12" onClick={() => setShowAddModal(false)}>
               Batal
             </Button>
             <Button
               type="submit"
               variant="primary"
               size="sm"
-              className="fw-semibold text-white"
+              className="px-3.5 py-1.5 fs-12 fw-semibold text-white d-inline-flex align-items-center rounded-2 shadow-sm"
               style={{ backgroundColor: '#ff6c2f', borderColor: '#ff6c2f' }}
             >
-              Simpan & Alokasikan Toko
+              <IconifyIcon icon="solar:check-circle-bold" className="me-1.5 fs-14" />
+              Simpan &amp; Alokasikan Toko
             </Button>
           </Modal.Footer>
         </form>

@@ -811,3 +811,133 @@ export const cashflowJournalEntries = [
   },
 ];
 
+
+// ============================================================================
+// MODUL 7: EXECUTIVE BI & PLATFORM-WIDE ANALYTICS DATA (SAAS BI & MACRO TRENDS)
+// ============================================================================
+
+export const executiveBiSaaS = {
+  mrr: 184500000,
+  mrrGrowthMoM: 14.2,
+  newMrr: 28500000,
+  expansionMrr: 14800000,
+  contractionMrr: 3200000,
+  churnedMrr: 4500000,
+  netNewMrr: 35600000,
+  arrRunRate: 2214000000,
+  arrProjectionYearEnd: 2850000000,
+  arpu: 246000,
+  arpuGrowthYoY: 8.5,
+  arpuByTier: { starter: 199000, pro: 499000, enterprise: 1499000, custom: 4999000 },
+  nrr: 118.4,
+  nrrBenchmark: "> 110% (Top Quartile SaaS)",
+  customerChurnRate: 1.8,
+  customerChurnCount: 3,
+  revenueChurnRate: -3.2, // Net negative churn
+  ltv: 13660000,
+  cac: 1850000,
+  ltvCacRatio: 7.38,
+  paybackPeriodMonths: 7.5,
+  activePaidTenants: 750,
+  trialTenants: 115,
+};
+
+export const mrrWaterfallTrend = {
+  months: ["Okt 25", "Nov 25", "Des 25", "Jan 26", "Feb 26", "Mar 26", "Apr 26", "Mei 26", "Jun 26", "Jul 26", "Agu 26", "Sep 26"],
+  newMrr: [12.0, 14.5, 17.0, 18.5, 20.0, 22.0, 23.5, 24.8, 26.0, 27.0, 27.8, 28.5],
+  expansionMrr: [5.0, 6.2, 7.5, 8.0, 9.2, 10.5, 11.2, 12.0, 12.8, 13.5, 14.0, 14.8],
+  churnContractionMrr: [-2.5, -2.8, -3.0, -3.2, -3.5, -4.0, -4.2, -4.5, -5.0, -5.2, -5.8, -7.7],
+  totalMrr: [102.5, 112.0, 124.5, 132.0, 141.5, 152.0, 160.5, 168.0, 175.5, 180.2, 182.5, 184.5],
+};
+
+export const macroCommerceTrends = {
+  totalPlatformGmv: 14850000000,
+  gmvGrowthMoM: 26.8,
+  takeRateRevenueNet: 222750000,
+  blendedTakeRatePct: 1.50,
+  nationalConversionRate: 3.42,
+  conversionBenchmark: 2.40,
+  totalCompletedOrders: 48920,
+  aovAverage: 303550,
+  categoryConversion: [
+    { category: "Fashion & Apparel", conversionRate: 3.85, gmvShare: 41.2, aov: 320000, color: "#ff6c2f" },
+    { category: "Electronics & Gadgets", conversionRate: 2.45, gmvShare: 24.5, aov: 850000, color: "#3b82f6" },
+    { category: "Food & Beverages", conversionRate: 4.90, gmvShare: 16.8, aov: 145000, color: "#16a34a" },
+    { category: "Beauty & Personal Care", conversionRate: 4.10, gmvShare: 11.5, aov: 230000, color: "#eab308" },
+    { category: "Sports & Outdoors", conversionRate: 2.95, gmvShare: 6.0, aov: 410000, color: "#8b5cf6" },
+  ],
+};
+
+export const demographicHeatmapData = {
+  summary: {
+    jabodetabek: { pct: 54.2, gmv: 8048700000, orders: 28240, aov: 285000, color: "#ff6c2f" },
+    nonJawaIsland: { pct: 28.6, gmv: 4247100000, orders: 14390, aov: 295100, color: "#3b82f6" },
+    luarJawa: { pct: 17.2, gmv: 2554200000, orders: 6290, aov: 406000, color: "#16a34a" },
+  },
+  provinces: [
+    { name: "DKI Jakarta", region: "Jabodetabek", gmv: 4752000000, gmvShare: 32.0, orders: 16500, aov: 288000, growth: "+28.4%" },
+    { name: "Jawa Barat (Bodetabek + Bandung)", region: "Jawa Barat", gmv: 3712500000, gmvShare: 25.0, orders: 13200, aov: 281250, growth: "+24.1%" },
+    { name: "Jawa Timur (Surabaya, Malang)", region: "Jawa Timur", gmv: 2079000000, gmvShare: 14.0, orders: 7400, aov: 280940, growth: "+31.5%" },
+    { name: "Banten (Tangerang Raya, Serang)", region: "Banten", gmv: 1485000000, gmvShare: 10.0, orders: 5100, aov: 291170, growth: "+19.8%" },
+    { name: "Jawa Tengah & D.I. Yogyakarta", region: "Jawa Tengah", gmv: 1188000000, gmvShare: 8.0, orders: 4600, aov: 258260, growth: "+22.0%" },
+    { name: "Sumatera Utara (Medan & sekitarnya)", region: "Sumatera", gmv: 742500000, gmvShare: 5.0, orders: 1750, aov: 424280, growth: "+42.6%" },
+    { name: "Bali & Nusa Tenggara", region: "Bali-Nusra", gmv: 445500000, gmvShare: 3.0, orders: 1050, aov: 424280, growth: "+38.2%" },
+    { name: "Sulawesi Selatan (Makassar)", region: "Sulawesi", gmv: 297000000, gmvShare: 2.0, orders: 720, aov: 412500, growth: "+51.0%" },
+    { name: "Kalimantan Timur (IKN & Balikpapan)", region: "Kalimantan", gmv: 148500000, gmvShare: 1.0, orders: 350, aov: 424280, growth: "+64.5%" },
+  ],
+};
+
+export const peakShoppingHoursData = {
+  hourlyVolume: [
+    { hour: "00:00", orders: 420, gmv: 126000000, serverLoad: "12%" },
+    { hour: "01:00", orders: 190, gmv: 57000000, serverLoad: "8%" },
+    { hour: "02:00", orders: 110, gmv: 33000000, serverLoad: "5%" },
+    { hour: "03:00", orders: 90, gmv: 27000000, serverLoad: "4%" },
+    { hour: "04:00", orders: 140, gmv: 42000000, serverLoad: "6%" },
+    { hour: "05:00", orders: 380, gmv: 114000000, serverLoad: "11%" },
+    { hour: "06:00", orders: 850, gmv: 255000000, serverLoad: "22%" },
+    { hour: "07:00", orders: 1420, gmv: 426000000, serverLoad: "34%" },
+    { hour: "08:00", orders: 2150, gmv: 645000000, serverLoad: "46%" },
+    { hour: "09:00", orders: 2680, gmv: 804000000, serverLoad: "54%" },
+    { hour: "10:00", orders: 2950, gmv: 885000000, serverLoad: "62%" },
+    { hour: "11:00", orders: 3410, gmv: 1023000000, serverLoad: "71%" },
+    { hour: "12:00", orders: 4120, gmv: 1236000000, serverLoad: "84% (Lunch Surge)" },
+    { hour: "13:00", orders: 3780, gmv: 1134000000, serverLoad: "78%" },
+    { hour: "14:00", orders: 2840, gmv: 852000000, serverLoad: "58%" },
+    { hour: "15:00", orders: 2710, gmv: 813000000, serverLoad: "55%" },
+    { hour: "16:00", orders: 2990, gmv: 897000000, serverLoad: "61%" },
+    { hour: "17:00", orders: 3120, gmv: 936000000, serverLoad: "66%" },
+    { hour: "18:00", orders: 3450, gmv: 1035000000, serverLoad: "73%" },
+    { hour: "19:00", orders: 4890, gmv: 1467000000, serverLoad: "94% (Prime Peak)" },
+    { hour: "20:00", orders: 5420, gmv: 1626000000, serverLoad: "98% (Prime Peak)" },
+    { hour: "21:00", orders: 4610, gmv: 1383000000, serverLoad: "91% (Prime Peak)" },
+    { hour: "22:00", orders: 3120, gmv: 936000000, serverLoad: "68%" },
+    { hour: "23:00", orders: 1680, gmv: 504000000, serverLoad: "42%" }
+  ],
+  infrastructureRecommendation: {
+    status: "RECOMMENDED_AUTOSCALE",
+    primaryWindow: "19:00 - 21:30 WIB (Puncak Checkout Nasional)",
+    secondaryWindow: "12:00 - 13:30 WIB (Makan Siang)",
+    currentBasePods: 6,
+    recommendedPods: 16,
+    targetLatencyP99: "< 35ms",
+    actionPrompt: "Rekomendasi Autoscaling: Scale-out worker pods Golang v1.22 dari 6 menjadi 16 pods pada 18:30 WIB untuk mengantisipasi lonjakan trafik transaksi checkout malam tanpa latensi."
+  }
+};
+
+export const taxAndComplianceData = {
+  fiscalPeriod: "September 2026 (Masa Pajak 09-2026)",
+  dppSaaSRevenue: 166216216,
+  ppnOutput11Pct: 18283784,
+  ppnInputCredited: 4120000,
+  ppnNetPayable: 14163784,
+  ntpnBillingCode: "NTPN-8921-DJP-20260909",
+  eFakturStatus: "TERVALIDASI_DJP",
+  sptMasaForm: "SPT Masa PPN 1111 (KLU 62019 - Aktivitas Pemrograman Komputer Lainnya)",
+  taxReportingDueDate: "31 Oktober 2026",
+  reconciliationLogs: [
+    { id: "TAX-01", period: "Agustus 2026", dpp: 164414414, ppn11: 18085585, status: "SUDAH_DILAPOR", ntpn: "NTPN-7812-DJP-20260831", proofUrl: "#" },
+    { id: "TAX-02", period: "Juli 2026", dpp: 162162162, ppn11: 17837838, status: "SUDAH_DILAPOR", ntpn: "NTPN-6743-DJP-20260731", proofUrl: "#" },
+    { id: "TAX-03", period: "Juni 2026", dpp: 158108108, ppn11: 17391892, status: "SUDAH_DILAPOR", ntpn: "NTPN-5621-DJP-20260630", proofUrl: "#" },
+  ]
+};

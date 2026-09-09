@@ -106,9 +106,34 @@ const SellerAdd = lazy(() => import('@/app/(admin)/seller/seller-add/page'));
 
 // Billing & SaaS Monetization Routes
 const BillingEngine = lazy(() => import('@/app/(admin)/billing/billing-dashboard/page'));
+const BillingCashflow = lazy(() => import('@/app/(admin)/billing/cashflow/page'));
 const BillingPlans = lazy(() => import('@/app/(admin)/billing/plans/page'));
 const BillingDunning = lazy(() => import('@/app/(admin)/billing/dunning/page'));
 const BillingTakeRate = lazy(() => import('@/app/(admin)/billing/take-rate/page'));
+
+// Escrow & Payout Engine Routes (Modul 4)
+const EscrowDashboard = lazy(() => import('@/app/(admin)/escrow/escrow-dashboard/page'));
+const EscrowGatewayHub = lazy(() => import('@/app/(admin)/escrow/gateway-hub/page'));
+const EscrowLedger = lazy(() => import('@/app/(admin)/escrow/ledger/page'));
+const EscrowDisbursements = lazy(() => import('@/app/(admin)/escrow/disbursements/page'));
+
+// Logistics & WhatsApp Hub Routes (Modul 5)
+const LogisticsHub = lazy(() => import('@/app/(admin)/logistics/hub/page'));
+const LogisticsWhatsApp = lazy(() => import('@/app/(admin)/logistics/whatsapp/page'));
+
+// Product Moderation & Compliance Routes (Modul 6)
+const ModerationCatalog = lazy(() => import('@/app/(admin)/moderation/catalog/page'));
+const ModerationPenalties = lazy(() => import('@/app/(admin)/moderation/penalties/page'));
+
+// Central Theme & Section Marketplace Routes (Modul 3)
+const ThemesRepository = lazy(() => import('@/app/(admin)/themes/repository/page'));
+const ThemesSections = lazy(() => import('@/app/(admin)/themes/sections/page'));
+const ThemesProductLayouts = lazy(() => import('@/app/(admin)/themes/product-layouts/page'));
+const ThemesPagesLayouts = lazy(() => import('@/app/(admin)/themes/pages-layouts/page'));
+
+// System Infrastructure & Security Engine Routes (Modul 8)
+const SystemTelemetry = lazy(() => import('@/app/(admin)/system/telemetry/page'));
+const SystemAuditLogs = lazy(() => import('@/app/(admin)/system/audit-logs/page'));
 
 // Coupons Routes
 const CouponsList = lazy(() => import('@/app/(admin)/coupons/coupons-list/page'));
@@ -624,6 +649,10 @@ const BillingRoutes = [{
   path: '/billing',
   element: <BillingEngine />
 }, {
+  name: 'Billing Cashflow',
+  path: '/billing/cashflow',
+  element: <BillingCashflow />
+}, {
   name: 'Billing Plans',
   path: '/billing/plans',
   element: <BillingPlans />
@@ -636,6 +665,58 @@ const BillingRoutes = [{
   path: '/billing/take-rate',
   element: <BillingTakeRate />
 }];
+const EscrowRoutes = [{
+  name: 'Central Escrow Dashboard',
+  path: '/escrow',
+  element: <EscrowDashboard />
+}, {
+  name: 'Master Gateway Hub',
+  path: '/escrow/gateway-hub',
+  element: <EscrowGatewayHub />
+}, {
+  name: 'Merchant Settlement Ledger',
+  path: '/escrow/ledger',
+  element: <EscrowLedger />
+}, {
+  name: 'Payout Disbursements',
+  path: '/escrow/disbursements',
+  element: <EscrowDisbursements />
+}];
+const LogisticsRoutes = [{
+  name: 'Logistics Aggregator Hub',
+  path: '/logistics/hub',
+  element: <LogisticsHub />
+}, {
+  name: 'WhatsApp Gateway Hub',
+  path: '/logistics/whatsapp',
+  element: <LogisticsWhatsApp />
+}];
+const ModerationRoutes = [{
+  name: 'Audit Katalog Nasional',
+  path: '/moderation/catalog',
+  element: <ModerationCatalog />
+}, {
+  name: 'Sistem Sanksi & Strike',
+  path: '/moderation/penalties',
+  element: <ModerationPenalties />
+}];
+const ThemesRoutes = [{
+  name: 'Katalog Tema & Versi',
+  path: '/themes/repository',
+  element: <ThemesRepository />
+}, {
+  name: 'Registri Seksi & Fitur',
+  path: '/themes/sections',
+  element: <ThemesSections />
+}, {
+  name: 'Tata Letak Detail Produk (24 Layouts)',
+  path: '/themes/product-layouts',
+  element: <ThemesProductLayouts />
+}, {
+  name: 'Tata Letak Halaman Toko (Shop, Pages & Blog)',
+  path: '/themes/pages-layouts',
+  element: <ThemesPagesLayouts />
+}];
 const CouponRoutes = [{
   name: 'Coupons List',
   path: '/coupons/coupons-list',
@@ -644,6 +725,15 @@ const CouponRoutes = [{
   name: 'Coupons Add',
   path: '/coupons/coupons-add',
   element: <CouponsAdd />
+}];
+const SystemRoutes = [{
+  name: 'Telemetri Runtime Golang & Kontrol Keamanan',
+  path: '/system/telemetry',
+  element: <SystemTelemetry />
+}, {
+  name: 'Immutable Audit Trail (WORM)',
+  path: '/system/audit-logs',
+  element: <SystemAuditLogs />
 }];
 export const authRoutes = [{
   name: 'Sign In',
@@ -700,4 +790,4 @@ export const authRoutes = [{
   path: '/coming-soon',
   element: <ComingSoon />
 }];
-export const appRoutes = [...initialRoutes, ...generalRoutes, ...appsRoutes, ...customRoutes, ...baseUIRoutes, ...advancedUIRoutes, ...chartsNMapsRoutes, ...formsRoutes, ...tableRoutes, ...iconRoutes, ...productRoutes, ...CategoryRoutes, ...InventoryRoutes, ...OrdersRoutes, ...AttributeRoutes, ...PurchaseRoutes, ...InvoiceRoutes, ...RoleRoutes, ...CustomerRoutes, ...SellerRoutes, ...BillingRoutes, ...CouponRoutes];
+export const appRoutes = [...initialRoutes, ...generalRoutes, ...appsRoutes, ...customRoutes, ...baseUIRoutes, ...advancedUIRoutes, ...chartsNMapsRoutes, ...formsRoutes, ...tableRoutes, ...iconRoutes, ...productRoutes, ...CategoryRoutes, ...InventoryRoutes, ...OrdersRoutes, ...AttributeRoutes, ...PurchaseRoutes, ...InvoiceRoutes, ...RoleRoutes, ...CustomerRoutes, ...SellerRoutes, ...BillingRoutes, ...EscrowRoutes, ...LogisticsRoutes, ...ModerationRoutes, ...ThemesRoutes, ...CouponRoutes, ...SystemRoutes];

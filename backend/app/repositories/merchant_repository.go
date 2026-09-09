@@ -17,6 +17,7 @@ type MerchantRepository interface {
 	UpdateStatus(id uint, status string) error
 	UpdateKYC(id uint, status string, notes string, bankVerified bool) error
 	VerifyDomain(id uint, verified bool, sslStatus string, sslExpiresAt *time.Time) error
+	UpdateThemeConfig(id uint, themeConfig string) error
 	GetStats() (map[string]int64, error)
 	CreateAuditLog(log *models.AuditLog) error
 	GetAuditLogs(targetEntity, targetID string) ([]models.AuditLog, error)
@@ -104,6 +105,10 @@ func (r *merchantRepository) VerifyDomain(id uint, verified bool, sslStatus stri
 		"ssl_status":      sslStatus,
 		"ssl_expires_at":  sslExpiresAt,
 	}).Error
+}
+
+func (r *merchantRepository) UpdateThemeConfig(id uint, themeConfig string) error {
+	return r.db.Model(&models.Merchant{}).Where("id = ?", id).Update("theme_config", themeConfig).Error
 }
 
 func (r *merchantRepository) GetStats() (map[string]int64, error) {

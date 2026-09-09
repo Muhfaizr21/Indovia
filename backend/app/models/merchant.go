@@ -53,6 +53,9 @@ type Merchant struct {
 	BankAccountNumber string `gorm:"size:50" json:"bank_account_number"`
 	BankAccountHolder string `gorm:"size:120" json:"bank_account_holder"`
 	BankVerified      bool   `gorm:"default:false" json:"bank_verified"`
+
+	// Theme & Layout Configuration (JSONB / text)
+	ThemeConfig string `gorm:"type:text" json:"theme_config"`
 }
 
 // AuditLog records security & operational actions by Superadmin (WORM pattern)

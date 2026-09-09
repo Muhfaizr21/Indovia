@@ -20,8 +20,8 @@ const BillingKpiCards = ({ onSelectTab }) => {
         <Card
           className="border-0 shadow-sm h-100 cursor-pointer"
           style={{ borderLeft: '4px solid #ff6c2f' }}
-          onClick={() => handleCardClick('/billing', 'overview')}
-          title="Klik untuk membuka Dashboard Arus Kas"
+          onClick={() => handleCardClick('/billing/cashflow', 'overview')}
+          title="Klik untuk membuka Dashboard Arus Kas & Likuiditas"
         >
           <CardBody className="p-3">
             <div className="d-flex align-items-center justify-content-between">

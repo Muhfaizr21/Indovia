@@ -283,3 +283,76 @@ export const kycConfig = {
   rejected: { label: 'KYC Ditolak', icon: 'solar:shield-cross-bold', color: '#dc2626', bg: 'rgba(239, 68, 68, 0.1)' },
   unverified: { label: 'Belum Verifikasi', icon: 'solar:shield-minimalistic-outline', color: '#64748b', bg: 'rgba(100, 116, 139, 0.08)' }
 };
+
+export const getMerchantThemeInfo = (merchant) => {
+  if (!merchant) {
+    return {
+      theme_id: 'fashion-01',
+      theme_name: 'Demo 01 - Fashion Store',
+      demo_number: 'Demo 01',
+      product_layout: 'Product Single 1'
+    };
+  }
+
+  // Parse if theme_config exists
+  if (merchant.theme_config) {
+    try {
+      const cfg = typeof merchant.theme_config === 'string' ? JSON.parse(merchant.theme_config) : merchant.theme_config;
+      if (cfg && cfg.theme_id) {
+        let name = cfg.theme_name;
+        let demoNum = 'Demo 01';
+        if (cfg.theme_id === 'fashion-02') {
+          name = name || 'Demo 02 - Minimalist Boutique';
+          demoNum = 'Demo 02';
+        } else if (cfg.theme_id === 'fashion-03') {
+          name = name || 'Demo 03 - Luxury Artisan';
+          demoNum = 'Demo 03';
+        } else {
+          name = name || 'Demo 01 - Fashion Store';
+          demoNum = 'Demo 01';
+        }
+        return {
+          theme_id: cfg.theme_id,
+          theme_name: name,
+          demo_number: demoNum,
+          product_layout: cfg.product_layout || 'Product Single 1'
+        };
+      }
+    } catch {
+      // ignore
+    }
+  }
+
+  // Fallback based on merchant ID or category
+  if (merchant.id === 2 || merchant.id === 10 || merchant.id === 5) {
+    return {
+      theme_id: 'fashion-02',
+      theme_name: 'Demo 02 - Minimalist Boutique',
+      demo_number: 'Demo 02',
+      product_layout: merchant.id === 10 ? 'Product Single 4' : 'Product Single 3'
+    };
+  }
+  if (merchant.id === 3 || merchant.id === 8) {
+    return {
+      theme_id: 'fashion-03',
+      theme_name: 'Demo 03 - Luxury Artisan',
+      demo_number: 'Demo 03',
+      product_layout: 'Product Single 5'
+    };
+  }
+  if (merchant.id === 7 || merchant.id === 4) {
+    return {
+      theme_id: 'fashion-01',
+      theme_name: 'Demo 01 - Fashion Store',
+      demo_number: 'Demo 01',
+      product_layout: 'Product Single 2'
+    };
+  }
+
+  return {
+    theme_id: 'fashion-01',
+    theme_name: 'Demo 01 - Fashion Store',
+    demo_number: 'Demo 01',
+    product_layout: 'Product Single 1'
+  };
+};

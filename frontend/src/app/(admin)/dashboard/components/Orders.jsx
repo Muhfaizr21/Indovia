@@ -3,7 +3,9 @@ import { Button, Card, CardBody, CardFooter, CardTitle, Col, Row } from 'react-b
 import { Link } from 'react-router-dom';
 import { recentIndoviaOrders } from '../data';
 
-const Orders = () => {
+const Orders = ({ orders = null }) => {
+  const orderItems = orders && orders.length > 0 ? orders : recentIndoviaOrders;
+
   return (
     <Col xs={12}>
       <Card className="border-0 shadow-sm">
@@ -46,7 +48,7 @@ const Orders = () => {
               </tr>
             </thead>
             <tbody>
-              {recentIndoviaOrders.map((item, idx) => (
+              {orderItems.map((item, idx) => (
                 <tr key={idx}>
                   <td className="ps-3 fw-bold">
                     <Link to="/orders/order-detail" className="text-primary text-decoration-none">

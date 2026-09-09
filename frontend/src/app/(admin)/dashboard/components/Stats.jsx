@@ -7,10 +7,12 @@ import { useState } from 'react';
 import { useLayoutContext } from '@/context/useLayoutContext';
 
 // 4 KPI Cards in signature Indovia warm orange branding
-export const KpiCards = () => {
+export const KpiCards = ({ kpis = stateData }) => {
+  const items = kpis && kpis.length > 0 ? kpis : stateData;
+
   return (
     <>
-      {stateData.map((item, idx) => (
+      {items.map((item, idx) => (
         <Col sm={6} xl={3} key={idx} className="mb-3">
           <Card className="overflow-hidden border-0 shadow-sm h-100">
             <CardBody className="p-3">
@@ -19,7 +21,7 @@ export const KpiCards = () => {
                   className="avatar-md rounded-3 d-flex align-items-center justify-content-center"
                   style={{ backgroundColor: 'rgba(255, 108, 47, 0.1)' }}
                 >
-                  <IconifyIcon icon={item.icon} className="fs-26" style={{ color: '#ff6c2f' }} />
+                  <IconifyIcon icon={item.icon || 'solar:wallet-money-bold-duotone'} className="fs-26" style={{ color: '#ff6c2f' }} />
                 </div>
                 <div className="text-end">
                   <p className="text-muted mb-1 text-truncate fs-12 fw-medium">{item.name}</p>
@@ -42,7 +44,7 @@ export const KpiCards = () => {
                   </span>
                   <span className="text-muted ms-1 fs-11">{item.period || 'vs bln lalu'}</span>
                 </div>
-                <Link to="#!" className="fw-semibold fs-11 text-decoration-none" style={{ color: '#ff6c2f' }}>
+                <Link to="/billing/billing-dashboard" className="fw-semibold fs-11 text-decoration-none" style={{ color: '#ff6c2f' }}>
                   Detail &rarr;
                 </Link>
               </div>
@@ -55,27 +57,32 @@ export const KpiCards = () => {
 };
 
 // CHART 1 [WHAT]: Pertumbuhan Pendapatan & Volume Transaksi (Signature Indovia Orange & Emerald Green)
-export const RevenueChart = () => {
+export const RevenueChart = ({ revenueData = null }) => {
   const [filterRange, setFilterRange] = useState('1T');
   const { theme } = useLayoutContext();
   const isDark = theme === 'dark';
+
+  const months = revenueData?.months || ['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul', 'Agu', 'Sep', 'Okt', 'Nov', 'Des'];
+  const gmvData = revenueData?.gmv || [115, 142, 130, 168, 185, 210, 195, 240, 265, 280, 310, 345];
+  const netRevenueData = revenueData?.net_revenue || [38, 46, 42, 55, 61, 70, 64, 79, 88, 93, 102, 114];
+  const targetData = revenueData?.target || [100, 120, 135, 150, 175, 190, 205, 225, 250, 270, 295, 320];
 
   const chartOptions = {
     series: [
       {
         name: 'Gross Merchandise Value (GMV)',
         type: 'column',
-        data: [115, 142, 130, 168, 185, 210, 195, 240, 265, 280, 310, 345]
+        data: gmvData
       },
       {
         name: 'Pendapatan Bersih Platform',
         type: 'area',
-        data: [38, 46, 42, 55, 61, 70, 64, 79, 88, 93, 102, 114]
+        data: netRevenueData
       },
       {
         name: 'Target Penjualan',
         type: 'line',
-        data: [100, 120, 135, 150, 175, 190, 205, 225, 250, 270, 295, 320]
+        data: targetData
       }
     ],
     chart: {
@@ -113,7 +120,7 @@ export const RevenueChart = () => {
       }
     },
     xaxis: {
-      categories: ['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul', 'Agu', 'Sep', 'Okt', 'Nov', 'Des'],
+      categories: months,
       axisTicks: { show: false },
       axisBorder: { show: false },
       labels: {

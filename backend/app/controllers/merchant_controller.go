@@ -190,6 +190,35 @@ func (ctrl *MerchantController) Impersonate(c *gin.Context) {
 	})
 }
 
+// UpdateThemeConfig updates merchant storefront theme and layout configuration
+func (ctrl *MerchantController) UpdateThemeConfig(c *gin.Context) {
+	idParam := c.Param("id")
+	id, err := strconv.ParseUint(idParam, 10, 32)
+	if err != nil {
+		response.Error(c, http.StatusBadRequest, "ID merchant tidak valid", nil)
+		return
+	}
+
+	var req struct {
+		ThemeConfig string `json:"theme_config"`
+	}
+	if err := c.ShouldBindJSON(&req); err != nil {
+		response.Error(c, http.StatusBadRequest, "Data konfigurasi tema tidak valid: "+err.Error(), nil)
+		return
+	}
+
+	actorID := getActorID(c)
+	actorName := getActorName(c)
+
+	merchant, err := ctrl.service.UpdateThemeConfig(uint(id), req.ThemeConfig, actorID, actorName)
+	if err != nil {
+		response.Error(c, http.StatusBadRequest, err.Error(), nil)
+		return
+	}
+
+	response.Success(c, http.StatusOK, "Konfigurasi tampilan dan tata letak toko berhasil disimpan", merchant)
+}
+
 func getActorID(c *gin.Context) uint {
 	if val, exists := c.Get("user_id"); exists {
 		if id, ok := val.(uint); ok {

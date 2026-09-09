@@ -6,9 +6,14 @@ import { useLayoutContext } from '@/context/useLayoutContext';
 
 // CHART 4 [WHO]: Segmentasi & Loyalitas Pelanggan (Col xl={5})
 // Signature Indovia Orange Palette: Warm Amber to Vibrant Orange (#ff6c2f & #f97316)
-export const CustomerLoyaltyChart = () => {
+export const CustomerLoyaltyChart = ({ loyaltyData = null }) => {
   const { theme } = useLayoutContext();
   const isDark = theme === 'dark';
+
+  const repeatRate = loyaltyData?.repeat_order_rate || 68.4;
+  const newRate = Number((100 - repeatRate).toFixed(1));
+  const returningCount = loyaltyData?.returning_customers || 12599;
+  const newCount = loyaltyData?.new_customers || 5821;
 
   const customerChartOptions = {
     chart: {
@@ -60,7 +65,7 @@ export const CustomerLoyaltyChart = () => {
     },
     stroke: { dashArray: 4 },
     colors: ['#ff6c2f'],
-    series: [68.4],
+    series: [repeatRate],
     labels: ['Pelanggan Setia (Repeat)'],
     grid: {
       padding: { top: -15, bottom: -15 }
@@ -84,7 +89,7 @@ export const CustomerLoyaltyChart = () => {
               className="px-2 py-0.5 rounded fs-11 fw-semibold"
               style={{ backgroundColor: 'rgba(255, 108, 47, 0.1)', color: '#ff6c2f' }}
             >
-              Retensi 68.4%
+              Retensi {repeatRate}%
             </span>
           </div>
 
@@ -112,7 +117,7 @@ export const CustomerLoyaltyChart = () => {
                   </div>
                   <div>
                     <p className="text-muted mb-0 fs-11">Pembeli Berulang</p>
-                    <h6 className="mb-0 fw-bold text-body fs-12">12.599 Akun (68.4%)</h6>
+                    <h6 className="mb-0 fw-bold text-body fs-12">{returningCount.toLocaleString('id-ID')} Akun ({repeatRate}%)</h6>
                   </div>
                 </div>
               </div>
@@ -129,7 +134,7 @@ export const CustomerLoyaltyChart = () => {
                   </div>
                   <div>
                     <p className="text-muted mb-0 fs-11">Pelanggan Baru</p>
-                    <h6 className="mb-0 fw-bold text-body fs-12">5.821 Akun (31.6%)</h6>
+                    <h6 className="mb-0 fw-bold text-body fs-12">{newCount.toLocaleString('id-ID')} Akun ({newRate}%)</h6>
                   </div>
                 </div>
               </div>
@@ -157,17 +162,23 @@ export const CustomerLoyaltyChart = () => {
 
 // CHART 3 [WHERE]: Sebaran Wilayah & Kanal Penjualan (Col xl={12})
 // Signature Indovia Warm Palette: Bright Orange (#ff6c2f), Warm Amber (#ea580c), Soft Peach (#fdba74)
-export const RegionalDistributionChart = () => {
+export const RegionalDistributionChart = ({ regionalData = null, channelData = null }) => {
   const { theme } = useLayoutContext();
   const isDark = theme === 'dark';
+
+  const regions = regionalData || regionalDistribution;
+  const channels = channelData || salesChannels;
+
+  const channelPercentages = channels.map((c) => Math.round(c.percentage));
+  const channelLabels = channels.map((c) => c.name);
 
   const channelChartOptions = {
     chart: { type: 'donut', height: 200, background: 'transparent' },
     theme: {
       mode: isDark ? 'dark' : 'light'
     },
-    series: [48, 34, 18],
-    labels: ['Web Storefront', 'WhatsApp Direct', 'Multi-Channel Sync'],
+    series: channelPercentages.length > 0 ? channelPercentages : [48, 34, 18],
+    labels: channelLabels.length > 0 ? channelLabels : ['Web Storefront', 'WhatsApp Direct', 'Multi-Channel Sync'],
     colors: ['#ff6c2f', '#ea580c', '#fdba74'],
     dataLabels: { enabled: false },
     legend: { show: false },
@@ -258,7 +269,7 @@ export const RegionalDistributionChart = () => {
                 5 Wilayah Pesanan Terbesar di Indonesia:
               </p>
               <Row className="g-2">
-                {regionalDistribution.map((item, idx) => (
+                {regions.map((item, idx) => (
                   <Col md={6} key={idx} className="mb-1">
                     <div
                       className="p-2 rounded-2 bg-light bg-opacity-25 border"

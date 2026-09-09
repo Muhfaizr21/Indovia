@@ -7,6 +7,7 @@ import SellerDetails from './components/SellerDetails';
 import SellerChat from './components/SellerChat';
 import LatestProduct from './components/LatestProduct';
 import SearchableMerchantSelector from './components/SearchableMerchantSelector';
+import SellerThemeSettings from './components/SellerThemeSettings';
 import { initialMerchantsData, formatRupiah } from '../data';
 import { merchantDetailsMetadata } from './data';
 
@@ -18,6 +19,7 @@ const SellerDetailsPage = () => {
   const [currentMerchantId, setCurrentMerchantId] = useState(
     Number(searchParams.get('id')) || initialMerchantsData[0]?.id || 1
   );
+  const [activeTab, setActiveTab] = useState(searchParams.get('tab') === 'themes' ? 'THEMES' : 'OVERVIEW');
 
   // Modals state
   const [showImpersonateModal, setShowImpersonateModal] = useState(false);
@@ -196,29 +198,70 @@ const SellerDetailsPage = () => {
         </CardBody>
       </Card>
 
-      {/* KARTU PROFIL UTAMA (LAYOUT SELLER DETAILS) */}
-      <SellerDetails
-        merchant={selectedMerchant}
-        metadata={selectedMetadata}
-        onImpersonate={() => {
-          setShowImpersonateModal(true);
-          setImpersonateTokenResult(null);
-        }}
-        onOpenKyc={() => {
-          setKycNotes(selectedMerchant.kyc_notes || '');
-          setShowKycModal(true);
-        }}
-        onOpenDomain={() => {
-          setDomainVerifiedAlert(null);
-          setShowDomainModal(true);
-        }}
-      />
+      {/* TAB NAVIGATOR: IKHTISAR TOKO VS PENGATURAN TAMPILAN & TEMA */}
+      <div className="d-flex align-items-center gap-2 mb-3 border-bottom pb-2">
+        <button
+          type="button"
+          className={`btn btn-sm ${activeTab === 'OVERVIEW' ? 'btn-primary shadow-sm' : 'btn-outline-secondary'} d-inline-flex align-items-center fw-semibold px-3 py-1.5`}
+          onClick={() => {
+            setActiveTab('OVERVIEW');
+            setSearchParams({ id: String(selectedMerchant.id), tab: 'overview' });
+          }}
+        >
+          <IconifyIcon icon="solar:shop-bold-duotone" className="me-1.5 fs-16" />
+          Ikhtisar &amp; Audit Toko
+        </button>
+        <button
+          type="button"
+          className={`btn btn-sm ${activeTab === 'THEMES' ? 'btn-primary shadow-sm' : 'btn-outline-secondary'} d-inline-flex align-items-center fw-semibold px-3 py-1.5`}
+          onClick={() => {
+            setActiveTab('THEMES');
+            setSearchParams({ id: String(selectedMerchant.id), tab: 'themes' });
+          }}
+        >
+          <IconifyIcon icon="solar:pallete-2-bold-duotone" className="me-1.5 fs-16" />
+          Tampilan &amp; Layout Toko (24 Layouts)
+          <Badge bg="danger" className="ms-2" style={{ fontSize: '9px' }}>Baru</Badge>
+        </button>
+      </div>
 
-      {/* GRAFIK OMSET & REPUTASI TOKO */}
-      <SellerChat merchant={selectedMerchant} />
+      {activeTab === 'OVERVIEW' ? (
+        <>
+          {/* KARTU PROFIL UTAMA (LAYOUT SELLER DETAILS) */}
+          <SellerDetails
+            merchant={selectedMerchant}
+            metadata={selectedMetadata}
+            onImpersonate={() => {
+              setShowImpersonateModal(true);
+              setImpersonateTokenResult(null);
+            }}
+            onOpenKyc={() => {
+              setKycNotes(selectedMerchant.kyc_notes || '');
+              setShowKycModal(true);
+            }}
+            onOpenDomain={() => {
+              setDomainVerifiedAlert(null);
+              setShowDomainModal(true);
+            }}
+          />
 
-      {/* KATALOG PRODUK TERKINI & SUMMARY ACCOUNTING */}
-      <LatestProduct merchant={selectedMerchant} metadata={selectedMetadata} />
+          {/* GRAFIK OMSET & REPUTASI TOKO */}
+          <SellerChat merchant={selectedMerchant} />
+
+          {/* KATALOG PRODUK TERKINI & SUMMARY ACCOUNTING */}
+          <LatestProduct merchant={selectedMerchant} metadata={selectedMetadata} />
+        </>
+      ) : (
+        /* TAB 2: PENGATURAN TAMPILAN & TEMA TOKO */
+        <SellerThemeSettings
+          merchant={selectedMerchant}
+          onUpdateMerchant={(updated) => {
+            setMerchants((prev) =>
+              prev.map((m) => (m.id === updated.id ? { ...m, ...updated } : m))
+            );
+          }}
+        />
+      )}
 
       {/* MODAL 1: IMPERSONASI ("LOGIN AS MERCHANT") */}
       <Modal
@@ -298,33 +341,33 @@ const SellerDetailsPage = () => {
 
       {/* MODAL 2: AUDIT & REVIEW KYC */}
       <Modal show={showKycModal} onHide={() => setShowKycModal(false)} centered size="lg">
-        <Modal.Header closeButton className="border-bottom pb-2">
-          <Modal.Title className="fs-15 fw-bold text-dark d-flex align-items-center">
+        <Modal.Header closeButton className="border-bottom px-3 py-2.5 bg-body">
+          <Modal.Title className="fs-15 fw-bold text-body d-flex align-items-center">
             <IconifyIcon icon="solar:document-medicine-bold-duotone" className="me-2 text-primary fs-20" />
             Audit Legalitas &amp; Dokumen KYC ({selectedMerchant?.name})
           </Modal.Title>
         </Modal.Header>
-        <Modal.Body className="py-3">
+        <Modal.Body className="p-3">
           <div className="row g-3">
             <div className="col-md-6">
               <label className="fs-11 text-muted">Nomor Induk Kependudukan (KTP):</label>
-              <p className="fs-13 fw-semibold font-monospace text-dark mb-2">
+              <p className="fs-13 fw-semibold font-monospace text-body mb-2">
                 {selectedMerchant?.ktp_number || 'Belum diunggah'}
               </p>
 
               <label className="fs-11 text-muted">Nomor Pokok Wajib Pajak (NPWP):</label>
-              <p className="fs-13 fw-semibold font-monospace text-dark mb-2">
+              <p className="fs-13 fw-semibold font-monospace text-body mb-2">
                 {selectedMerchant?.npwp_number || 'Tidak Dilampirkan (Perorangan)'}
               </p>
 
               <label className="fs-11 text-muted">Nomor Induk Berusaha (NIB):</label>
-              <p className="fs-13 fw-semibold font-monospace text-dark mb-2">
+              <p className="fs-13 fw-semibold font-monospace text-body mb-2">
                 {selectedMerchant?.nib_number || 'Dalam Proses'}
               </p>
             </div>
             <div className="col-md-6">
               <label className="fs-11 text-muted">Informasi Rekening Bank:</label>
-              <div className="p-2.5 rounded bg-light border mb-2">
+              <div className="p-2.5 rounded bg-body-secondary border mb-2">
                 <span className="fs-12 d-block">
                   Bank: <strong>{selectedMerchant?.bank_name || '-'}</strong>
                 </span>
@@ -350,26 +393,37 @@ const SellerDetailsPage = () => {
             />
           </div>
         </Modal.Body>
-        <Modal.Footer className="border-top pt-2">
-          <Button variant="outline-danger" size="sm" onClick={() => handleKycReview('rejected')}>
-            Tolak Verifikasi
+        <Modal.Footer className="border-top px-3 py-2.5 bg-body d-flex justify-content-between align-items-center">
+          <Button variant="outline-secondary" size="sm" className="px-3 py-1.5 fs-12" onClick={() => setShowKycModal(false)}>
+            Tutup
           </Button>
-          <Button variant="success" size="sm" onClick={() => handleKycReview('approved')} className="text-white">
-            Setujui &amp; Verifikasi KYC
-          </Button>
+          <div className="d-flex align-items-center" style={{ gap: '10px' }}>
+            <Button variant="outline-danger" size="sm" className="px-3 py-1.5 fs-12 fw-semibold" onClick={() => handleKycReview('rejected')}>
+              Tolak Verifikasi
+            </Button>
+            <Button
+              variant="success"
+              size="sm"
+              className="px-3.5 py-1.5 fs-12 fw-bold text-white shadow-sm"
+              style={{ backgroundColor: '#16a34a', borderColor: '#16a34a' }}
+              onClick={() => handleKycReview('approved')}
+            >
+              Setujui &amp; Verifikasi KYC
+            </Button>
+          </div>
         </Modal.Footer>
       </Modal>
 
       {/* MODAL 3: DOMAIN & SSL ENGINE */}
       <Modal show={showDomainModal} onHide={() => setShowDomainModal(false)} centered size="md">
-        <Modal.Header closeButton className="border-bottom pb-2">
-          <Modal.Title className="fs-15 fw-bold text-dark d-flex align-items-center">
+        <Modal.Header closeButton className="border-bottom px-3 py-2.5 bg-body">
+          <Modal.Title className="fs-15 fw-bold text-body d-flex align-items-center">
             <IconifyIcon icon="solar:global-bold-duotone" className="me-2 text-primary fs-20" />
             Domain &amp; SSL Engine ({selectedMerchant?.name})
           </Modal.Title>
         </Modal.Header>
-        <Modal.Body className="py-3">
-          <div className="p-3 bg-light rounded border mb-3">
+        <Modal.Body className="p-3">
+          <div className="p-3 bg-body-secondary rounded border mb-3">
             <span className="text-muted fs-11 d-block">Subdomain Default:</span>
             <span className="fs-13 fw-bold font-monospace text-primary">
               {selectedMerchant?.subdomain}.indovia.com
@@ -377,7 +431,7 @@ const SellerDetailsPage = () => {
           </div>
 
           <div className="mb-3">
-            <label className="fs-12 text-dark fw-semibold mb-1">Domain Kustom Merchant:</label>
+            <label className="fs-12 text-body fw-semibold mb-1">Domain Kustom Merchant:</label>
             <input
               type="text"
               readOnly

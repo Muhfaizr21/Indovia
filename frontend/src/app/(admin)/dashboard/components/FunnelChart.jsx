@@ -3,9 +3,14 @@ import { Card, CardBody, CardTitle, Col, Row, ProgressBar } from 'react-bootstra
 import { conversionFunnel, paymentMethods } from '../data';
 import { useLayoutContext } from '@/context/useLayoutContext';
 
-const FunnelChart = () => {
+const FunnelChart = ({ funnelData = null, paymentsData = null }) => {
   const { theme } = useLayoutContext();
   const isDark = theme === 'dark';
+
+  const funnel = funnelData || conversionFunnel;
+  const payments = paymentsData || paymentMethods;
+
+  const finalRate = funnel[funnel.length - 1]?.rate || 13.5;
 
   // CHART 5 [HOW & WHY]: Corong Konversi
   // Signature Stepped Indovia Orange Palette with Emerald Success (zero AI-slop)
@@ -41,13 +46,13 @@ const FunnelChart = () => {
         fontWeight: 600
       },
       formatter: (val, opt) => {
-        const item = conversionFunnel[opt.dataPointIndex];
-        return `${item.stage}: ${item.label} (${item.rate}%)`;
+        const item = funnel[opt.dataPointIndex];
+        return item ? `${item.stage}: ${item.label} (${item.rate}%)` : '';
       },
       offsetX: 10
     },
     xaxis: {
-      categories: conversionFunnel.map((f) => f.stage),
+      categories: funnel.map((f) => f.stage),
       labels: { show: false },
       axisBorder: { show: false },
       axisTicks: { show: false }
@@ -87,7 +92,7 @@ const FunnelChart = () => {
               className="px-2 py-0.5 rounded fs-11 fw-semibold"
               style={{ backgroundColor: 'rgba(34, 197, 94, 0.1)', color: '#16a34a' }}
             >
-              Konversi: 13.5%
+              Konversi: {finalRate}%
             </span>
           </div>
 
@@ -97,7 +102,7 @@ const FunnelChart = () => {
               <div dir="ltr">
                 <ReactApexChart
                   options={funnelChartOptions}
-                  series={[{ name: 'Volume Sesi', data: conversionFunnel.map((f) => f.count) }]}
+                  series={[{ name: 'Volume Sesi', data: funnel.map((f) => f.count) }]}
                   height={250}
                   type="bar"
                 />
@@ -110,7 +115,7 @@ const FunnelChart = () => {
                 <p className="fs-11 fw-bold text-uppercase text-muted mb-1.5">
                   Metode Pembayaran Terpilih:
                 </p>
-                {paymentMethods.map((pm, idx) => (
+                {payments.map((pm, idx) => (
                   <div
                     key={idx}
                     className="p-1.5 px-2 mb-1.5 rounded-2 bg-light bg-opacity-25 border"
